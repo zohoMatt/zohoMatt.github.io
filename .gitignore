@@ -2,6 +2,11 @@
 # IDE/editor file
 .idea
 
+# Libraries
+node_modules
+
+# Generated files
+bundle
 
 #################################################################################
 # Created by .ignore support plugin (hsz.mobi)
