@@ -95,10 +95,20 @@
 /*                       Title                          */
 /*======================================================*/
 @FONT_SIZE:         2em;
-@FONT_COLOR:        @LIGHT_COLOR_1;
+@BASIC_FONT_COLOR:  @LIGHT_COLOR_3;
+@TAG_TEXT_COLOR:    @MILD_COLOR_3;
+@TAG_BRACKET_COLOR: @LIGHT_COLOR_2;
 
 #title {
   font-size: @FONT_SIZE;
   letter-spacing: 0.1em;
-  color: @FONT_COLOR;
+  color: @BASIC_FONT_COLOR;
+}
+
+.tag-text {
+  color: @TAG_TEXT_COLOR;
+}
+
+.triangle-bracket {
+  color: @TAG_BRACKET_COLOR;
 }
