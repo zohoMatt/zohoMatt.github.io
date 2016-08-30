@@ -1,0 +1,78 @@
+/**
+ * Style of Logo Component
+ * -- including:
+ *    Avatar, Title
+ */
+/*======================================================*/
+/*                       LAYOUT                         */
+/*======================================================*/
+
+
+
+/*======================================================*/
+/*                       Avatar                         */
+/*======================================================*/
+@CONTAINER_SIZE:    100px;
+
+.avatar {
+  height: @CONTAINER_SIZE;
+  width: @CONTAINER_SIZE;
+
+  position: relative;
+}
+
+.avatar img {
+  height: 100%;
+  width: 100%;
+
+  position: relative;
+  border-radius: 9999px;
+  z-index: 2;
+}
+
+@keyframes cycle-colors {
+  0% { border-color: hsl(0, 100%, 50%); }
+  25% { border-color: hsl(90, 100%, 50%); }
+  50% { border-color: hsl(180, 100%, 50%); }
+  75% { border-color: hsl(270, 100%, 50%); }
+  100% { border-color: hsl(360, 100%, 50%); }
+}
+
+@keyframes pulse {
+  to {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
+
+.avatar::before,
+.avatar::after {
+  height: 140%;
+  width: 140%;
+
+  position: absolute;
+  left: -20%;
+  top: -20%;
+  z-index: 1;
+
+  border: #fff solid 8px;
+  border-radius: 9999px;
+  box-sizing: border-box;
+
+  content: ' ';
+  opacity: .6;
+
+  transform: scale(0.714);
+  animation: pulse 2s linear infinite;
+  animation-delay: 1s;
+}
+
+.avatar:hover::before,
+.avatar:hover::after {
+  animation: pulse 1s linear infinite, cycle-colors 6s linear infinite;
+}
+
+.avatar:hover::after {
+  animation-delay: .5s;
+}
