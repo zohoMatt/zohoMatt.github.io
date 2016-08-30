@@ -3,12 +3,13 @@
  */
 import React from 'react';
 
-export default class Avatar extends React.Component {
+const avatarImg = require('../../../../img/avatar.jpg');
 
+export default class Avatar extends React.Component {
     render() {
         return (
             <div class="avatar">
-                <img src="../../../../img/avatar.jpg" alt="GitHub: zohoFrank" />
+                <img src={avatarImg} alt="GitHub: zohoFrank" />
             </div>
         );
     }

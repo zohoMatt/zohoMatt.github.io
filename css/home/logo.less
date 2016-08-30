@@ -24,7 +24,14 @@
 /*======================================================*/
 /*                       Avatar                         */
 /*======================================================*/
-@CONTAINER_SIZE:    100px;
+@CONTAINER_SIZE:        100px;
+
+// Wave effect
+@WAVE_START_SCALE:      0.714;
+@WAVE_END_SCALE:        1;
+@DEFAULT_SPEED:         2s;
+@HOVER_SPEED:           1s;
+@COLOR_CHANGING_SPEED:  6S;
 
 .avatar {
   height: @CONTAINER_SIZE;
@@ -55,7 +62,7 @@
 @keyframes pulse {
   to {
     opacity: 0;
-    transform: scale(1);
+    transform: scale(@WAVE_END_SCALE);
   }
 }
 
@@ -77,14 +84,14 @@
   content: ' ';
   opacity: .6;
 
-  transform: scale(0.714);
-  animation: pulse 2s linear infinite;
+  transform: scale(@WAVE_START_SCALE);
+  animation: pulse @DEFAULT_SPEED linear infinite;
   animation-delay: 1s;
 }
 
 .avatar:hover::before,
 .avatar:hover::after {
-  animation: pulse 1s linear infinite, cycle-colors 6s linear infinite;
+  animation: pulse @HOVER_SPEED linear infinite, cycle-colors @COLOR_CHANGING_SPEED linear infinite;
 }
 
 .avatar:hover::after {

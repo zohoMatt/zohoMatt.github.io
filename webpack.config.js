@@ -26,15 +26,15 @@ module.exports = {
             {
                 test:/\.less$/,
                 exclude: /(node_modules|bower_components)/,
-                loader: 'style!css!less'
+                loader: 'style!css!less!autoprefixer-loader'
             },
             {
-                test: /\.(eot|woff|woff2|png|jpg)$/,
-                loader: 'url-loader?limit=30000&name=[name]-[hash].[ext]'
+                test: /\.(png|jpg|svg)$/,
+                loader: 'url-loader?limit=30000&name=img/img-[hash:6].[ext]'
             },
             {
-                test: /\.(svg|ttf)/,
-                loader: 'file-loader'
+                test: /\.(eot|woff|woff2|ttf)$/,
+                loader: 'url-loader?limit=30000&name=font/font-[hash:6].[ext]'
             }
         ]
     },

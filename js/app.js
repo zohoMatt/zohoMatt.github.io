@@ -9,6 +9,7 @@ import './router';
 import '../css/main.less';
 
 /********** IMAGE FILES *************/
+import '../img/avatar.jpg'
 
 
 
