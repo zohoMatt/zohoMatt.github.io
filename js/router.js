@@ -13,5 +13,5 @@ const home = document.getElementById('homepage');
 ReactDOM.render(<Home/>, home);
 
 
-const contact = document.getElementById('contact');
-ReactDOM.render(<Contact/>, contact);
+// const contact = document.getElementById('contact');
+// ReactDOM.render(<Contact/>, contact);
