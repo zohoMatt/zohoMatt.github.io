@@ -6,7 +6,7 @@
 node_modules
 
 # Generated files
-bundle
+#bundle
 
 #################################################################################
 # Created by .ignore support plugin (hsz.mobi)
