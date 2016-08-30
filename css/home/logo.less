@@ -3,10 +3,22 @@
  * -- including:
  *    Avatar, Title
  */
+@import "../variables";
+
 /*======================================================*/
 /*                       LAYOUT                         */
 /*======================================================*/
+#logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 
+  height: 40%;
+
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
 
 
 /*======================================================*/
@@ -28,6 +40,8 @@
   position: relative;
   border-radius: 9999px;
   z-index: 2;
+
+  cursor: pointer;
 }
 
 @keyframes cycle-colors {
@@ -75,4 +89,16 @@
 
 .avatar:hover::after {
   animation-delay: .5s;
+}
+
+/*======================================================*/
+/*                       Title                          */
+/*======================================================*/
+@FONT_SIZE:         2em;
+@FONT_COLOR:        @LIGHT_COLOR_1;
+
+#title {
+  font-size: @FONT_SIZE;
+  letter-spacing: 0.1em;
+  color: @FONT_COLOR;
 }

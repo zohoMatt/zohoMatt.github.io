@@ -8,10 +8,10 @@ export default class Navbar extends React.Component {
         return (
             <nav id="navbar">
                 <ul>
-                    <li>one</li>
-                    <li>two</li>
-                    <li>three</li>
-                    <li>four</li>
+                    <li>Blog</li>
+                    <li>Project</li>
+                    <li>Gallery</li>
+                    <li>Contact</li>
                 </ul>
             </nav>
         );

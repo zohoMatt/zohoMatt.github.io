@@ -1,7 +1,6 @@
 /**
  * Created by Zoho on 16/8/27.
  */
-
 var debug = process.env.NODE_ENV !== "production";
 console.log(debug);
 var webpack = require('webpack');
