@@ -3,8 +3,7 @@
  */
 
 /********** JS FILES *****************/
-
-
+import './router';
 
 /*********** LESS FILES *************/
 import '../css/main.less';

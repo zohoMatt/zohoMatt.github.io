@@ -1,0 +1,37 @@
+/**
+ * Style of Navbar component
+ */
+@import "../variables";
+
+@NAV_COLOR:       @LIGHT_COLOR_2;
+@NAV_BACKGROUND:  @DARK_COLOR_2;
+@HIGHLIGHT:       @MILD_COLOR_2;
+
+nav {
+  width: 100%;
+  color: @NAV_COLOR;
+  background: @NAV_BACKGROUND;
+  font-weight: bold;
+  letter-spacing: 0.025em;
+}
+
+nav ul {
+  text-align: center;
+  margin: 0;
+}
+
+nav ul li {
+  display: inline-block;
+  padding: 0 3em;
+  line-height: 3em;
+
+  cursor: pointer;
+}
+
+nav ul li:hover {
+  background: @HIGHLIGHT;
+}
+
+
+
+
