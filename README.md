@@ -11,19 +11,19 @@ This is the entrance/home page for my site.
 * **LESS** for more structured CSS styles.
 * **Webpack+npm** for reliable package management and bundling modules.
 #### Quick Start
-Basicly, you start a webdev-server and webpack watching process.
+Basicly, you start a webdev-server and a webpack watching process.
 ``` bash
-    npm run build
-    npm run watch
+npm run build
+npm run watch
 ```
-If you don't like source mapping, or in **distribution** circumstances, and you **only** need to bundle all the modules.
+If you don't like source mapping, or in **distribution** circumstances, so you **only** need to bundle all the modules.
 ``` bash
-    npm run dist
+npm run dist
 ```
+Of course you can start the webdev-server at any time by using `npm run watch`.
 #### File Structure
 ```
 .
-├── node_modules
 ├── css
 │   ├── *
 │   ├── main.less           # main entrance for all LESS files
