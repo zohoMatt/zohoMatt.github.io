@@ -3,10 +3,14 @@
  */
 import React from 'react';
 
+import Avatar from './Logo/Avatar';
+
 export default class Logo extends React.Component {
     render() {
         return (
-            <p>i'm logo</p>
+            <div id="logo">
+                <Avatar/>
+            </div>
         );
     }
 }
