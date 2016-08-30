@@ -8,8 +8,6 @@ import './router';
 /*********** LESS FILES *************/
 import '../css/main.less';
 
-/********** IMAGE FILES *************/
-import '../img/avatar.jpg'
 
 
 
