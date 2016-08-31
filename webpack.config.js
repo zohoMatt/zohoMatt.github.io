@@ -1,10 +1,10 @@
 /**
  * Created by Zoho on 16/8/27.
  */
-var debug = process.env.NODE_ENV !== "production";
+const debug = process.env.NODE_ENV !== "production";
 console.log(debug);
-var webpack = require('webpack');
-var path = require('path');
+const webpack = require('webpack');
+const path = require('path');
 
 module.exports = {
     context: __dirname,
@@ -39,7 +39,7 @@ module.exports = {
         ]
     },
     output: {
-        path: __dirname + "/bundle",
+        path: path.join(__dirname, 'bundle'),
         filename: "[name].min.js"
     },
     plugins: debug ? [] : [

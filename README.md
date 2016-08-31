@@ -7,16 +7,21 @@
 This is the entrance/home page for my site.
  
 ### Basic info.
-* **React+ES6** for quick and modular development. Making the project more structured and easily maintained.
+* **React+Redux** for quick and modular development. Making the project more structured and easily maintained.
+> Although this page is a light-weight project, just adopt React+Redux for consistence with other pages on this site and for convenience of further developing.
+
 * **LESS** for more structured CSS styles.
-* **Webpack+npm** for reliable package management and bundling modules.
+> All LESS files and static resources (image, font, etc.) are loaded by Webpack.
+
+* **ES6+Webpack** for modular development and loading static resources.
+* **npm** for global package management.
 ### Quick Start
 Basicly, you start a webdev-server and a webpack watching process.
 ``` bash
 npm run build
 npm run watch
 ```
-If you don't like source mapping, or in **distribution** circumstances, so you **only** need to bundle all the modules.
+Furthermore, if you don't like source mapping, or in **distribution** circumstances, so you **only** need to bundle all the modules.
 ``` bash
 npm run dist
 ```

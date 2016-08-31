@@ -5,7 +5,7 @@
   "main": "webconfig.min.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dist": "export NODE_ENV=production && ./node_modules/.bin/webpack",
+    "dist": "export NODE_ENV=production && ./node_modules/.bin/webpack -w",
     "build": "export NODE_ENV=debug && ./node_modules/.bin/webpack -w",
     "watch": "./node_modules/.bin/webpack-dev-server --content-base --inline --hot"
   },
