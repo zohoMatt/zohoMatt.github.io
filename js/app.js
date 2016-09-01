@@ -6,7 +6,7 @@
 import './router';
 
 /*********** LESS FILES *************/
-import '../css/main.less';
+import '../css/$loader.less';
 
 
 

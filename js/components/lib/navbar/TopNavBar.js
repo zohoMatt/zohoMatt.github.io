@@ -1,8 +1,6 @@
 /**
  * Created by Zoho on 16/9/1.
  */
-// todo
-
 import React from 'react';
 import { Link } from 'react-router';
 
@@ -22,7 +20,7 @@ export default class TopNavBar extends React.Component {
             );
         });
         return (
-            <nav className="top-navbar">
+            <nav className="top-nav">
                 <ul>
                     {LinkArray}
                 </ul>
