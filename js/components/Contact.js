@@ -5,14 +5,14 @@
 
 import React from 'react';
 
-import TopNavbar from './lib/navbar/TopNavBar'
+import TopNavBar from './lib/nav/TopNavBar'
 
 export default class Contact extends React.Component {
 
     render() {
         return (
             <div id="contact-page">
-                <TopNavbar members={[
+                <CenterNavBar members={[
                     {path: 'blog', text: 'Blog'},
                     {path: 'project', text: 'Project'},
                     {path: 'gallery', text: 'Gallery'},

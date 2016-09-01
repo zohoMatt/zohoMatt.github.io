@@ -4,14 +4,14 @@
 import React from 'react';
 
 import Logo from './Home/Logo';
-import TopNavbar from './lib/navbar/TopNavBar';
+import CenterNavBar from './Home/CenterNavBar';
 
 export default class Home extends React.Component {
     render() {
         return (
             <div id="home-container">
                 <Logo/>
-                <TopNavbar id="navbar" members={[
+                <CenterNavBar id="navbar" members={[
                     {path: 'blog', text: 'Blog'},
                     {path: 'project', text: 'Project'},
                     {path: 'gallery', text: 'Gallery'},

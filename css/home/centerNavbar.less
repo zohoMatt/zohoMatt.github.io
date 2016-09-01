@@ -1,13 +1,22 @@
+/**
+ * Style of Navbar component
+ */
 /*======================================================*/
 /*                       Navbar                         */
 /*======================================================*/
+
+@import "../variables";
+
+#navbar {
+  margin-bottom: 2em;
+}
 @import "../variables";
 
 @NAV_TEXT_COLOR:  @LIGHT_COLOR_2;
 @NAV_BACKGROUND:  @DARK_COLOR_2;
 @HIGHLIGHT:       @MILD_COLOR_2;
 
-nav.top-nav {
+nav.c-nav {
   width: 100%;
   color: @NAV_TEXT_COLOR;
   background: @NAV_BACKGROUND;
@@ -15,13 +24,13 @@ nav.top-nav {
   letter-spacing: 0.025em;
 }
 
-nav.top-nav ul {
+nav.c-nav ul {
   text-align: center;
 
   margin: 0;
 }
 
-nav.top-nav ul li {
+nav.c-nav ul li {
   width: 80px;
 
   display: inline-block;
@@ -32,11 +41,15 @@ nav.top-nav ul li {
   cursor: pointer;
 }
 
-nav.top-nav ul li a {
+nav.c-nav ul li a {
   text-decoration: none;
   color: @NAV_TEXT_COLOR;
 }
 
-nav.top-nav ul li:hover {
+nav.c-nav ul li:hover {
   background: @HIGHLIGHT;
 }
+
+
+
+

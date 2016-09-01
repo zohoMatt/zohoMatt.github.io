@@ -6,7 +6,7 @@ import { Link } from 'react-router';
 
 import uuid from 'uuid';
 
-export default class TopNavBar extends React.Component {
+export default class CenterNavBar extends React.Component {
     
     render() {
         const {members, selected} = this.props;
@@ -20,7 +20,7 @@ export default class TopNavBar extends React.Component {
             );
         });
         return (
-            <nav className="top-nav">
+            <nav className="c-nav">
                 <ul>
                     {LinkArray}
                 </ul>
