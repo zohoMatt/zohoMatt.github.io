@@ -50,7 +50,7 @@ module.exports = {
     },
     plugins: debug ? [
         // Clean distribution folder
-        new CleanWebpackPlugin(['bundle'], {
+        new CleanWebpackPlugin(['docs'], {
             root: '/Users/Zoho/Desktop/SoftwareEngineering/PROJECTS/zohoFrank.github.io',
             verbose: true
         })
@@ -59,7 +59,7 @@ module.exports = {
         new webpack.optimize.OccurenceOrderPlugin(),
         new webpack.optimize.UglifyJsPlugin({ mangle: false, sourcemap: false }),
         // Clean distribution folder
-        new CleanWebpackPlugin(['bundle'], {
+        new CleanWebpackPlugin(['docs'], {
             root: '/Users/Zoho/Desktop/SoftwareEngineering/PROJECTS/zohoFrank.github.io',
             verbose: true
         })

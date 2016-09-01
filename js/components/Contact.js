@@ -5,6 +5,7 @@
 
 import React from 'react';
 
+import InfoCard from './Contact/InfoCard';
 import TopNavBar from './lib/nav/TopNavBar'
 
 export default class Contact extends React.Component {
@@ -18,6 +19,7 @@ export default class Contact extends React.Component {
                     {path: 'gallery', text: 'Gallery'},
                     {path: 'contact', text: 'Contact'}
                 ]} activeLink={3} />
+                <InfoCard/>
             </div>
         );
     }

@@ -18,7 +18,7 @@ export default class TopNavBar extends React.Component {
             <nav className="t-nav">
                 <ul>
                     <Link className="home-t-nav" to="/">
-                        <i className="fa fa-home" ria-hidden="true"></i>
+                        <i className="fa fa-home" aria-hidden="true"></i>
                     </Link>
                     {this.state.elements}
                 </ul>
