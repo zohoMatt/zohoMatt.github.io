@@ -10,17 +10,15 @@ import Home from './components/Home'
 import Contact from './components/Contact'
 
 
-const home = document.getElementById('homepage');
+const app = document.getElementById('app');
 
 ReactDOM.render(
     <Router history={browserHistory}>
-        <Route path="/" component={Home}>
-            <IndexRoute component={Home}></IndexRoute>
-            {/*<Route path="blog" name="blog" component={}></Route>*/}
-            {/*<Route path="project" name="project" component={}></Route>*/}
-            {/*<Route path="gallery" name="gallery" component={}></Route>*/}
-            <Route path="contact" name="contact" component={Contact}></Route>
-        </Route>
+        <Route path="/" name="home" component={Home}></Route>
+        {/*<Route path="blog" name="blog" component={}></Route>*/}
+        {/*<Route path="project" name="project" component={}></Route>*/}
+        {/*<Route path="gallery" name="gallery" component={}></Route>*/}
+        <Route path="contact" name="contact" component={Contact}></Route>
     </Router>,
-    home);
+    app);
 
