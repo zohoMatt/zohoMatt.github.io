@@ -7,24 +7,34 @@ import { Link } from 'react-router';
 import uuid from 'uuid';
 
 export default class CenterNavBar extends React.Component {
-    
+    componentWillMount() {
+        this.setChildren();
+    }
+
     render() {
-        const {members, selected} = this.props;
-        const LinkArray = members.map((m, i) => {
-            const {path, text} = m;
-            const active = (i == selected) ? 'active' : '';
-            return (
-                <Link key={uuid.v1()} class={active} to={path}>
-                    <li>{text}</li>
-                </Link>
-            );
-        });
         return (
             <nav className="c-nav">
                 <ul>
-                    {LinkArray}
+                    {this.state.elements}
                 </ul>
             </nav>
         );
+    }
+
+    /*****************************************/
+    setChildren() {
+        const {links} = this.props;
+        const linkArray = links.map((link, i) => {
+            const {path, text} = link;
+            return (
+                <Link key={uuid.v1()}
+                      to={path}>
+                    {text}
+                </Link>
+            );
+        });
+        this.setState({
+            elements: linkArray
+        });
     }
 }

@@ -11,12 +11,12 @@ export default class Home extends React.Component {
         return (
             <div id="home-container">
                 <Logo/>
-                <CenterNavBar id="navbar" members={[
+                <CenterNavBar id="navbar" links={[
                     {path: 'blog', text: 'Blog'},
                     {path: 'project', text: 'Project'},
                     {path: 'gallery', text: 'Gallery'},
                     {path: 'contact', text: 'Contact'}
-                ]} selectedMember={3} />
+                ]} />
             </div>
         );
     }

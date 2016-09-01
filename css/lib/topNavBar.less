@@ -1,0 +1,60 @@
+/**
+ * Style of CenterNavbar component
+ */
+@import "../variables";
+
+@NAV_TEXT_COLOR:        @LIGHT_COLOR_2;
+@NAV_BACKGROUND:        @DARK_COLOR_2;
+@HOME_BACKGROUND:       @MILD_COLOR_3;
+@HOVER_HIGHLIGHT:       @MILD_COLOR_2;
+@ACTIVE_HIGHLIGHT:      @DARK_COLOR_3;
+
+
+@BTN_SIZE:              120px;
+
+nav.t-nav {
+  width: 100%;
+  color: @NAV_TEXT_COLOR;
+  background: @NAV_BACKGROUND;
+  font-weight: bold;
+  letter-spacing: 0.025em;
+}
+
+nav.t-nav ul {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+
+  font-size: 0.8em;
+  text-align: center;
+
+  margin: 0;
+}
+
+nav.t-nav ul a {
+  width: @BTN_SIZE;
+
+  display: inline-block;
+
+  color: @NAV_TEXT_COLOR;
+  line-height: 2.5em;
+  text-decoration: none;
+  text-align: center;
+
+  cursor: pointer;
+
+  &:hover{
+    background-color: @HOVER_HIGHLIGHT;
+  }
+
+  &.active-t-nav {
+    background-color: @ACTIVE_HIGHLIGHT;
+  }
+
+  &.home-t-nav {
+    width: @BTN_SIZE / 3;
+    background-color: @HOME_BACKGROUND;
+  }
+}
+
+
