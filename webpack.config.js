@@ -3,7 +3,9 @@
  */
 const debug = process.env.NODE_ENV !== "production";
 console.log(debug);
+
 const webpack = require('webpack');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 const path = require('path');
 
 module.exports = {
@@ -25,16 +27,16 @@ module.exports = {
             },
             {
                 test: /\.(png|jpg|svg)(\?v=\d+\.\d+\.\d+)?/,
-                loader: 'url-loader?limit=30000&name=img/img-[hash:6].[ext]'
+                loader: 'url-loader?limit=30000&name=./img/img-[hash:6].[ext]'
             },
             {
                 test: /\.(eot|woff|woff2|ttf)(\?v=\d+\.\d+\.\d+)?/,
-                loader: 'url-loader?limit=30000&name=font/font-[hash:6].[ext]'
+                loader: 'url-loader?limit=30000&name=./font/font-[hash:6].[ext]'
             },
             {
                 test:/\.less$/,
                 exclude: /(node_modules|bower_components)/,
-                loader: 'style!css!less!autoprefixer-loader'        // doubt Possibly not working.
+                loader: 'style!css!less'        // doubt Possibly not working.
             }
         ]
     },
@@ -45,7 +47,12 @@ module.exports = {
     plugins: debug ? [] : [
         new webpack.optimize.DedupePlugin(),
         new webpack.optimize.OccurenceOrderPlugin(),
-        new webpack.optimize.UglifyJsPlugin({ mangle: false, sourcemap: false })
+        new webpack.optimize.UglifyJsPlugin({ mangle: false, sourcemap: false }),
+        // Clean distribution folder
+        new CleanWebpackPlugin(['bundle'], {
+            root: '/Users/Zoho/Desktop/SoftwareEngineering/PROJECTS/zohoFrank.github.io',
+            verbose: true
+        })
     ],
     external: {
     }
