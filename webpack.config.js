@@ -24,17 +24,17 @@ module.exports = {
                 }
             },
             {
-                test: /\.(png|jpg|svg)/,
+                test: /\.(png|jpg|svg)(\?v=\d+\.\d+\.\d+)?/,
                 loader: 'url-loader?limit=30000&name=img/img-[hash:6].[ext]'
             },
             {
-                test: /\.(eot|woff|woff2|ttf)(\?.)?/,
+                test: /\.(eot|woff|woff2|ttf)(\?v=\d+\.\d+\.\d+)?/,
                 loader: 'url-loader?limit=30000&name=font/font-[hash:6].[ext]'
             },
             {
                 test:/\.less$/,
                 exclude: /(node_modules|bower_components)/,
-                loader: 'style!css!less!autoprefixer-loader'
+                loader: 'style!css!less!autoprefixer-loader'        // doubt Possibly not working.
             }
         ]
     },
