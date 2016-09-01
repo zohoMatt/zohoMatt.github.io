@@ -27,24 +27,34 @@ module.exports = {
             },
             {
                 test: /\.(png|jpg|svg)(\?v=\d+\.\d+\.\d+)?/,
-                loader: 'url-loader?limit=30000&name=./img/img-[hash:6].[ext]'
+                loader: 'url-loader?limit=30&name=./img/img-[hash:6].[ext]'
             },
             {
                 test: /\.(eot|woff|woff2|ttf)(\?v=\d+\.\d+\.\d+)?/,
-                loader: 'url-loader?limit=30000&name=./font/font-[hash:6].[ext]'
+                loader: 'url-loader?limit=30&name=./font/font-[hash:6].[ext]'
             },
             {
-                test:/\.less$/,
+                test: /\.less$/,
                 exclude: /(node_modules|bower_components)/,
                 loader: 'style!css!less'        // doubt Possibly not working.
+            },
+            {
+                test: /index\.html$/,
+                loader: 'file-loader?name=index.html'
             }
         ]
     },
     output: {
-        path: path.join(__dirname, 'bundle'),
+        path: path.join(__dirname, 'docs'),
         filename: "[name].min.js"
     },
-    plugins: debug ? [] : [
+    plugins: debug ? [
+        // Clean distribution folder
+        new CleanWebpackPlugin(['bundle'], {
+            root: '/Users/Zoho/Desktop/SoftwareEngineering/PROJECTS/zohoFrank.github.io',
+            verbose: true
+        })
+    ] : [
         new webpack.optimize.DedupePlugin(),
         new webpack.optimize.OccurenceOrderPlugin(),
         new webpack.optimize.UglifyJsPlugin({ mangle: false, sourcemap: false }),

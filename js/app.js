@@ -8,6 +8,7 @@ import './router';
 /*********** LESS FILES *************/
 import '../css/$loader.less';
 
-
+/*********** HTML FILES *************/
+import '../index.html'
 
 
