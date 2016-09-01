@@ -3,7 +3,7 @@
  */
 @import "../variables";
 
-@NAV_COLOR:       @LIGHT_COLOR_2;
+@NAV_TEXT_COLOR:  @LIGHT_COLOR_2;
 @NAV_BACKGROUND:  @DARK_COLOR_2;
 @HIGHLIGHT:       @MILD_COLOR_2;
 
@@ -14,7 +14,7 @@
 
 nav {
   width: 100%;
-  color: @NAV_COLOR;
+  color: @NAV_TEXT_COLOR;
   background: @NAV_BACKGROUND;
   font-weight: bold;
   letter-spacing: 0.025em;
@@ -31,8 +31,15 @@ nav ul li {
 
   display: inline-block;
   padding: 0 3em;
+
+  color: @NAV_TEXT_COLOR;
   line-height: 3em;
   cursor: pointer;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: @NAV_TEXT_COLOR;
 }
 
 nav ul li:hover {

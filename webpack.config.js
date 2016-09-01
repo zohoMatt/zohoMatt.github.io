@@ -48,6 +48,5 @@ module.exports = {
         new webpack.optimize.UglifyJsPlugin({ mangle: false, sourcemap: false })
     ],
     external: {
-        "jquery": "jQuery"
     }
 };
