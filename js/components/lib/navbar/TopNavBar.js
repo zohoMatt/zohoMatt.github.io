@@ -22,8 +22,10 @@ export default class TopNavBar extends React.Component {
             );
         });
         return (
-            <nav id="top-navbar">
-                {LinkArray}
+            <nav className="top-navbar">
+                <ul>
+                    {LinkArray}
+                </ul>
             </nav>
         );
     }

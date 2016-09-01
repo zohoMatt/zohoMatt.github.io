@@ -2,49 +2,13 @@
  * Style of Navbar component
  */
 @import "../variables";
-
-@NAV_TEXT_COLOR:  @LIGHT_COLOR_2;
-@NAV_BACKGROUND:  @DARK_COLOR_2;
-@HIGHLIGHT:       @MILD_COLOR_2;
+@import "../lib/navbar";
 
 #navbar {
   margin-bottom: 2em;
 }
 
 
-nav {
-  width: 100%;
-  color: @NAV_TEXT_COLOR;
-  background: @NAV_BACKGROUND;
-  font-weight: bold;
-  letter-spacing: 0.025em;
-}
-
-nav ul {
-  text-align: center;
-
-  margin: 0;
-}
-
-nav ul li {
-  width: 80px;
-
-  display: inline-block;
-  padding: 0 3em;
-
-  color: @NAV_TEXT_COLOR;
-  line-height: 3em;
-  cursor: pointer;
-}
-
-nav ul li a {
-  text-decoration: none;
-  color: @NAV_TEXT_COLOR;
-}
-
-nav ul li:hover {
-  background: @HIGHLIGHT;
-}
 
 
 

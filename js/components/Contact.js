@@ -5,7 +5,7 @@
 
 import React from 'react';
 
-import TopNavbar from './lib/titleBar/TopNavBar'
+import TopNavbar from './lib/navbar/TopNavBar'
 
 export default class Contact extends React.Component {
 
