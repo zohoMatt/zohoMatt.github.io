@@ -5,23 +5,28 @@
 
 import React from 'react';
 
-import Icon from './LinkPanel/Icon'
+import uuid from 'uuid';
+
+import Icon from './LinkPanel/IconButton'
 
 export default class LinkPanel extends React.Component {
     constructor() {
         super();
+
+        const IconArray = ['fa-archive','fa-github','fa-envelope','fa-linkedin-square'].map((name) => {
+            return <Icon iconName={name} key={uuid.v1()}/>
+        });
+
         this.state = {
-            className: 'contact-link'
+            className: 'contact-link',
+            elements: IconArray
         };
     }
-    
+
     render() {
         return (
             <div class={this.state.className}>
-                <Icon iconName="fa-archive"/>
-                <Icon iconName="fa-github"/>
-                <Icon iconName="fa-envelope"/>
-                <Icon iconName="fa-linkedin-square"/>
+                {this.state.elements}
             </div>
         );
     }
