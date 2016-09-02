@@ -4,12 +4,109 @@
 @import "../variables";
 
 /*======================================================*/
+/*                     MAIN BODY                        */
+/*======================================================*/
+@BACKGROUND_COLOR:          @DARK_COLOR_3;
+@CARD_HEIGHT:               320px;
+@CARD_WIDTH:                200px;
+
+@MID_LINE:                  @CARD_HEIGHT / 3;
+
+.info-card {
+  width: @CARD_WIDTH;
+  height: @CARD_HEIGHT;
+  margin-top: 10%;
+
+  transition: 0.6s;
+  transform-style: preserve-3d;
+
+  z-index: 10;
+}
+
+.front, .back {
+  background-color: @BACKGROUND_COLOR;
+
+  height: @CARD_HEIGHT;
+  width: @CARD_WIDTH;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.info-card.flip {
+  transform: rotateY(180deg);
+}
+
+/*======================================================*/
+/*             UpperBackground Component                */
+/*======================================================*/
+.upper-background {
+  background-color: #2E2E2E;
+
+  position: relative;
+  top: -32%;
+
+  width: @CARD_WIDTH;
+  height: @MID_LINE + @PIC_SIZE / 2;
+  margin: 0;
+
+  z-index: 20;
+}
+
+
+/*======================================================*/
 /*                 RoundPic Component                   */
 /*======================================================*/
-@BACKGROUND_COLOR:          @MILD_COLOR_2;
+@PIC_BGD_COLOR:             @DARK_COLOR_2;
+@PIC_SIZE:                  100px;
 
 .round-pic {
+  background: @PIC_BGD_COLOR url("../../img/avatar.jpg") no-repeat;
+  background-size: @PIC_SIZE @PIC_SIZE;
+
+  position: relative;
+  top: @MID_LINE;
+
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
+  width: @PIC_SIZE;
+  height: @PIC_SIZE;
+
+  box-shadow: 1px 1px 5px black;
+  z-index: 30;
+}
+
+/*======================================================*/
+/*                 LinkPanel Component                  */
+/*======================================================*/
+@LINK_PANEL_MARGIN_TOP:       @CARD_HEIGHT - @MID_LINE - 180px;   // Now whatever position middle line is, position keeps accurate.
+
+.contact-link {
+  width: 80%;
+  margin-top: @LINK_PANEL_MARGIN_TOP;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+  z-index: 30;
+}
+
+.contact-link i {
+  display: block;
+  width: 10px;
+  height: 10px;
+
+  font-size: 1.2em;
+  cursor: pointer;
+
+  z-index: 30;
+
+  &:hover {
+    filter: brightness(200%);
+  }
 }

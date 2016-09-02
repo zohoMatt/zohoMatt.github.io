@@ -5,7 +5,7 @@
 
 ## About Project
 This is the entrance/home page for my site.
- 
+
 ### Basic info.
 * **React+Redux** for quick and modular development. Making the project more structured and easily maintained.
 > Although this page is a light-weight project, just adopt React+Redux for consistence with other pages on this site and for convenience of further developing.
@@ -54,5 +54,6 @@ npm run dist
 
 ```
 
-
+### Release
+This page is supposed to be released on master branch.
 

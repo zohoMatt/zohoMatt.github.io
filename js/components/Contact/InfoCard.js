@@ -15,10 +15,15 @@ export default class InfoCard extends React.Component {
     render() {
         return (
             <div className="info-card">
-                <DetailPanel/>
-                <RoundPic/>
-                <UpperBackground/>
-                <LinkPanel/>
+                <div class="front">
+                    <RoundPic/>
+                    <UpperBackground/>
+                    <LinkPanel/>
+
+                </div>
+                <div class="back">
+                    <DetailPanel/>
+                </div>
             </div>
         );
     }

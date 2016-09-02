@@ -5,15 +5,23 @@
 
 import React from 'react';
 
+import Icon from './LinkPanel/Icon'
+
 export default class LinkPanel extends React.Component {
+    constructor() {
+        super();
+        this.state = {
+            className: 'contact-link'
+        };
+    }
     
     render() {
         return (
-            <div class="contact-link">
-                <i className="fa fa-archive"></i>
-                <i className="fa fa-github"></i>
-                <i className="fa fa-envelope"></i>
-                <i className="fa fa-linkedin-square"></i>
+            <div class={this.state.className}>
+                <Icon iconName="fa-archive"/>
+                <Icon iconName="fa-github"/>
+                <Icon iconName="fa-envelope"/>
+                <Icon iconName="fa-linkedin-square"/>
             </div>
         );
     }

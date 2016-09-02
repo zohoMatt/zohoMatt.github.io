@@ -36,7 +36,7 @@ module.exports = {
             {
                 test: /\.less$/,
                 exclude: /(node_modules|bower_components)/,
-                loader: 'style!css!less'        // doubt Possibly not working.
+                loader: 'style!css!autoprefixer-loader!less'
             },
             {
                 test: /index\.html$/,
