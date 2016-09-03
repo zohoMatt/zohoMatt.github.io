@@ -4,27 +4,38 @@
 // todo
 
 import React from 'react';
+import { connect } from 'react-redux';
 
 import DetailPanel from './InfoCard/DetailPanel';
 import LinkPanel from './InfoCard/LinkPanel';
 import RoundPic from './InfoCard/RoundPic';
 import UpperBackground from './InfoCard/UpperBackground';
 
+@connect((store) => {
+    return {
+        faceUp: store.flipCard
+    }
+})
 export default class InfoCard extends React.Component {
 
     render() {
+        const element = this.setDisplayAsState();
         return (
             <div className="info-card">
-                <div class="front">
-                    <RoundPic/>
-                    <UpperBackground/>
-                    <LinkPanel/>
-
-                </div>
-                <div class="back">
-                    <DetailPanel/>
-                </div>
+                { element }
             </div>
         );
+    }
+    /*****************************************/
+    setDisplayAsState() {
+        return (this.props.faceUp) ?
+            (<div class="front">
+                <RoundPic/>
+                <UpperBackground/>
+                <LinkPanel/>
+            </div>)
+            : (<div class="back">
+            <DetailPanel/>
+        </div>);
     }
 }

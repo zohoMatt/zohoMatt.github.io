@@ -17,7 +17,7 @@ export default class LinkPanel extends React.Component {
             return <Icon iconName={name} key={uuid.v1()}/>
         });
 
-        this.state = {
+        this.data = {
             className: 'contact-link',
             elements: IconArray
         };
@@ -25,8 +25,8 @@ export default class LinkPanel extends React.Component {
 
     render() {
         return (
-            <div class={this.state.className}>
-                {this.state.elements}
+            <div class={this.data.className}>
+                {this.data.elements}
             </div>
         );
     }

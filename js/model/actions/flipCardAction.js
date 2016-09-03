@@ -3,7 +3,7 @@
  */
 
 export function dispatchFlipCard(faceUp) {
-    console.log('faceUp in dispatcher', faceUp);
+    // console.log('faceUp in dispatcher', faceUp);
     return {
         type: 'FLIP_CARD',
         payload: faceUp

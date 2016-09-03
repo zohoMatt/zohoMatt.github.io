@@ -7,6 +7,11 @@ import { Link } from 'react-router';
 import uuid from 'uuid';
 
 export default class CenterNavBar extends React.Component {
+    constructor() {
+        super();
+        this.data = {};
+    }
+
     componentWillMount() {
         this.setChildren();
     }
@@ -15,7 +20,7 @@ export default class CenterNavBar extends React.Component {
         return (
             <nav className="c-nav">
                 <ul>
-                    {this.state.elements}
+                    {this.data.elements}
                 </ul>
             </nav>
         );
@@ -33,8 +38,6 @@ export default class CenterNavBar extends React.Component {
                 </Link>
             );
         });
-        this.setState({
-            elements: linkArray
-        });
+        this.data.elements = linkArray;
     }
 }

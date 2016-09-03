@@ -16,16 +16,18 @@ import { dispatchFlipCard } from '../../../../model/actions/flipCardAction'
     };
 })
 export default class IconButton extends React.Component {
+    constructor() {
+        super();
+        this.data = {};
+    }
 
     componentWillMount() {
-        this.setState({
-            name: this.props.iconName
-        });
+        this.data.name = this.props.iconName;
     }
 
     render() {
         return (
-            <i className={`fa ${this.state.name}`} onClick={this.triggerFlip.bind(this)}></i>
+            <i className={`fa ${this.data.name}`} onClick={this.triggerFlip.bind(this)}></i>
         );
     }
     /*****************************************/

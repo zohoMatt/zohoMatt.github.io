@@ -9,9 +9,9 @@ export default function (
     state = true,
     action
 ) {
+    debugger;
     switch (action.type) {
         case 'FLIP_CARD':
-            console.log(state);
             return !state;
         default:
             return state;

@@ -8,11 +8,11 @@ import Title from './Logo/Title';
 
 
 export default class Logo extends React.Component {
-
-    componentWillMount() {
-        this.setState({
+    constructor() {
+        super();
+        this.state = {
             imgPath: require('../../../img/avatar.jpg')
-        });
+        }
     }
 
     render() {
