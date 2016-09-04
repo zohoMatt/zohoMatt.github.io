@@ -6,11 +6,11 @@
  */
 import { combineReducers } from 'redux';
 
-import flipCard from './flipCardReducer';
+import flipCardBackReducer from './flipCardReducer';
 
 // Combine reducers. Also reveal the data structure of store.
 const reducer = combineReducers({
-    flipCard
+    flipCard: flipCardBackReducer
 });
 
 export default reducer;

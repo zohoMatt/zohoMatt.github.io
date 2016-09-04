@@ -8,6 +8,8 @@ import { Link } from 'react-router';
 
 import uuid from 'uuid';
 
+import TopNavButton from './TopNabBar/TopNavButton';
+
 export default class TopNavBar extends React.Component {
     componentWillMount() {
         this.setElements();
@@ -33,12 +35,13 @@ export default class TopNavBar extends React.Component {
             const {path, text} = link;
             const active = (i == activeLink) ? 'active-t-nav' : '';
             return (
-                <Link key={uuid.v1()} class={active} to={path}>{text}</Link>
+                <TopNavButton key={uuid.v1()} active={active} path={path} text={text} />
             );
         });
         this.setState({
             elements: linkArray
         });
     }
+
 }
 

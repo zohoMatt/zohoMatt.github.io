@@ -2,9 +2,10 @@
  * Created by Zoho on 16/9/1.
  */
 import React from 'react';
-import { Link } from 'react-router';
 
 import uuid from 'uuid';
+
+import CenterNavButton from './CenterNavBar/CenterNavButton';
 
 export default class CenterNavBar extends React.Component {
     constructor() {
@@ -32,10 +33,7 @@ export default class CenterNavBar extends React.Component {
         const linkArray = links.map((link, i) => {
             const {path, text} = link;
             return (
-                <Link key={uuid.v1()}
-                      to={path}>
-                    {text}
-                </Link>
+                <CenterNavButton key={uuid.v1()} path={path} text={text} />
             );
         });
         this.data.elements = linkArray;

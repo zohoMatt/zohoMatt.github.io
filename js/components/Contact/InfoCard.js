@@ -13,7 +13,7 @@ import UpperBackground from './InfoCard/UpperBackground';
 
 @connect((store) => {
     return {
-        faceUp: store.flipCard
+        faceUp: store.flipCard.faceUp
     }
 })
 export default class InfoCard extends React.Component {

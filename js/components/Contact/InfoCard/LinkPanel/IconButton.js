@@ -7,13 +7,11 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 // action functions
-import { dispatchFlipCard } from '../../../../model/actions/flipCardAction'
+import { dispatchFlipBack } from '../../../../model/actions/flipCardAction'
 
 
-@connect((store) => {
-    return {
-        faceUp: store.flipCard
-    };
+@connect(() => {
+    return {};
 })
 export default class IconButton extends React.Component {
     constructor() {
@@ -27,12 +25,18 @@ export default class IconButton extends React.Component {
 
     render() {
         return (
-            <i className={`fa ${this.data.name}`} onClick={this.triggerFlip.bind(this)}></i>
+            <i className={`fa ${this.data.name}`} onClick={this.triggerManager.bind(this)}></i>
         );
     }
     /*****************************************/
-    triggerFlip() {
-        const faceUp = this.props.faceUp;
-        this.props.dispatch(dispatchFlipCard(faceUp));
+    triggerManager() {
+        this._triggerFlip();
     }
+
+    /*****************************************/
+    _triggerFlip() {
+        const name = this.data.name.split('-')[1];          // get the * part of fa-*
+        this.props.dispatch(dispatchFlipBack(name));
+    }
+
 }
