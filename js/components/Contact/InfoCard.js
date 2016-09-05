@@ -20,9 +20,12 @@ export default class InfoCard extends React.Component {
 
     render() {
         const element = this.setDisplayAsState();
+        const className = this.props.faceUp ? 'info-card' : 'info-card flip';
         return (
-            <div className="info-card">
-                { element }
+            <div className="info-card-container">
+                <div className={className}>
+                    { element }
+                </div>
             </div>
         );
     }
