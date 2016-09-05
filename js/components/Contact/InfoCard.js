@@ -24,7 +24,14 @@ export default class InfoCard extends React.Component {
         return (
             <div className="info-card-container">
                 <div className={className}>
-                    { element }
+                    <div class="front">
+                        <RoundPic/>
+                        <UpperBackground/>
+                        <LinkPanel/>
+                    </div>
+                    <div class="back">
+                        <DetailPanel/>
+                    </div>
                 </div>
             </div>
         );

@@ -33,6 +33,9 @@
   top: 0;
   left: 0;
 
+  z-index: 60;
+  backface-visibility: hidden;
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -40,7 +43,8 @@
 
 .back {
   .front;
-  z-index: 0;
+  z-index: 40;
+  transform: rotateY(180deg);
 }
 
 .info-card.flip {
