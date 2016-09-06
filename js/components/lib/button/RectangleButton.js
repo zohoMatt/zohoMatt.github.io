@@ -87,6 +87,6 @@ export default class RectangleButton extends React.Component {
             this.setState({
                 style: curStyle
             })
-        }, 200);
+        }, 100);
     }
 }

@@ -22,7 +22,10 @@ export default class ResumeDetail extends React.Component {
                 <div class="resume-intro"></div>
                 <RectangleButton btnColor={BTN_COLOR} btnWidth={BTN_WIDTH} btnHeight={BTN_HEIGHT} text="Fetch CV"
                                  clickHandler={()=>{
-                                     window.open('mailto:zoho10@outlook.com?subject=CVRequest&body=This%20mail%20is%20from%20personal%20page.')
+                                     // setTimeout just for visual effect
+                                     setTimeout(() => {
+                                        window.open('mailto:zoho10@outlook.com?subject=CVRequest&body=This%20mail%20is%20from%20personal%20page.')
+                                     }, 300);
                                  }} />
             </div>
         );
