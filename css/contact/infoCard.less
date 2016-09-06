@@ -4,7 +4,7 @@
 @import "../variables";
 
 /*======================================================*/
-/*                     MAIN BODY                        */
+/*                     FRONT COVER                      */
 /*======================================================*/
 @BACKGROUND_COLOR:          @DARK_COLOR_3;
 @CARD_HEIGHT:               320px;
@@ -44,6 +44,7 @@
 
 .back {
   .front;
+  justify-content: center;
 
   z-index: 40;
   transform: rotateY(180deg);
@@ -53,9 +54,7 @@
   transform: rotateY(180deg);
 }
 
-/*======================================================*/
-/*             UpperBackground Component                */
-/*======================================================*/
+/******************** UpperBackground Component *******************/
 .upper-background {
   background-color: #2E2E2E;
 
@@ -70,9 +69,8 @@
 }
 
 
-/*======================================================*/
-/*                 RoundPic Component                   */
-/*======================================================*/
+/******************** RoundPic Component *******************/
+
 @PIC_BGD_COLOR:             @DARK_COLOR_2;
 @PIC_SIZE:                  100px;
 
@@ -91,9 +89,8 @@
   z-index: 30;
 }
 
-/*======================================================*/
-/*                 LinkPanel Component                  */
-/*======================================================*/
+/******************** LinkPanel Component *******************/
+
 @LINK_PANEL_MARGIN_TOP:       @CARD_HEIGHT - @MID_LINE - 190px;   // Now whatever position middle line is, position keeps accurate.
 
 .contact-link {
@@ -139,14 +136,22 @@
 }
 
 .back-content {
+  height: 100%;
+  width: 100%;
+
   display: flex;
+  justify-content: space-around;
   flex-direction: column;
   align-items: center;
 
   margin: 10px;
 }
 
+/******************** Resume detail *******************/
 .resume-detail {
+  margin-left: 5px;
+  margin-right: 5px;
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -164,5 +169,20 @@
   .resume-intro;
   align-self: flex-start;
   font-size: 0.9em;
+}
+
+
+/******************** GitHub detail *******************/
+.github-detail {
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.github-name {
+  .resume-intro;
+  font-size: 1.0em;
 }
 

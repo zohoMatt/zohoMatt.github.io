@@ -6,9 +6,7 @@ import React from 'react';
 
 import RectangleButton from '../../../lib/button/RectangleButton';
 
-const BTN_COLOR = '#D95360';
-const BTN_WIDTH = '100px';
-const BTN_HEIGHT = '40px';
+import { BTN_COLOR, BTN_WIDTH, BTN_HEIGHT } from '../../../_variables';
 
 export default class ResumeDetail extends React.Component {
 
