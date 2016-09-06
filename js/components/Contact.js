@@ -20,6 +20,10 @@ export default class Contact extends React.Component {
                     {path: 'contact', text: 'Contact'}
                 ]} activeLink={3} />
                 <InfoCard/>
+                <div id="contact-footer">
+                    <div className="prompt-text eng">Redux & React dev-tool/extension is able to work on this site(temporarily) for revealing the details of development process.</div>
+                    <div className="prompt-text chn">Redux和React开发工具/插件在本站(暂时)可以工作,以展示开发细节。</div>
+                </div>
             </div>
         );
     }

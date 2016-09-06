@@ -36,7 +36,7 @@ module.exports = {
             {
                 test: /\.less$/,
                 exclude: /(node_modules|bower_components)/,
-                loader: 'style!css!autoprefixer-loader!less'
+                loader: 'style!css!autoprefixer-loader?{browsers:[">1%", "last 2 version", "Firefox 15"]}!less'
             },
             {
                 test: /index\.html$/,

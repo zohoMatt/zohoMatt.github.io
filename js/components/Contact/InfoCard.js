@@ -13,39 +13,26 @@ import UpperBackground from './InfoCard/UpperBackground';
 
 @connect((store) => {
     return {
-        faceUp: store.flipCard.faceUp
+        faceUp: store.flipCard.faceUp,
+        backComponent: store.flipCard.backComponent
     }
 })
 export default class InfoCard extends React.Component {
 
     render() {
-        const element = this.setDisplayAsState();
-        const className = this.props.faceUp ? 'info-card' : 'info-card flip';
+        const { faceUp, backComponent } = this.props;
+        const className = faceUp ? 'info-card' : 'info-card flip';
         return (
-            <div className="info-card-container">
-                <div className={className}>
-                    <div class="front">
-                        <RoundPic/>
-                        <UpperBackground/>
-                        <LinkPanel/>
-                    </div>
-                    <div class="back">
-                        <DetailPanel/>
-                    </div>
+            <div className={className}>
+                <div class="front">
+                    <RoundPic/>
+                    <UpperBackground/>
+                    <LinkPanel/>
+                </div>
+                <div class="back">
+                    <DetailPanel component={backComponent}/>
                 </div>
             </div>
         );
-    }
-    /*****************************************/
-    setDisplayAsState() {
-        return (this.props.faceUp) ?
-            (<div class="front">
-                <RoundPic/>
-                <UpperBackground/>
-                <LinkPanel/>
-            </div>)
-            : (<div class="back">
-            <DetailPanel/>
-        </div>);
     }
 }
