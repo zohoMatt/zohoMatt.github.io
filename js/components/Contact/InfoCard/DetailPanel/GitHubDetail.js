@@ -7,7 +7,7 @@ import React from 'react';
 
 import RectangleButton from '../../../lib/button/RectangleButton';
 
-import { BTN_COLOR, BTN_WIDTH, BTN_HEIGHT } from '../../../_variables';
+import { BTN_COLOR, BTN_WIDTH, BTN_HEIGHT } from '../../../../data/style';
 
 export default class GitHubDetail extends React.Component {
 

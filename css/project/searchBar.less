@@ -1,0 +1,52 @@
+/**
+ * Search bar style
+ */
+@import "../variables";
+
+@INPUT_BLUR_WIDTH:              30%;
+@INPUT_FOCUS_WIDTH:             60%;
+
+@DEFAULT_TEXT_COLOR:            @MILD_COLOR_2;
+
+
+.search-bar {
+  width: @INPUT_FOCUS_WIDTH;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+  .search-input {
+    width: @INPUT_BLUR_WIDTH;
+    height: 40px;
+
+    padding-left: 30px;
+    margin: auto;
+    border: 1px solid grey;
+    border-radius: 40px;
+
+    color: @DEFAULT_TEXT_COLOR;
+    font-size: 1em;
+    outline: none;
+
+    transition: all 0.3s ease-in-out;
+
+    &:focus {
+      width: @INPUT_FOCUS_WIDTH;
+    }
+  }
+
+  .search-btn {
+    position: relative;
+    right: 40px;
+
+    border-radius: 50%;
+  }
+}
+
+/******************** StatusBar *******************/
+.status-text {
+  margin-top: 20px;
+  margin-bottom: 10px;
+
+  font-size: 0.7em;
+  font-family: @FONT_1;
+}

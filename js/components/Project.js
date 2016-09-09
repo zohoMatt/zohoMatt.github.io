@@ -5,19 +5,25 @@
 
 import React from 'react';
 
-import TopNavBar from './lib/nav/TopNavBar'
+import SearchBar from './Project/SearchBar';
+import StatusBar from './Project/StatusBar';
+import TopNavBar from './lib/nav/TopNavBar';
 
 export default class Project extends React.Component {
 
     render() {
         return (
-            <div id="contact-page">
+            <div id="project-page">
                 <TopNavBar links={[
                     {path: 'blog', text: 'Blog'},
                     {path: 'project', text: 'Project'},
                     {path: 'gallery', text: 'Gallery'},
                     {path: 'contact', text: 'Contact'}
                 ]} activeLink={1} />
+                <div class="project-body">
+                    <SearchBar/>
+                    <StatusBar/>
+                </div>
             </div>
         );
     }

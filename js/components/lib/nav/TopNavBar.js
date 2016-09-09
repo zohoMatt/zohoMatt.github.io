@@ -1,8 +1,6 @@
 /**
  * Created by Zoho on 16/9/1.
  */
-// todo
-
 import React from 'react';
 import { Link } from 'react-router';
 

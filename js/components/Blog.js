@@ -10,7 +10,7 @@ export default class Contact extends React.Component {
 
     render() {
         return (
-            <div id="contact-page">
+            <div id="blog-page">
                 <TopNavBar links={[
                     {path: 'blog', text: 'Blog'},
                     {path: 'project', text: 'Project'},

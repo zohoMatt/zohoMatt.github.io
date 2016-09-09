@@ -21,7 +21,6 @@ export default function flipCardBackReducer (
     },
     action
 ) {
-    // todo
     switch (action.type) {
         case 'FLIP_CARD_BACK':
             return {

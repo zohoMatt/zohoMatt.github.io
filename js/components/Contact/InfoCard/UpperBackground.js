@@ -1,7 +1,7 @@
 /**
  * Created by Zoho on 16/9/2.
  */
-// todo
+// todo Background picture
 
 import React from 'react';
 

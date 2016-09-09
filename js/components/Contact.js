@@ -1,8 +1,6 @@
 /**
  * Created by Zoho on 16/8/29.
  */
-// todo
-
 import React from 'react';
 
 import InfoCard from './Contact/InfoCard';

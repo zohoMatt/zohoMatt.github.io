@@ -11,7 +11,7 @@ export default class Gallery extends React.Component {
 
     render() {
         return (
-            <div id="contact-page">
+            <div id="gallery-page">
                 <TopNavBar links={[
                     {path: 'blog', text: 'Blog'},
                     {path: 'project', text: 'Project'},

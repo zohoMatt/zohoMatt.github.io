@@ -1,12 +1,11 @@
 /**
  * Created by Zoho on 16/9/5.
  */
-// todo
 import React from 'react';
 
 import RectangleButton from '../../../lib/button/RectangleButton';
 
-import { BTN_COLOR, BTN_WIDTH, BTN_HEIGHT } from '../../../_variables';
+import { BTN_COLOR, BTN_WIDTH, BTN_HEIGHT } from '../../../../data/style';
 
 export default class ResumeDetail extends React.Component {
 
