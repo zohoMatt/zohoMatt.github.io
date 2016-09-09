@@ -13,8 +13,8 @@ export default class GitHubDetail extends React.Component {
 
     render() {
         return (
-            <div className="github-detail">
-                <div className="github-name"><p>Send me an email</p></div>
+            <div className="email-detail">
+                <div className="email-name"><p>Send me an email</p></div>
                 <RectangleButton btnColor={BTN_COLOR} btnWidth={BTN_WIDTH} btnHeight={BTN_HEIGHT} text="Email me"
                                  clickHandler={()=>{
                                      // setTimeout just for visual effect
