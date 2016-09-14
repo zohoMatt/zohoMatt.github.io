@@ -5,6 +5,8 @@
 
 import React from 'react';
 
+import uuid from 'uuid';
+
 import LinkIcon from './TableRow/LinkIcon';
 import PlayIcon from './TableRow/PlayIcon';
 import Tag from './TableRow/Tag';
@@ -14,7 +16,10 @@ export default class TableRow extends React.Component {
     render() {
         const { name, tags, description, linkUrl, playUrl } = this.props;
         const tagArr = tags.map((name) => {
-            return <Tag name={name}/>
+            return <Tag
+                key={uuid.v1()}
+                name={name}
+            />
         });
         return (
             <div className="table-row">

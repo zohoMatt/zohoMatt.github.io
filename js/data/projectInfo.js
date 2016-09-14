@@ -1,6 +1,7 @@
 /**
  * Created by Zoho on 16/9/6.
  */
+const url = require('url');
 
 export const ProjectInfoData = {
     author: 'zoho',
@@ -10,7 +11,7 @@ export const ProjectInfoData = {
             id: 'p01',
             title: 'Hum',
             tags: ['library', 'framework', 'canvas', 'web app'],
-            description: 'A library that everyone likes',
+            description: 'A simple mvc framework.',
             link: 'https://github.com/zohoFrank/hum',
             play: null
         },
@@ -18,9 +19,17 @@ export const ProjectInfoData = {
             id: 'p02',
             title: 'frogger-game',
             tags: ['web app', 'game'],
-            description: 'A simple game that everyone likes',
+            description: 'A simple game.',
             link: 'https://github.com/zohoFrank/frogger-game',
             play: 'https://zohoFrank.github.io/frogger-game'
+        },
+        {
+            id: 'p03',
+            title: 'canvas-tree',
+            tags: ['canvas'],
+            description: 'Draw a tree!',
+            link: 'https://github.com/zohoFrank/canvas-tree',
+            play: 'https://zohoFrank.github.io/canvas-tree'
         }
     ]
 };
@@ -69,4 +78,13 @@ export function getPlayableProjects(isPlayable) {
     return ProjectInfoData.entry.filter((entry) => {
         return entry.playable != null;
     });
+}
+
+/**
+ *
+ * @param linkUrl {string} Full link path.
+ * @returns {string} The host name of the path.
+ */
+export function whichRepoHost(linkUrl) {
+    return url.parse(linkUrl).host.slice(0, -4);
 }

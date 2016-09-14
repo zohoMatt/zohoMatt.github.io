@@ -10,6 +10,11 @@
   width: 90%;
 }
 
+.table-box {
+  padding: 10px 20px;
+}
+
+/******************** Row style *******************/
 .table-row {
   display: flex;
   flex-direction: row;
@@ -17,11 +22,6 @@
   align-items: center;
 
   width: 100%;
-}
-
-
-.table-box {
-  padding: 5px 20px;
 }
 
 .table-header {
@@ -35,17 +35,27 @@
 
 }
 
-/******************** Columns: Set the width of boxes *******************/
+/******************** Column style: Set the width/display style of boxes *******************/
 .name-column {
   width: 15%;
 }
 
 .tags-column {
-  width: 20%;
+  width: 30%;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.table-content.tags-column {
+  font-family: @FONT_1;
+  font-size: 0.6em;
+  color: @DARK_COLOR_1;
 }
 
 .description-column {
-  width: 40%;
+  width: 30%;
 }
 
 .link-column {
@@ -54,4 +64,65 @@
 
 .play-column {
   width: 10%;
+}
+/**********************************************************************************/
+
+/******************** Tag *******************/
+@TAG_HEIGHT:              12px;
+.tag {
+  height: @TAG_HEIGHT;
+  display: inline-block;
+
+  margin: 5px 5px;
+  padding: 5px 10px;
+
+  border-radius: @TAG_HEIGHT;
+
+  background-color: white;    // will be replaced by inline style
+
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 1px 1px 1px @LIGHT_COLOR_2;
+  }
+}
+
+/******************** Link *******************/
+.repo-link {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  cursor: pointer;
+
+  i {
+    display: inline-block;
+    margin-right: 5px;
+  }
+}
+
+/******************** Play *******************/
+@ICON-HEIGHT:             16px;
+.play-icon {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+  height: @ICON-HEIGHT;
+
+  padding: 3px 5px;
+  border: 3px solid orange;
+  border-radius: @ICON-HEIGHT;
+
+  color: orange;
+
+  cursor: pointer;
+
+  i, p {
+    display: inline-block;
+  }
+
+  &:hover {
+    filter: invert(1);
+  }
 }

@@ -1,15 +1,18 @@
 /**
  * Created by Zoho on 16/9/14.
  */
-// todo
-
 import React from 'react';
+
+import { TAG_TO_COLOR } from '../../../../data/style';
 
 export default class Tag extends React.Component {
 
     render() {
+        let { name } = this.props;
+        name = name.replace(' ', '_');
+        const backgroundColor = TAG_TO_COLOR[name];
         return (
-            <div>{this.props.name}</div>
+            <div className="tag" style={{ backgroundColor }}>{name}</div>
         );
     }
 }

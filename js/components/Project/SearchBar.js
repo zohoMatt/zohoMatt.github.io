@@ -14,10 +14,9 @@ export default class SearchBar extends React.Component {
     }
 
     render() {
-        const { revealText } = this.state;
         return (
             <div className="search-bar">
-                <input placeholder="search" name="search" type="text" class="search-input" />
+                <input placeholder="search not working now" type="text" class="search-input" />
                 <div class="search-btn fa fa-search"></div>
             </div>
         );

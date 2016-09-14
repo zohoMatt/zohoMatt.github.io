@@ -5,6 +5,8 @@
 
 import React from 'react';
 
+import uuid from 'uuid';
+
 import TableHeader from './Table/TableHeader';
 import TableRow from './Table/TableRow';
 
@@ -13,24 +15,28 @@ import { getProjectData } from '../../data/projectInfo';
 export default class Table extends React.Component {
     constructor() {
         super();
-        const test = getProjectData()[1];
-        const { title, tags, description, link, play } = test;
-        this.data = { name: title, tags, description, linkUrl: link, playUrl: play };
+        this.data = {
+            entries: getProjectData()
+        };
     }
 
     render() {
-        // name, tags, description, linkUrl, playUrl
-        const { name, tags, description, linkUrl, playUrl } = this.data;
+        const tableRowArr = this.data.entries.map((entry) => {
+            const { title, tags, description, link, play } = entry;
+            return <TableRow
+                key={uuid.v1()}
+                name={title}
+                tags={tags}
+                description={description}
+                linkUrl={link}
+                playUrl={play}
+            />
+        });
+
         return (
             <div className="table">
                 <TableHeader/>
-                <TableRow
-                    name={name}
-                    tags={tags}
-                    description={description}
-                    linkUrl={linkUrl}
-                    playUrl={playUrl}
-                />
+                {tableRowArr}
             </div>
         );
     }
