@@ -7,6 +7,7 @@ import React from 'react';
 
 import SearchBar from './Project/SearchBar';
 import StatusBar from './Project/StatusBar';
+import Table from './Project/Table';
 import TopNavBar from './lib/nav/TopNavBar';
 
 export default class Project extends React.Component {
@@ -23,6 +24,7 @@ export default class Project extends React.Component {
                 <div class="project-body">
                     <SearchBar/>
                     <StatusBar/>
+                    <Table/>
                 </div>
             </div>
         );

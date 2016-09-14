@@ -1,14 +1,14 @@
 {
-  "name": "zohowebpack",
+  "name": "homepage",
   "version": "1.0.0",
   "description": "",
-  "main": "webconfig.min.js",
+  "main": "./js/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dist": "export NODE_ENV=production && ./node_modules/.bin/webpack",
     "dev": "export NODE_ENV=debug && ./node_modules/.bin/webpack-dev-server --content-base ./docs --inline --hot"
   },
-  "author": "",
+  "author": "zoho",
   "license": "ISC",
   "dependencies": {
     "react": "^0.14.8",

@@ -12,15 +12,15 @@ export const ProjectInfoData = {
             tags: ['library', 'framework', 'canvas', 'web app'],
             description: 'A library that everyone likes',
             link: 'https://github.com/zohoFrank/hum',
-            playable: true
+            play: null
         },
         {
             id: 'p02',
             title: 'frogger-game',
-            tags: ['web app'],
+            tags: ['web app', 'game'],
             description: 'A simple game that everyone likes',
             link: 'https://github.com/zohoFrank/frogger-game',
-            playable: true
+            play: 'https://zohoFrank.github.io/frogger-game'
         }
     ]
 };
@@ -67,6 +67,6 @@ export function getProjectByTags(tagArray) {
  */
 export function getPlayableProjects(isPlayable) {
     return ProjectInfoData.entry.filter((entry) => {
-        return entry.playable == isPlayable;
+        return entry.playable != null;
     });
 }

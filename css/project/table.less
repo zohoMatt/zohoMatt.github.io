@@ -1,0 +1,57 @@
+/**
+ * Table Style
+ */
+@import "../variables";
+
+.table {
+  display: flex;
+  flex-direction: column;
+
+  width: 90%;
+}
+
+.table-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+}
+
+
+.table-box {
+  padding: 5px 20px;
+}
+
+.table-header {
+
+  border-bottom: 1px dotted @DARK_COLOR_2;
+  cursor: pointer;
+
+  i {
+    margin-right: 8px;
+  }
+
+}
+
+/******************** Columns: Set the width of boxes *******************/
+.name-column {
+  width: 15%;
+}
+
+.tags-column {
+  width: 20%;
+}
+
+.description-column {
+  width: 40%;
+}
+
+.link-column {
+  width: 15%;
+}
+
+.play-column {
+  width: 10%;
+}
