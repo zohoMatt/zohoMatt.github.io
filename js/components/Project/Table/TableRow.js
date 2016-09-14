@@ -11,6 +11,14 @@ import LinkIcon from './TableRow/LinkIcon';
 import PlayIcon from './TableRow/PlayIcon';
 import Tag from './TableRow/Tag';
 
+/**
+ * @props:
+ * name                 {string} Title of this project.
+ * tags                 {Array<string>} All tags related with this project.
+ * description          {string} A simple description on this project.
+ * linkUrl              {string} Repository link for this project.
+ * playUrl              {string} A page to play with this project.
+ */
 export default class TableRow extends React.Component {
     
     render() {

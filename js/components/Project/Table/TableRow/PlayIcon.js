@@ -5,6 +5,10 @@
 
 import React from 'react';
 
+/**
+ * @props:
+ * url          {string} Play site URL.
+ */
 export default class PlayIcon extends React.Component {
 
     render() {

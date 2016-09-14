@@ -1,31 +1,19 @@
 /**
  * Created by Zoho on 16/9/2.
  */
+import { DEFAULT_STORE } from './rootReducer';
+
 /**
- * Handling the flip card actions:
- * @action
+ * @actions:
  * FLIP_CARD
  * FLIP_CARD_FRONT
- *
- * @state
- * [store.flipCard]
- * {
- *  faceUp: <boolean>,
- *  backComponent: <string>
- * }
  */
-export default function flipCardBackReducer (
-    state = {
-        faceUp: true,
-        backComponent: 'div'
-    },
-    action
-) {
+export default function flipCardBackReducer (state=DEFAULT_STORE.flipCard, action) {
     switch (action.type) {
         case 'FLIP_CARD_BACK':
             return {
                 faceUp: false,
-                backComponent: action.payload
+                backComponentType: action.payload
             };
         case 'FLIP_CARD_FRONT':
             return {

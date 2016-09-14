@@ -15,11 +15,11 @@ const BTN_HEIGHT = '40px';
 
 /**
  * @props
- * btnWidth {string} '100px' default
- * btnHeight {string} '40px' default
- * btnColor {string} 'yellow' default
- * text {string} '' default
- * clickHandler {function}
+ * btnWidth                 {string} '100px' default
+ * btnHeight                {string} '40px' default
+ * btnColor                 {string} 'yellow' default
+ * text                     {string} '' default
+ * clickHandler             {function}
  */
 export default class RectangleButton extends React.Component {
     constructor() {

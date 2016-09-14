@@ -6,8 +6,13 @@ import { Link } from 'react-router';
 
 import uuid from 'uuid';
 
-import TopNavButton from './TopNabBar/TopNavButton';
+import TopNavButton from './TopNavBar/TopNavButton';
 
+/**
+ * @props:
+ * links                {Array<object>} object = {path: <string>, text: <string>}
+ * activeLink           {number} The index of active link in the array: links;
+ */
 export default class TopNavBar extends React.Component {
     componentWillMount() {
         this.setElements();

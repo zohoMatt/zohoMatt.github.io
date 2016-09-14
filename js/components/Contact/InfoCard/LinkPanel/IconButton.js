@@ -9,7 +9,11 @@ import { connect } from 'react-redux';
 // action functions
 import { dispatchFlipBack } from '../../../../model/actions/flipCardAction'
 
-
+/**
+ * @props:
+ * // origin
+ * iconName             {string} Name string to describe what this icon represents. Also the name related with FontAwesome icon.
+ */
 @connect(() => {
     return {};
 })

@@ -10,7 +10,7 @@ export const ProjectInfoData = {
         {
             id: 'p01',
             title: 'Hum',
-            tags: ['library', 'framework', 'canvas', 'web app'],
+            tags: ['framework'],
             description: 'A simple mvc framework.',
             link: 'https://github.com/zohoFrank/hum',
             play: null
@@ -18,7 +18,7 @@ export const ProjectInfoData = {
         {
             id: 'p02',
             title: 'frogger-game',
-            tags: ['web app', 'game'],
+            tags: ['game', 'canvas'],
             description: 'A simple game.',
             link: 'https://github.com/zohoFrank/frogger-game',
             play: 'https://zohoFrank.github.io/frogger-game'
@@ -45,8 +45,8 @@ export function getProjectNames() {
 }
 
 /**
- * @param id {string}
- * @returns {Array.<Object>}
+ * @param id            {string}
+ * @returns             {Array.<Object>}
  */
 export function getProjectById(id) {
     return ProjectInfoData.entry.filter((entry) => {
@@ -56,8 +56,8 @@ export function getProjectById(id) {
 
 /**
  *
- * @param titlePiece {string}
- * @returns {Array.<Object>}
+ * @param titlePiece    {string}
+ * @returns             {Array.<Object>}
  */
 export function getProjectByTitle(titlePiece) {
     var pattern = new RegExp(titlePiece, 'g');
@@ -71,8 +71,8 @@ export function getProjectByTags(tagArray) {
 }
 
 /**
- * @param isPlayable {boolean}
- * @returns {Array.<Object>}
+ * @param isPlayable    {boolean}
+ * @returns             {Array.<Object>}
  */
 export function getPlayableProjects(isPlayable) {
     return ProjectInfoData.entry.filter((entry) => {
@@ -82,8 +82,8 @@ export function getPlayableProjects(isPlayable) {
 
 /**
  *
- * @param linkUrl {string} Full link path.
- * @returns {string} The host name of the path.
+ * @param linkUrl       {string} Full link path.
+ * @returns             {string} The host name of the path.
  */
 export function whichRepoHost(linkUrl) {
     return url.parse(linkUrl).host.slice(0, -4);

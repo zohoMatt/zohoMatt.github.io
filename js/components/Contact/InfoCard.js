@@ -11,16 +11,22 @@ import LinkPanel from './InfoCard/LinkPanel';
 import RoundPic from './InfoCard/RoundPic';
 import UpperBackground from './InfoCard/UpperBackground';
 
+/**
+ * @props:
+ * // connected
+ * faceUp               {boolean} Whether the info card is facing up.
+ * backComponentType    {string} Type string to describe the back component.
+ */
 @connect((store) => {
     return {
         faceUp: store.flipCard.faceUp,
-        backComponent: store.flipCard.backComponent
+        backComponentType: store.flipCard.backComponentType
     }
 })
 export default class InfoCard extends React.Component {
 
     render() {
-        const { faceUp, backComponent } = this.props;
+        const { faceUp, backComponentType } = this.props;
         const className = faceUp ? 'info-card' : 'info-card flip';
         return (
             <div className={className}>
@@ -30,7 +36,7 @@ export default class InfoCard extends React.Component {
                     <LinkPanel/>
                 </div>
                 <div class="back">
-                    <DetailPanel component={backComponent}/>
+                    <DetailPanel component={backComponentType}/>
                 </div>
             </div>
         );

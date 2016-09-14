@@ -6,6 +6,13 @@ import { Link } from 'react-router';
 
 import { connect } from 'react-redux';
 
+/**
+ * @props:
+ * // origin
+ * active               {boolean} Whether this navigator button is active.
+ * path                 {string} The router path.
+ * text                 {string} Text to display.
+ */
 @connect(() => {
     return {};
 })

@@ -7,6 +7,10 @@ import React from 'react';
 
 import { whichRepoHost } from '../../../../data/projectInfo';
 
+/**
+ * @props:
+ * url          {string} Link URL.
+ */
 export default class LinkIcon extends React.Component {
 
     render() {

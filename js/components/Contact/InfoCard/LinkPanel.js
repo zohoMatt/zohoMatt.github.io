@@ -5,14 +5,14 @@ import React from 'react';
 
 import uuid from 'uuid';
 
-import Icon from './LinkPanel/IconButton'
+import IconButton from './LinkPanel/IconButton'
 
 export default class LinkPanel extends React.Component {
     constructor() {
         super();
 
         const IconArray = ['fa-archive','fa-github','fa-envelope','fa-linkedin-square'].map((name) => {
-            return <Icon iconName={name} key={uuid.v1()}/>
+            return <IconButton iconName={name} key={uuid.v1()}/>
         });
 
         this.data = {
