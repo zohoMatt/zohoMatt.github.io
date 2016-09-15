@@ -4,6 +4,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+import { flipFrontAction } from '../../../../model/actions/flipCardAction';
+
 @connect(() => {
     return {};
 })
@@ -24,9 +26,6 @@ export default class FlipFrontButton extends React.Component {
 
     /*****************************************/
     _triggerFlipFront() {
-        this.props.dispatch({
-            type: 'FLIP_CARD_FRONT',
-            payload: null
-        });
+        this.props.dispatch(flipFrontAction());
     }
 }

@@ -8,7 +8,7 @@ import { DEFAULT_STORE } from './rootReducer';
  * FLIP_CARD
  * FLIP_CARD_FRONT
  */
-export default function flipCardBackReducer (state=DEFAULT_STORE.flipCard, action) {
+export function flipCardBackReducer (state=DEFAULT_STORE.searchKeyword, action) {
     switch (action.type) {
         case 'FLIP_CARD_BACK':
             return {

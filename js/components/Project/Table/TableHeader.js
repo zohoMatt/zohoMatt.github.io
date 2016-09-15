@@ -21,7 +21,7 @@ export default class TableHeader extends React.Component {
                     Description</div>
                 <div class="table-box table-header link-column">
                     <i class="fa fa-code-fork" aria-hidden="true"></i>
-                    RepoLink</div>
+                    Repo</div>
                 <div class="table-box table-header play-column">
                     <i class="fa fa-play" aria-hidden="true"></i>
                     Play</div>

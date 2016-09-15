@@ -2,7 +2,7 @@
  * Created by Zoho on 16/9/2.
  */
 
-export function dispatchFlipBack(type) {
+export function flipBackAction(type) {
     // console.log('faceUp in dispatcher', faceUp);
     return {
         type: 'FLIP_CARD_BACK',
@@ -10,7 +10,7 @@ export function dispatchFlipBack(type) {
     }
 }
 
-export function dispatchFlipFront() {
+export function flipFrontAction() {
     return {
         type: 'FLIP_CARD_FRONT',
         payload: null

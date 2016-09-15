@@ -4,6 +4,7 @@
 // todo
 
 import React from 'react';
+import { connect } from 'react-redux';
 
 import uuid from 'uuid';
 
@@ -12,6 +13,11 @@ import TableRow from './Table/TableRow';
 
 import { getProjectData } from '../../data/projectInfo';
 
+@connect((store) => {
+    return {
+        projectKeyword: store.searchKeyword.project
+    };
+})
 export default class Table extends React.Component {
     constructor() {
         super();
@@ -33,10 +39,17 @@ export default class Table extends React.Component {
             />
         });
 
+        // filter using keyword
+        const keyword = this.props.projectKeyword;
+        const filteredTableArr = (keyword == '') ? tableRowArr : tableRowArr.filter((row) => {
+            const name = row.props.name.toLowerCase();
+            return name.indexOf(keyword.toLowerCase()) != -1;
+        });
+
         return (
             <div className="table">
                 <TableHeader/>
-                {tableRowArr}
+                {filteredTableArr}
             </div>
         );
     }

@@ -4,7 +4,7 @@
 import { applyMiddleware, createStore, compose } from 'redux';
 
 // Reducer
-import reducer from './reducers/rootReducer';
+import reducer, { DEFAULT_STORE } from './reducers/rootReducer';
 // Middleware
 import logger from "redux-logger";
 import thunk from "redux-thunk";
@@ -20,5 +20,5 @@ const debugMiddleware = compose(
 const distMiddleware = applyMiddleware(promise(), thunk);
 
 // Create store
-const store = createStore(reducer, debugMiddleware);
+const store = createStore(reducer, DEFAULT_STORE, debugMiddleware);
 export default store;

@@ -7,7 +7,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 // action functions
-import { dispatchFlipBack } from '../../../../model/actions/flipCardAction'
+import { flipBackAction } from '../../../../model/actions/flipCardAction'
 
 /**
  * @props:
@@ -40,7 +40,7 @@ export default class IconButton extends React.Component {
     /*****************************************/
     _triggerFlip() {
         const name = this.data.name.split('-')[1];          // get the * part of fa-*
-        this.props.dispatch(dispatchFlipBack(name));
+        this.props.dispatch(flipBackAction(name));
     }
 
 }
