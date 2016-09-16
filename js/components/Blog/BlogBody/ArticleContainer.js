@@ -5,7 +5,7 @@
 
 import React from 'react';
 
-import ArticleCard from './ArticleCard';
+import ArticleCard from './ArticleContainer/ArticleCard';
 
 export default class ArticleContainer extends React.Component {
 

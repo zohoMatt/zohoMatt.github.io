@@ -12,11 +12,9 @@ import { TAG_TO_COLOR } from '../../../../../data/style';
 export default class Tag extends React.Component {
 
     render() {
-        let { name } = this.props;
-        name = name.replace(' ', '_');
-        const backgroundColor = TAG_TO_COLOR[name];
+        const { name, bgColor } = this.props;
         return (
-            <div className="tag" style={{ backgroundColor }}>{name}</div>
+            <div className="tag" style={{ backgroundColor: bgColor }}>{name}</div>
         );
     }
 }
