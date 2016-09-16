@@ -1,11 +1,9 @@
 /**
  * Created by Zoho on 16/9/14.
  */
-// todo
-
 import React from 'react';
 
-import { whichRepoHost } from '../../../../data/projectInfo';
+import { whichRepoHost } from '../../../../../data/projectInfo';
 
 /**
  * @props:

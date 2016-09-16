@@ -1,8 +1,6 @@
 /**
  * Created by Zoho on 16/9/6.
  */
-// todo
-
 import React from 'react';
 
 export default class StatusBar extends React.Component {

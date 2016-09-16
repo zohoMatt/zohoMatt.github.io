@@ -21,6 +21,7 @@ ReactDOM.render(
         <Router history={browserHistory}>
             <Route path="/" name="home" component={Home}></Route>
             <Route path="blog" name="blog" component={Blog}></Route>
+            <Route path="blog/2" name="blog" component={Contact}></Route>
             <Route path="project" name="project" component={Project}></Route>
             <Route path="gallery" name="gallery" component={Gallery}></Route>
             <Route path="contact" name="contact" component={Contact}></Route>

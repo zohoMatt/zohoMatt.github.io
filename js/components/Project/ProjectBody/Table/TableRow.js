@@ -1,8 +1,6 @@
 /**
  * Created by Zoho on 16/9/9.
  */
-// todo
-
 import React from 'react';
 
 import uuid from 'uuid';

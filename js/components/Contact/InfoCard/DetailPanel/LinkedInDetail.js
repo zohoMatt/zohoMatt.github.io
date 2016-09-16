@@ -1,8 +1,6 @@
 /**
  * Created by Zoho on 16/9/5.
  */
-// todo
-
 import React from 'react';
 
 import RectangleButton from '../../../lib/button/RectangleButton';

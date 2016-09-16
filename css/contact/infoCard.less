@@ -6,15 +6,15 @@
 /*======================================================*/
 /*                     FRONT COVER                      */
 /*======================================================*/
-@BACKGROUND_COLOR:          @DARK_COLOR_3;
-@CARD_HEIGHT:               320px;
-@CARD_WIDTH:                200px;
+@INFO_CARD_BACKGROUND_COLOR:          @DARK_COLOR_3;
+@INFO_CARD_HEIGHT:                    320px;
+@INFO_CARD_WIDTH:                     200px;
 
-@MID_LINE:                  @CARD_HEIGHT / 3;
+@MID_LINE:                            @INFO_CARD_HEIGHT / 3;
 
 .info-card {
-  width: @CARD_WIDTH;
-  height: @CARD_HEIGHT;
+  width: @INFO_CARD_WIDTH;
+  height: @INFO_CARD_HEIGHT;
   margin-top: 10%;
 
   transition: 0.5s;
@@ -25,10 +25,10 @@
 }
 
 .front {
-  background-color: @BACKGROUND_COLOR;
+  background-color: @INFO_CARD_BACKGROUND_COLOR;
 
-  height: @CARD_HEIGHT;
-  width: @CARD_WIDTH;
+  height: @INFO_CARD_HEIGHT;
+  width: @INFO_CARD_WIDTH;
 
   position: absolute;
   top: 0;
@@ -61,7 +61,7 @@
   position: relative;
   top: -32%;
 
-  width: @CARD_WIDTH;
+  width: @INFO_CARD_WIDTH;
   height: @MID_LINE + @PIC_SIZE / 2;
   margin: 0;
 
@@ -91,7 +91,7 @@
 
 /******************** LinkPanel Component *******************/
 
-@LINK_PANEL_MARGIN_TOP:       @CARD_HEIGHT - @MID_LINE - 190px;   // Now whatever position middle line is, position keeps accurate.
+@LINK_PANEL_MARGIN_TOP:       @INFO_CARD_HEIGHT - @MID_LINE - 190px;   // Now whatever position middle line is, position keeps accurate.
 
 .contact-link {
   width: 80%;

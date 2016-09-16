@@ -1,13 +1,15 @@
 /**
  * Created by Zoho on 16/9/6.
  */
-// todo
-
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { searchProjectAction } from '../../model/actions/searchAction';
-
+/**
+ * @props:
+ * // origin
+ * placeHolder          {string} The 'placeholder' property for input element.
+ * onInputHandler       {function} (event) For 'onInput' event handler in input.
+ */
 @connect(() => {
     return {};
 })
@@ -20,18 +22,14 @@ export default class SearchBar extends React.Component {
     }
 
     render() {
+        const { placeHolder, onInputHandler } = this.props;
         return (
             <div className="search-bar">
-                <input placeholder="project name search" type="text" class="search-input"
-                       onInput={this.onInputHandler.bind(this)}/>
+                <input placeholder={placeHolder} type="text" class="search-input"
+                       onInput={onInputHandler}/>
                 <div class="search-btn fa fa-search"></div>
             </div>
         );
-    }
-
-    /*****************************************/
-    onInputHandler(event) {
-        this.props.dispatch(searchProjectAction(event.target.value));
     }
 
 }

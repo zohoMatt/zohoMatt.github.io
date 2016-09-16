@@ -1,0 +1,102 @@
+/**
+ * Article cards style
+ */
+@import "../variables";
+
+/**======================================================**/
+/**                     Main body                        **/
+/**======================================================**/
+@ARTI_CARD_HEIGHT:                  250px;
+@ARTI_CARD_WIDTH:                   200px;
+@ARTI_CARD_BACKGROUND_COLOR:        @LIGHT_COLOR_1;
+@ARTI_CARD_FONT_COLOR:              @DARK_COLOR_1;
+
+.article-card {
+  width: @ARTI_CARD_WIDTH;
+  height: @ARTI_CARD_HEIGHT;
+
+  margin: 10px;
+  padding: 10px;
+
+  background-color: @ARTI_CARD_BACKGROUND_COLOR;
+  color: @ARTI_CARD_FONT_COLOR;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+/**======================================================**/
+/**                     Sub-part                         **/
+/**======================================================**/
+@ARTICLE_TAG_FONT_SIZE:               0.7em;
+@ARTICLE_TITLE_FONT_SIZE:             1.5em;
+@ARTICLE_SUMMARY_FONT_SIZE:           1em;
+@ARTICLE_TIME_FONT_SIZE:              0.7em;
+
+@ARTICLE_TAG_FONT_FAMILY:             @FONT_1;
+@ARTICLE_TITLE_FONT_FAMILY:           @FONT_1;
+@ARTICLE_SUMMARY_FONT_FAMILY:         @FONT_1;
+@ARTICLE_TIME_FONT_FAMILY:            @FONT_1;
+
+@ARTICLE_TAG_FONT_COLOR:              @LIGHT_COLOR_2;
+@ARTICLE_TITLE_FONT_COLOR:            black;
+@ARTICLE_SUMMARY_FONT_COLOR:          black;
+@ARTICLE_TIME_FONT_COLOR:             grey;
+
+// function
+.font-setting(@family; @size; @color) {
+  font-family: @family;
+  font-size: @size;
+  color: @color;
+}
+
+/******************** Category *******************/
+@ARTICLE_CATEGORY_HEIGHT:           @ARTICLE_TAG_FONT_SIZE * 2;
+@ARTICLE_CATEGORY_BACKGROUND:       @DARK_COLOR_3;
+.article-category {
+  height: @ARTICLE_CATEGORY_HEIGHT;
+  line-height: @ARTICLE_CATEGORY_HEIGHT;
+
+  margin-bottom: 5px;
+  padding: 1px 8px;
+  border-radius: @ARTICLE_CATEGORY_HEIGHT;
+
+  background-color: @ARTICLE_CATEGORY_BACKGROUND;
+  .font-setting(@ARTICLE_TAG_FONT_FAMILY; @ARTICLE_TAG_FONT_SIZE; @ARTICLE_TAG_FONT_COLOR;);
+
+  cursor: pointer;
+
+  &:hover {
+    filter: brightness(1.2);
+  }
+}
+
+.article-tags {
+
+}
+
+/*****************************************/
+
+@ARTICLE_TITLE_HOVER_FONT_COLOR:    GrayText;
+.article-title {
+  height: @ARTICLE_TITLE_FONT_SIZE * 2;
+
+  .font-setting(@ARTICLE_TITLE_FONT_FAMILY; @ARTICLE_TITLE_FONT_SIZE; @ARTICLE_TITLE_FONT_COLOR;);
+
+  cursor: pointer;
+
+  &:hover {
+    color: @ARTICLE_TITLE_HOVER_FONT_COLOR;
+  }
+}
+
+.article-summary {
+  .font-setting(@ARTICLE_SUMMARY_FONT_FAMILY; @ARTICLE_SUMMARY_FONT_SIZE; @ARTICLE_SUMMARY_FONT_COLOR;)
+}
+
+.article-time {
+  margin-top: auto;
+  .font-setting(@ARTICLE_TIME_FONT_FAMILY; @ARTICLE_TIME_FONT_SIZE; @ARTICLE_TIME_FONT_COLOR;)
+}

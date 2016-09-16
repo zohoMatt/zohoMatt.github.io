@@ -1,8 +1,6 @@
 /**
  * Created by Zoho on 16/9/9.
  */
-// todo
-
 import React from 'react';
 import { connect } from 'react-redux';
 
@@ -11,7 +9,7 @@ import uuid from 'uuid';
 import TableHeader from './Table/TableHeader';
 import TableRow from './Table/TableRow';
 
-import { getProjectData } from '../../data/projectInfo';
+import { getProjectData } from '../../../data/projectInfo';
 
 @connect((store) => {
     return {

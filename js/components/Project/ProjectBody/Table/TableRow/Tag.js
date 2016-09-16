@@ -3,7 +3,7 @@
  */
 import React from 'react';
 
-import { TAG_TO_COLOR } from '../../../../data/style';
+import { TAG_TO_COLOR } from '../../../../../data/style';
 
 /**
  * @props:
