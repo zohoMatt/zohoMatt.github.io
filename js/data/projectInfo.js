@@ -13,7 +13,8 @@ export const ProjectInfoData = {
             tags: ['framework'],
             description: 'A simple mvc framework.',
             link: 'https://github.com/zohoFrank/hum',
-            play: null
+            play: null,
+            rate: 3.5
         },
         {
             id: 'p02',
@@ -21,7 +22,8 @@ export const ProjectInfoData = {
             tags: ['game', 'canvas'],
             description: 'A simple game.',
             link: 'https://github.com/zohoFrank/frogger-game',
-            play: 'https://zohoFrank.github.io/frogger-game'
+            play: 'https://zohoFrank.github.io/frogger-game',
+            rate: 5.5
         },
         {
             id: 'p03',
@@ -29,13 +31,25 @@ export const ProjectInfoData = {
             tags: ['canvas'],
             description: 'Draw a tree!',
             link: 'https://github.com/zohoFrank/canvas-tree',
-            play: 'https://zohoFrank.github.io/canvas-tree'
+            play: 'https://zohoFrank.github.io/canvas-tree',
+            rate: 6.5
+        },
+        {
+            id: 'p04',
+            title: 'homepage',
+            tags: ['page'],
+            description: 'Just the site you are visiting!',
+            link: 'https://github.com/zohoFrank/zohoFrank.github.io',
+            play: 'https://zohofrank.github.io/',
+            rate: 7.0
         }
     ]
 };
 
 export function getProjectData() {
-    return ProjectInfoData.entry;
+    return ProjectInfoData.entry.sort((a, b) => {
+        return b.rate - a.rate;
+    });
 }
 
 export function getProjectNames() {

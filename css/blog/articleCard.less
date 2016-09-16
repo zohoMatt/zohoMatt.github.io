@@ -6,8 +6,8 @@
 /**======================================================**/
 /**                     Main body                        **/
 /**======================================================**/
-@ARTI_CARD_HEIGHT:                  250px;
-@ARTI_CARD_WIDTH:                   200px;
+@ARTI_CARD_HEIGHT:                  300px;
+@ARTI_CARD_WIDTH:                   260px;
 @ARTI_CARD_BACKGROUND_COLOR:        @LIGHT_COLOR_1;
 @ARTI_CARD_FONT_COLOR:              @DARK_COLOR_1;
 
@@ -56,6 +56,18 @@
 @ARTICLE_CATEGORY_HEIGHT:           @ARTICLE_TAG_FONT_SIZE * 2;
 @ARTICLE_CATEGORY_BACKGROUND:       @DARK_COLOR_3;
 .article-category {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+
+  overflow: hidden;
+
+  div, i {
+    margin-right: 4px;
+  }
+}
+
+.article-tags {
   height: @ARTICLE_CATEGORY_HEIGHT;
   line-height: @ARTICLE_CATEGORY_HEIGHT;
 
@@ -73,15 +85,11 @@
   }
 }
 
-.article-tags {
-
-}
-
 /*****************************************/
 
 @ARTICLE_TITLE_HOVER_FONT_COLOR:    GrayText;
 .article-title {
-  height: @ARTICLE_TITLE_FONT_SIZE * 2;
+  margin-bottom: 10px;
 
   .font-setting(@ARTICLE_TITLE_FONT_FAMILY; @ARTICLE_TITLE_FONT_SIZE; @ARTICLE_TITLE_FONT_COLOR;);
 

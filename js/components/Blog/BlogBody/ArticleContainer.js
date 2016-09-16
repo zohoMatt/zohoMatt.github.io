@@ -19,6 +19,8 @@ export default class ArticleContainer extends React.Component {
                 <ArticleCard/>
                 <ArticleCard/>
                 <ArticleCard/>
+                <ArticleCard/>
+                <ArticleCard/>
             </div>
         );
     }

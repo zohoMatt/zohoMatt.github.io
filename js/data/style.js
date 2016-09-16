@@ -18,6 +18,6 @@ export const TAG_TO_COLOR = {
     library: 'wheat',
     framework: 'lightgreen',
     canvas: 'purple',
-    web_app: 'skyblue',
+    page: 'skyblue',
     game: 'orange'
 };
