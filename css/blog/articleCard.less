@@ -59,6 +59,9 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
+  align-items: center;
+
+  margin-bottom: 10px;
 
   overflow: hidden;
 
@@ -67,11 +70,19 @@
   }
 }
 
+.article-archive {
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+    text-decoration-color: black;
+  }
+}
+
 .article-tags {
   height: @ARTICLE_CATEGORY_HEIGHT;
   line-height: @ARTICLE_CATEGORY_HEIGHT;
 
-  margin-bottom: 5px;
   padding: 1px 8px;
   border-radius: @ARTICLE_CATEGORY_HEIGHT;
 
