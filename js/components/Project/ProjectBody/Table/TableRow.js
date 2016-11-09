@@ -9,7 +9,7 @@ import LinkIcon from './TableRow/LinkIcon';
 import PlayIcon from './TableRow/PlayIcon';
 import Tag from './TableRow/Tag';
 
-import { TAG_TO_COLOR } from '../../../../data/style';
+import { tagToColor } from '../../../../data/style';
 
 /**
  * @props:
@@ -24,11 +24,12 @@ export default class TableRow extends React.Component {
     render() {
         const { name, tags, description, linkUrl, playUrl } = this.props;
         const tagArr = tags.map((name) => {
-            const bgColor = TAG_TO_COLOR[name.replace(' ', '_')];
+            const bgColor = tagToColor(name);
             return <Tag
                 key={uuid.v1()}
                 name={name}
                 bgColor={bgColor}
+                clickToRemove="not"
             />
         });
         return (

@@ -13,8 +13,10 @@ import { getProjectData } from '../../../data/projectInfo';
 
 @connect((store) => {
     const keyword = store.searchKeyword.project;
+    const tags = store.tagFilter.project;
     return {
-        keyword
+        keyword,
+        tags
     };
 })
 export default class Table extends React.Component {
@@ -39,10 +41,19 @@ export default class Table extends React.Component {
         });
 
         // filter using keyword
-        const { keyword } = this.props;
-        const filteredTableArr = (keyword == '') ? tableRowArr : tableRowArr.filter((row) => {
+        const { keyword, tags } = this.props;
+        let filteredTableArr = (keyword == '') ? tableRowArr : tableRowArr.filter((row) => {
             const name = row.props.name.toLowerCase();
             return name.indexOf(keyword.toLowerCase()) != -1;
+        });
+        // filter using tags
+        filteredTableArr = (tags.length == 0) ? filteredTableArr : filteredTableArr.filter((row) => {
+            const rowTags = row.props.tags;
+            for (let filter of tags) {
+                if (rowTags.indexOf(filter) == -1)
+                    return false
+            }
+            return true;
         });
 
         return (

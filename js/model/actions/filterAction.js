@@ -25,22 +25,16 @@ export function searchGalleryAction(keyword) {
 /**
  * Tags filter actions
  */
-export function addProjectTagFilter(id, tagName) {
+export function addProjectTagFilter(tagName) {
     return {
         type: 'ADD_PROJECT_FILTER_TAGS',
-        payload: {
-            tagId: id,
-            content, tagName
-        }
+        payload: tagName
     }
 }
 
-export function removeProjectTagFilter(id, tagName) {
+export function removeProjectTagFilter(tagName) {
     return {
         type: 'REMOVE_PROJECT_FILTER_TAGS',
-        payload: {
-            tagId: id,
-            content: tagName
-        }
+        payload: tagName
     }
 }

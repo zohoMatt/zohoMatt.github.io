@@ -26,7 +26,7 @@ export default class Tag extends React.Component {
     /******************** Click handler *******************/
     clickHandler(event) {
         const { name, clickToRemove, dispatch} = this.props;
-        if (clickToRemove == "remove") {
+        if (clickToRemove == "remove" || clickToRemove == "true" || clickToRemove == "yes") {
             dispatch(removeProjectTagFilter(name));
         } else {
             dispatch(addProjectTagFilter(name));

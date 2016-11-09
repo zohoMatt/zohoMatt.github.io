@@ -4,26 +4,50 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+import Tag from './Table/TableRow/Tag';
+
+import uuid from 'uuid';
+
+import { tagToColor } from '../../../data/style'
 
 @connect((store) => {
-    const keyword = store.searchKeyword.project;
+    const { searchKeyword, tagFilter } = store;
     return {
-        keyword
+        searchKeyword,
+        tagFilter
     }
 })
 export default class StatusBar extends React.Component {
-    constructor() {
-        super();
-    }
 
     render() {
-        const { keyword } = this.props;
+        const {type, searchKeyword, tagFilter} = this.props;
+        const comKeyword = searchKeyword[type];
+        const comTags = tagFilter[type];
 
-        const text = (keyword && true) ?
-            'filter: ' + `'${keyword}'` :
-            'no filter'
+        // Text part and tags part
+        const text = (comKeyword) ?
+            <p>{`'${comKeyword}'`} </p> :
+            <p></p>;
+        const tags = comTags.map((name) => {
+            const bgColor = tagToColor(name);
+            return <Tag
+                key={uuid.v1()}
+                name={name}
+                bgColor={bgColor}
+                clickToRemove="remove"
+            />
+        });
+
+        // Combine text and tags
+        let combine = null;
+        if (comKeyword || tags.length > 0) {
+            combine = <div>filter: {text} {tags}</div>
+        } else {
+            combine = <p>no filter</p>
+        }
+
         return (
-            <div className="status-text"><p>{text}</p></div>
+            <div className="status-text">{combine}</div>
         );
     }
 }

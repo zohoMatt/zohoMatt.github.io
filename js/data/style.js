@@ -23,3 +23,7 @@ export const TAG_TO_COLOR = {
     node: 'moccasin',
     app: 'goldenrod'
 };
+
+export function tagToColor(rawText) {
+    return TAG_TO_COLOR[rawText.replace(' ', '_')];
+}

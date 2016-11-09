@@ -26,13 +26,14 @@ export function searchKeywordReducer(state=DEFAULT_STORE.searchKeyword, action) 
 }
 
 export function tagsFilterReducer(state=DEFAULT_STORE.tagFilter, action) {
-    if (!action.payload) return state;
     let tagsCopy = null;
-
+    const content = action.payload;
     switch (action.type) {
         case 'ADD_PROJECT_FILTER_TAGS':
             tagsCopy = state.project.slice();
-            tagsCopy.push(content);
+            if (tagsCopy.indexOf(content) == -1) {
+                tagsCopy.push(content);
+            }
             return {
                 ...state,
                 project: tagsCopy
@@ -40,7 +41,9 @@ export function tagsFilterReducer(state=DEFAULT_STORE.tagFilter, action) {
         case 'REMOVE_PROJECT_FILTER_TAGS':
             tagsCopy = state.project.slice();
             const removeIndex = tagsCopy.indexOf(content);
-            tagsCopy.remove(removeIndex);
+            if (removeIndex != -1) {
+                tagsCopy.splice(removeIndex, removeIndex + 1);
+            }
             return {
                 ...state,
                 project: tagsCopy
