@@ -12,8 +12,9 @@ import TableRow from './Table/TableRow';
 import { getProjectData } from '../../../data/projectInfo';
 
 @connect((store) => {
+    const keyword = store.searchKeyword.project;
     return {
-        projectKeyword: store.searchKeyword.project
+        keyword
     };
 })
 export default class Table extends React.Component {
@@ -38,7 +39,7 @@ export default class Table extends React.Component {
         });
 
         // filter using keyword
-        const keyword = this.props.projectKeyword;
+        const { keyword } = this.props;
         const filteredTableArr = (keyword == '') ? tableRowArr : tableRowArr.filter((row) => {
             const name = row.props.name.toLowerCase();
             return name.indexOf(keyword.toLowerCase()) != -1;

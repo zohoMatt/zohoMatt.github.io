@@ -42,6 +42,15 @@ export const ProjectInfoData = {
             link: 'https://github.com/zohoFrank/zohoFrank.github.io',
             play: 'https://zohofrank.github.io/',
             rate: 7.0
+        },
+        {
+            id: 'p05',
+            title: 'everlink-md',
+            tags: ['node', 'app'],
+            description: 'A desktop markdown editor linked with evernote.',
+            link: 'https://github.com/zohoFrank/everlink-md',
+            play: null,
+            rate: 8.0
         }
     ]
 };

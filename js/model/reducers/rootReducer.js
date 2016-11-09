@@ -4,7 +4,7 @@
 import { combineReducers } from 'redux';
 
 import { flipCardBackReducer } from './flipCardReducer';
-import { searchReducer } from './searchReducer';
+import { searchKeywordReducer, tagsFilterReducer } from './filterReducer';
 
 /******************** Data Structure of Store *******************/
 export const DEFAULT_STORE = {
@@ -16,6 +16,11 @@ export const DEFAULT_STORE = {
         project: '',
         blog: '',
         gallery: ''
+    },
+    tagFilter: {
+        project: [],
+        blog: [],
+        gallery: []
     }
 };
 
@@ -24,7 +29,8 @@ export const DEFAULT_STORE = {
 // Combine reducers. Also reveal the data structure of store.
 const reducer = combineReducers({
     flipCard: flipCardBackReducer,
-    searchKeyword: searchReducer
+    searchKeyword: searchKeywordReducer,
+    tagFilter: tagsFilterReducer
 });
 
 export default reducer;

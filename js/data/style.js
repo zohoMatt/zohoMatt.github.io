@@ -19,5 +19,7 @@ export const TAG_TO_COLOR = {
     framework: 'lightgreen',
     canvas: 'purple',
     page: 'skyblue',
-    game: 'orange'
+    game: 'orange',
+    node: 'moccasin',
+    app: 'goldenrod'
 };

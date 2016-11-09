@@ -8,7 +8,7 @@ import SearchBar from '../Project/ProjectBody/SearchBar';
 import StatusBar from '../Project/ProjectBody/StatusBar';
 import Table from '../Project/ProjectBody/Table';
 
-import { searchProjectAction } from '../../model/actions/searchAction';
+import { searchProjectAction } from '../../model/actions/filterAction';
 
 
 @connect(() => {

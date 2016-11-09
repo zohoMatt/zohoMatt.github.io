@@ -24,7 +24,6 @@ export default class TableRow extends React.Component {
     render() {
         const { name, tags, description, linkUrl, playUrl } = this.props;
         const tagArr = tags.map((name) => {
-            console.log(name.replace(' ', '_'));
             const bgColor = TAG_TO_COLOR[name.replace(' ', '_')];
             return <Tag
                 key={uuid.v1()}
