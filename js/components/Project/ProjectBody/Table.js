@@ -44,7 +44,8 @@ export default class Table extends React.Component {
         const { keyword, tags } = this.props;
         let filteredTableArr = (keyword == '') ? tableRowArr : tableRowArr.filter((row) => {
             const name = row.props.name.toLowerCase();
-            return name.indexOf(keyword.toLowerCase()) != -1;
+            const description = row.props.description.toLowerCase();
+            return name.indexOf(keyword.toLowerCase()) != -1 || description.indexOf(keyword.toLowerCase()) != -1;
         });
         // filter using tags
         filteredTableArr = (tags.length == 0) ? filteredTableArr : filteredTableArr.filter((row) => {

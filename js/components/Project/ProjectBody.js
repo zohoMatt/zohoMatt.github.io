@@ -19,7 +19,7 @@ export default class ProjectBody extends React.Component {
     render() {
         return (
             <div class="project-body">
-                <SearchBar placeHolder="project name search"
+                <SearchBar placeHolder="name or description"
                            onInputHandler={this.onInputHandler.bind(this)}/>
                 <StatusBar type="project"/>
                 <Table/>
