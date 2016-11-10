@@ -20,8 +20,10 @@ export const TAG_TO_COLOR = {
     canvas: 'purple',
     page: 'skyblue',
     game: 'orange',
-    node: 'moccasin',
-    app: 'goldenrod'
+    node: 'yellow',
+    react: 'goldenrod',
+    redux: 'gold',
+    electron: 'darkgreen'
 };
 
 export function tagToColor(rawText) {

@@ -43,6 +43,8 @@
 }
 
 /******************** StatusBar *******************/
+@NO_BGD_TEXT_COLOR:               @LIGHT_COLOR_2;
+@BGD_TEXT_COLOR:                  @DARK_COLOR_1;
 .status-text {
   height: 30px;
 
@@ -52,7 +54,14 @@
   font-size: 0.7em;
   font-family: @FONT_1;
 
-  div, p {
+  p {
     display: inline-block;
+    color: @NO_BGD_TEXT_COLOR;
+  }
+
+
+  div {
+    display: inline-block;
+    color: @BGD_TEXT_COLOR;
   }
 }

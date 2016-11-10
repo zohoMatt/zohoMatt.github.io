@@ -8,15 +8,6 @@ export const ProjectInfoData = {
     mtime: '2016-09-06-20-10',
     entry: [
         {
-            id: 'p01',
-            title: 'Hum',
-            tags: ['framework'],
-            description: 'A simple mvc framework.',
-            link: 'https://github.com/zohoFrank/hum',
-            play: null,
-            rate: 3.5
-        },
-        {
             id: 'p02',
             title: 'frogger-game',
             tags: ['game', 'canvas'],
@@ -37,7 +28,7 @@ export const ProjectInfoData = {
         {
             id: 'p04',
             title: 'homepage',
-            tags: ['page'],
+            tags: ['page', 'react', 'redux'],
             description: 'Just the site you are visiting!',
             link: 'https://github.com/zohoFrank/zohoFrank.github.io',
             play: 'https://zohofrank.github.io/',
@@ -46,7 +37,7 @@ export const ProjectInfoData = {
         {
             id: 'p05',
             title: 'everlink-md',
-            tags: ['node', 'app'],
+            tags: ['node', 'electron', 'react', 'redux'],
             description: 'A desktop markdown editor linked with evernote.',
             link: 'https://github.com/zohoFrank/everlink-md',
             play: null,

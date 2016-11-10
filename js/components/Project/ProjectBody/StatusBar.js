@@ -41,9 +41,9 @@ export default class StatusBar extends React.Component {
         // Combine text and tags
         let combine = null;
         if (comKeyword || tags.length > 0) {
-            combine = <div>filter: {text} {tags}</div>
+            combine = <div><p>filter: </p>{text} {tags}</div>
         } else {
-            combine = <p>no filter</p>
+            combine = <div><p>no filter</p></div>
         }
 
         return (
