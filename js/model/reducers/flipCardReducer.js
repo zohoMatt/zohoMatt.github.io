@@ -26,6 +26,7 @@ export function flipCardBackReducer (state=DEFAULT_STORE.searchKeyword, action) 
 }
 
 /******************** Helper functions *******************/
+// Temp usage
 // function _getRelevantContent(theme) {
 //     switch (theme) {
 //         case 'archive':
