@@ -3,7 +3,7 @@
  */
 import React from 'react';
 
-import { whichRepoHost } from '../../../../../data/projectInfo';
+import { whichRepoHost } from '../../../../../lib/projectInfo';
 
 /**
  * @props:

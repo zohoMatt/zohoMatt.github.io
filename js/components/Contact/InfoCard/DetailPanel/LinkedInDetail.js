@@ -5,7 +5,7 @@ import React from 'react';
 
 import RectangleButton from '../../../lib/button/RectangleButton';
 
-import { BTN_COLOR, BTN_WIDTH, BTN_HEIGHT } from '../../../../data/style';
+import { BTN_COLOR, BTN_WIDTH, BTN_HEIGHT } from '../../../../lib/style';
 
 export default class LinkedInDetail extends React.Component {
 

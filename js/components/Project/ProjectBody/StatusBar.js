@@ -8,7 +8,7 @@ import Tag from './Table/TableRow/Tag';
 
 import uuid from 'uuid';
 
-import { tagToColor } from '../../../data/style'
+import { tagToColor } from '../../../lib/style'
 
 @connect((store) => {
     const { searchKeyword, tagFilter } = store;

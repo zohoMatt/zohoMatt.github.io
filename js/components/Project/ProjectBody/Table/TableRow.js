@@ -9,7 +9,7 @@ import LinkIcon from './TableRow/LinkIcon';
 import PlayIcon from './TableRow/PlayIcon';
 import Tag from './TableRow/Tag';
 
-import { tagToColor } from '../../../../data/style';
+import { tagToColor } from '../../../../lib/style';
 
 /**
  * @props:

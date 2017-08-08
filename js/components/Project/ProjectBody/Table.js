@@ -9,7 +9,7 @@ import uuid from 'uuid';
 import TableHeader from './Table/TableHeader';
 import TableRow from './Table/TableRow';
 
-import { getProjectData } from '../../../data/projectInfo';
+import { getProjectData } from '../../../lib/projectInfo';
 
 @connect((store) => {
     const keyword = store.searchKeyword.project;
