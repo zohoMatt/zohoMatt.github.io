@@ -6,8 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dist": "export NODE_ENV=production && ./node_modules/.bin/webpack",
-    "deploy": "npm run dist && git subtree push --prefix=docs origin master",
-    "dev": "export NODE_ENV=debug && ./node_modules/.bin/webpack-dev-server --content-base ./docs --inline --hot"
+    "dev": "export NODE_ENV=debug && ./node_modules/.bin/webpack-dev-server --content-base ./docs --inline --hot",
+    "deploy": "cd ./.deploy && source deploy-to-githubpages.sh"
   },
   "author": "zoho",
   "license": "ISC",
