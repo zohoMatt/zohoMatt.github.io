@@ -2,7 +2,7 @@
  * Created by Zoho on 16/8/27.
  */
 const debug = process.env.NODE_ENV !== "production";
-console.log(debug);
+console.log(`=> Debug mode: ${debug ? 'on' : 'off'}.`);
 
 const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
@@ -51,7 +51,7 @@ module.exports = {
     plugins: debug ? [
         // Clean distribution folder
         new CleanWebpackPlugin(['docs'], {
-            root: '/Users/Zoho/Desktop/SoftwareEngineering/PROJECTS/zohoFrank.github.io',
+            root: path.resolve('.'),
             verbose: true
         })
     ] : [
@@ -60,7 +60,7 @@ module.exports = {
         new webpack.optimize.UglifyJsPlugin({ mangle: false, sourcemap: false }),
         // Clean distribution folder
         new CleanWebpackPlugin(['docs'], {
-            root: '/Users/Zoho/Desktop/SoftwareEngineering/PROJECTS/zohoFrank.github.io',
+            root: path.resolve('.'),
             verbose: true
         })
     ],
