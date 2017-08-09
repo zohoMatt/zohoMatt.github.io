@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dist": "export NODE_ENV=production && ./node_modules/.bin/webpack",
     "dev": "export NODE_ENV=debug && ./node_modules/.bin/webpack-dev-server --content-base ./docs --inline --hot",
-    "deploy": "cd ./.deploy && source deploy-to-githubpages.sh"
+    "deploy-all": "cd ./.deploy && source deploy-to-githubpages.sh && source deploy-to-do.sh"
   },
   "author": "zoho",
   "license": "ISC",

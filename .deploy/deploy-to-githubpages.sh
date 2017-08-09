@@ -13,3 +13,6 @@ git commit -m "dist: DISTRIBUTION AT TIME: $(date)"
 # Remove remote branch and commit the local one as replacement
 git push origin --delete master
 git push origin master
+
+# Back to current folder
+cd ../.deploy
