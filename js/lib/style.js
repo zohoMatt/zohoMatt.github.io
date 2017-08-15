@@ -15,15 +15,18 @@ export const BTN_HEIGHT = '40px';
 /**                    Tag -> Color                      **/
 /**======================================================**/
 export const TAG_TO_COLOR = {
-    library: 'wheat',
-    framework: 'lightgreen',
-    canvas: 'purple',
-    page: 'skyblue',
-    game: 'orange',
-    node: 'yellow',
-    react: 'goldenrod',
-    redux: 'gold',
-    electron: 'darkgreen'
+    application:        'Fuchsia',
+    canvas:             'purple',
+    electron:           'darkgreen',
+    express:            'violet',
+    framework:          'lightgreen',
+    game:               'orange',
+    mongodb:            'brown',
+    node:               'yellow',
+    react:              'goldenrod',
+    redux:              'gold',
+    webpack:            'lightblue',
+    'web-app':          'wheat'
 };
 
 export function tagToColor(rawText) {

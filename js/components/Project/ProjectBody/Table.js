@@ -5,11 +5,10 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import uuid from 'uuid';
+const axios = require('axios');
 
 import TableHeader from './Table/TableHeader';
 import TableRow from './Table/TableRow';
-
-import { getProjectData } from '../../../lib/projectInfo';
 
 @connect((store) => {
     const keyword = store.searchKeyword.project;
@@ -22,22 +21,32 @@ import { getProjectData } from '../../../lib/projectInfo';
 export default class Table extends React.Component {
     constructor() {
         super();
-        this.data = {
-            entries: getProjectData()
+        this.state = {
+            entries: []
         };
     }
 
+    componentDidMount() {
+        axios.get('http://localhost:3000/api/project/all')
+            .then((res) => {
+                this.setState({
+                    entries: res.data.list
+                });
+            });
+    }
+
     render() {
-        const tableRowArr = this.data.entries.map((entry) => {
-            const { title, tags, description, link, play } = entry;
+        const tableRowArr = this.state.entries.map((entry) => {
+            const { id, pname, description, repo, playable, tagList } = entry;
+
             return <TableRow
                 key={uuid.v1()}
-                name={title}
-                tags={tags}
+                name={pname}
+                tags={tagList.map(t => t.tag)}
                 description={description}
-                linkUrl={link}
-                playUrl={play}
-            />
+                linkUrl={repo}
+                playUrl={playable}
+            />;
         });
 
         // filter using keyword
