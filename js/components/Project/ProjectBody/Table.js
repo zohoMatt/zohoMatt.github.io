@@ -27,7 +27,7 @@ export default class Table extends React.Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:3000/api/project/all')
+        axios.get('http://mattzo.life:3000/api/project/all')
             .then((res) => {
                 this.setState({
                     entries: res.data.list
