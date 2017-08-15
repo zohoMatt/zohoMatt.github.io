@@ -5,6 +5,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import SearchBar from '../Project/ProjectBody/SearchBar';
+import MediaCardContainer from './GalleryBody/MediaCardContainer';
 import { searchGalleryAction } from '../../model/actions/filterAction';
 
 @connect(() => {
@@ -17,6 +18,7 @@ export default class GalleryBody extends React.Component {
             <div className="gallery-body">
                 <SearchBar placeHolder="image keyword"
                            onInputHandler={this.onInputHandler.bind(this)} />
+                <MediaCardContainer/>
             </div>
         );
     }

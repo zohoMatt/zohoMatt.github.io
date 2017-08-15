@@ -1,0 +1,64 @@
+/**
+ * Style of media card
+ */
+@import "../variables";
+
+@IMAGE_CARD_HEIGHT:         180px;
+
+
+.media-card {
+  // width is specified in Javascript
+  height: @IMAGE_CARD_HEIGHT;
+
+  margin: 5px;
+  padding: 5px;
+
+  background: @DARK_COLOR_2;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+
+/**======================================================**/
+/**                     Image Card                       **/
+/**======================================================**/
+.image-card {
+}
+
+
+
+/**======================================================**/
+/**                    Info Banner                       **/
+/**======================================================**/
+@BANNER_LOGO_SIZE:                  20px;
+@BANNER_FONT_SIZE:                  16px;
+
+.info-banner {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.info-banner i {
+  font-size: @BANNER_LOGO_SIZE;
+  color: @LIGHT_COLOR_2;
+
+  display: block;
+
+  margin: 5px;
+
+  cursor: pointer;
+  &:hover {
+    filter: brightness(1.7);
+  }
+}
+
+.info-banner div {
+  margin: 3px;
+}
+
+.image-likes {
+  margin-left: auto !important;
+}
