@@ -27,7 +27,9 @@ export default class Table extends React.Component {
     }
 
     componentDidMount() {
-        axios.get('http://mattzo.life:3000/api/project/all')
+        // todo More elegant
+        // attention Never use localhost/... in deployment environment or you will get ERR_CONNECTION_REFUSED.
+        axios.get('http://localhost:3000/api/project/all')
             .then((res) => {
                 this.setState({
                     entries: res.data.list
@@ -37,7 +39,7 @@ export default class Table extends React.Component {
 
     render() {
         const tableRowArr = this.state.entries.map((entry) => {
-            const { id, pname, description, repo, playable, tagList } = entry;
+            const { id, pname, description, repo, playUrl, tagList } = entry;
 
             return <TableRow
                 key={uuid.v1()}
@@ -45,22 +47,22 @@ export default class Table extends React.Component {
                 tags={tagList.map(t => t.tag)}
                 description={description}
                 linkUrl={repo}
-                playUrl={playable}
+                playUrl={playUrl}
             />;
         });
 
         // filter using keyword
         const { keyword, tags } = this.props;
-        let filteredTableArr = (keyword == '') ? tableRowArr : tableRowArr.filter((row) => {
+        let filteredTableArr = (keyword === '') ? tableRowArr : tableRowArr.filter((row) => {
             const name = row.props.name.toLowerCase();
             const description = row.props.description.toLowerCase();
-            return name.indexOf(keyword.toLowerCase()) != -1 || description.indexOf(keyword.toLowerCase()) != -1;
+            return name.indexOf(keyword.toLowerCase()) !== -1 || description.indexOf(keyword.toLowerCase()) !== -1;
         });
         // filter using tags
-        filteredTableArr = (tags.length == 0) ? filteredTableArr : filteredTableArr.filter((row) => {
+        filteredTableArr = (tags.length === 0) ? filteredTableArr : filteredTableArr.filter((row) => {
             const rowTags = row.props.tags;
             for (let filter of tags) {
-                if (rowTags.indexOf(filter) == -1)
+                if (rowTags.indexOf(filter) === -1)
                     return false
             }
             return true;

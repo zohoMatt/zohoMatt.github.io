@@ -5,7 +5,8 @@
 
 import React from 'react';
 
-import TopNavBar from './lib/nav/TopNavBar'
+import TopNavBar from './lib/nav/TopNavBar';
+import GalleryBody from './Gallery/GalleryBody';
 
 export default class Gallery extends React.Component {
 
@@ -18,6 +19,7 @@ export default class Gallery extends React.Component {
                     {path: 'gallery', text: 'Gallery'},
                     {path: 'contact', text: 'Contact'}
                 ]} activeLink={2} />
+                <GalleryBody/>
             </div>
         );
     }
