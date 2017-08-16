@@ -3,16 +3,20 @@
   "version": "1.0.0",
   "description": "",
   "main": "./js/app.js",
+  "bin": {
+    "webpack-dev-server": "./node_modules/.bin/webpack-dev-server"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dist": "export NODE_ENV=production && ./node_modules/.bin/webpack",
-    "dev": "export NODE_ENV=debug && ./node_modules/.bin/webpack-dev-server --content-base ./docs --inline --hot",
+    "dev": "export NODE_ENV=debug &&  webpack-dev-server",
     "deploy-all": "cd ./.deploy && source deploy-to-githubpages.sh && source deploy-to-do.sh"
   },
   "author": "zoho",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.16.2",
+    "babel-preset-env": "^1.6.0",
     "font-awesome": "^4.7.0",
     "react": "^0.14.8",
     "react-bootstrap": "^0.30.0-rc.2",
@@ -22,12 +26,12 @@
     "redux": "^3.5.2",
     "redux-logger": "^2.6.1",
     "redux-promise-middleware": "^4.0.0",
-    "redux-thunk": "^2.1.0"
+    "redux-thunk": "^2.1.0",
+    "url-loader": "^0.5.9"
   },
   "devDependencies": {
-    "autoprefixer-loader": "^3.2.0",
     "babel-core": "^6.25.0",
-    "babel-loader": "^6.2.0",
+    "babel-loader": "^7.1.1",
     "babel-plugin-add-module-exports": "^0.1.2",
     "babel-plugin-react-html-attrs": "^2.0.0",
     "babel-plugin-transform-class-properties": "^6.3.13",
@@ -35,16 +39,15 @@
     "babel-preset-es2015": "^6.3.13",
     "babel-preset-react": "^6.3.13",
     "babel-preset-stage-0": "^6.3.13",
-    "clean-webpack-plugin": "^0.1.10",
-    "css-loader": "^0.23.1",
-    "file-loader": "^0.9.0",
+    "css-loader": "^0.28.4",
+    "file-loader": "^0.11.2",
     "history": "^1.17.0",
     "less": "^2.7.1",
-    "less-loader": "^2.2.3",
-    "style-loader": "^0.13.1",
-    "url-loader": "^0.5.7",
+    "less-loader": "^4.0.5",
+    "postcss-loader": "^2.0.6",
+    "style-loader": "^0.18.2",
     "uuid": "^2.0.2",
-    "webpack": "^1.13.1",
-    "webpack-dev-server": "^1.14.1"
+    "webpack": "^3.5.4",
+    "webpack-dev-server": "^2.7.1"
   }
 }
