@@ -85,7 +85,10 @@ module.exports = {
     devServer: {
         contentBase: path.join(__dirname, '/docs'),
         compress: true,
-        port: 8080
+        port: 8080,
+        historyApiFallback: {
+            index: 'index.html'
+        }
     },
     output: {
         path: path.join(__dirname, 'docs'),
