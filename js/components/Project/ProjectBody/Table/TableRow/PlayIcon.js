@@ -34,7 +34,7 @@ export default class PlayIcon extends React.Component {
 
     /*****************************************/
     _openNewTab(url) {
-        if (url == null) return;
+        if (url === null) return;
         window.open(url);
     }
 }

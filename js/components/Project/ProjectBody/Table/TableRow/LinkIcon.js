@@ -3,8 +3,6 @@
  */
 import React from 'react';
 
-import { whichRepoHost } from '../../../../../lib/projectInfo';
-
 /**
  * @props:
  * url          {string} Link URL.

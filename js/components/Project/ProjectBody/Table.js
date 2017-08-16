@@ -6,7 +6,9 @@ import { connect } from 'react-redux';
 
 import uuid from 'uuid';
 const axios = require('axios');
+const url = require('url');
 
+import { APIHOST } from '../../../lib/structure';
 import TableHeader from './Table/TableHeader';
 import TableRow from './Table/TableRow';
 
@@ -29,7 +31,7 @@ export default class Table extends React.Component {
     componentDidMount() {
         // todo More elegant
         // attention Never use localhost/... in deployment environment or you will get ERR_CONNECTION_REFUSED.
-        axios.get('http://localhost:3000/api/project/all')
+        axios.get(url.resolve(APIHOST, 'api/project/all'))
             .then((res) => {
                 this.setState({
                     entries: res.data.list
