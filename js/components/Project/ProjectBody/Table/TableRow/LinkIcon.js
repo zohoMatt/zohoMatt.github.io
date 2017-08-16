@@ -10,16 +10,6 @@ import React from 'react';
 export default class LinkIcon extends React.Component {
 
     render() {
-        // const url = this.props.url;
-        // let icon, host;
-        // if (url) {
-        //     host = whichRepoHost(url);
-        //     icon = <i class={`fa fa-${host}`} aria-hidden="true"></i>;
-        // } else {
-        //     host = 'no link';
-        //     icon = <i class="fa fa-question-circle-o" aria-hidden="true"></i>;
-        // }
-        // fixme The entry LinkURL not supported by database
         const host = 'github';
         const url = 'http://github.io/zohomatt';
         const icon = <i class={`fa fa-${host}`} aria-hidden="true"></i>

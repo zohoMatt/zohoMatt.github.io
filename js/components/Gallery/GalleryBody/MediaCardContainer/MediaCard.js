@@ -4,8 +4,7 @@
 
 import React from 'react';
 
-import ImageCard from './MediaCard/ImageCard';
-import InfoBanner from './MediaCard/InfoBanner';
+import InfoBanner from './InfoBanner';
 
 // todo
 export default class MediaCard extends React.Component {
@@ -18,7 +17,6 @@ export default class MediaCard extends React.Component {
         };
         return (
             <div className="media-card" style={randomWidth}>
-                <ImageCard/>
                 <InfoBanner/>
             </div>
         );

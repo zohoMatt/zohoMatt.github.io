@@ -29,8 +29,6 @@ export default class Table extends React.Component {
     }
 
     componentDidMount() {
-        // todo More elegant
-        // attention Never use localhost/... in deployment environment or you will get ERR_CONNECTION_REFUSED.
         axios.get(url.resolve(APIHOST, 'api/project/all'))
             .then((res) => {
                 this.setState({
