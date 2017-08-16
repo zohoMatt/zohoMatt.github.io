@@ -86,10 +86,12 @@
 
   background-color: white;    // will be replaced by inline style
 
-  cursor: pointer;
+  transition: 0.2s;
 
+  cursor: pointer;
   &:hover {
-    box-shadow: 1px 1px 1px @LIGHT_COLOR_2;
+    box-shadow: 1px 1px 10px 0 @LIGHT_COLOR_2;
+    transform: scale(1.05, 1.05);
   }
 }
 
@@ -122,13 +124,16 @@
 
   color: orange;
 
-  cursor: pointer;
 
   i, p {
     display: inline-block;
   }
 
+  transition: 0.2s;
+
+  cursor: pointer;
   &:hover {
     filter: invert(1);
+    transform: scale(1.05, 1.05);
   }
 }
