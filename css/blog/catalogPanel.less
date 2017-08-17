@@ -1,0 +1,70 @@
+/**
+ * Created by hao.zuo on 2017/8/17.
+ */
+
+@import "../variables";
+
+@CATALOG_PANEL_HEIGHT:            @FOLDER_BOX_HEIGHT * 5;
+@CATALOG_PANEL_WIDTH:             150px;
+@CATALOG_TOP_DISTANCE:            20%;
+.catalog-panel {
+  width: @CATALOG_PANEL_WIDTH;
+  height: @CATALOG_PANEL_HEIGHT;
+
+  position: fixed;
+
+  top: @CATALOG_TOP_DISTANCE;
+  right: 0;
+
+  background: @LIGHT_COLOR_1;
+}
+
+/**======================================================**/
+/**                 Collapse Handler                     **/
+/**======================================================**/
+.collapse-handler {
+  width: 20px;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background: @DARK_COLOR_2;
+}
+
+.arrow-icon {
+  display: block;
+  width: 10px;
+  height: 10px;
+}
+
+/**======================================================**/
+/**                   Folder Column                      **/
+/**======================================================**/
+.folder-column {
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+
+@FOLDER_BOX_HEIGHT:             40px;
+.folder-box {
+  height: @FOLDER_BOX_HEIGHT;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  background: @MILD_COLOR_3;
+}
+
+.folder-box i {
+  display: block;
+}
+

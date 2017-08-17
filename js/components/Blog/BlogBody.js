@@ -6,7 +6,7 @@
 import React from 'react';
 
 import ArticleContainer from './BlogBody/ArticleContainer';
-import LeftCatalogPanel from './BlogBody/LeftCatalogPanel';
+import CatalogPanel from './BlogBody/CatalogPanel';
 import SearchBar from '../Project/ProjectBody/SearchBar';
 
 export default class BlogBody extends React.Component {
@@ -16,6 +16,7 @@ export default class BlogBody extends React.Component {
         <div className="blog-body">
           <SearchBar placeHolder="search anything"/>
           <ArticleContainer/>
+          <CatalogPanel/>
         </div>
     );
   }
