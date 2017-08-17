@@ -4,5 +4,6 @@
 /**======================================================**/
 /**                    Deployment                        **/
 /**======================================================**/
-export const APIHOST = (process.env.NODE_ENV == 'production') ?
-    'http://mattzo.life/' : 'http://localhost:3000/';
+export const APIHOST = (process.env.NODE_ENV == 'production')
+    ? 'http://mattzo.life/'
+    : 'http://localhost:3000/';

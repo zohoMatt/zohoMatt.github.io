@@ -11,13 +11,13 @@ import SearchBar from '../Project/ProjectBody/SearchBar';
 
 export default class BlogBody extends React.Component {
 
-    render() {
-        return (
-            <div className="blog-body">
-                <SearchBar placeHolder="search anything"/>
-                <ArticleContainer/>
-            </div>
-        );
-    }
+  render() {
+    return (
+        <div className="blog-body">
+          <SearchBar placeHolder="search anything"/>
+          <ArticleContainer/>
+        </div>
+    );
+  }
 }
 

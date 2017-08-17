@@ -10,17 +10,17 @@ import GalleryBody from './Gallery/GalleryBody';
 
 export default class Gallery extends React.Component {
 
-    render() {
-        return (
-            <div id="gallery-page">
-                <TopNavBar links={[
-                    {path: 'blog', text: 'Blog'},
-                    {path: 'project', text: 'Project'},
-                    {path: 'gallery', text: 'Gallery'},
-                    {path: 'contact', text: 'Contact'}
-                ]} activeLink={2} />
-                <GalleryBody/>
-            </div>
-        );
-    }
+  render() {
+    return (
+        <div id="gallery-page">
+          <TopNavBar links={[
+            {path: 'blog', text: 'Blog'},
+            {path: 'project', text: 'Project'},
+            {path: 'gallery', text: 'Gallery'},
+            {path: 'contact', text: 'Contact'},
+          ]} activeLink={2}/>
+          <GalleryBody/>
+        </div>
+    );
+  }
 }

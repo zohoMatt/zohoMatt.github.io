@@ -11,29 +11,29 @@ import ResumeDetail from './DetailPanel/ResumeDetail';
 
 export default class DetailPanel extends React.Component {
 
-    render() {
-        const supposedComp = this.selectComponent(this.props.component);
-        return (
-            <div className="back-content">
-                {supposedComp}
-                <FlipFrontButton/>
-            </div>
-        );
-    }
+  render() {
+    const supposedComp = this.selectComponent(this.props.component);
+    return (
+        <div className="back-content">
+          {supposedComp}
+          <FlipFrontButton/>
+        </div>
+    );
+  }
 
-    /*****************************************/
-    selectComponent(componentName) {
-        switch (componentName) {
-            case 'archive':
-                return <ResumeDetail/>;
-            case 'github':
-                return <GitHubDetail/>;
-            case 'envelope':
-                return <EmailDetail/>;
-            case 'linkedin':
-                return <LinkedInDetail/>;
-            default:
-                return <div/>;
-        }
+  /*****************************************/
+  selectComponent(componentName) {
+    switch (componentName) {
+      case 'archive':
+        return <ResumeDetail/>;
+      case 'github':
+        return <GitHubDetail/>;
+      case 'envelope':
+        return <EmailDetail/>;
+      case 'linkedin':
+        return <LinkedInDetail/>;
+      default:
+        return <div/>;
     }
+  }
 }

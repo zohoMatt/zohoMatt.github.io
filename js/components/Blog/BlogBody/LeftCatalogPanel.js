@@ -7,7 +7,7 @@ import React from 'react';
 
 export default class LeftCatalogPanel extends React.Component {
 
-    render() {
-        return null;
-    }
+  render() {
+    return null;
+  }
 }

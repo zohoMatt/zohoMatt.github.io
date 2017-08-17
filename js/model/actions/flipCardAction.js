@@ -3,16 +3,16 @@
  */
 
 export function flipBackAction(type) {
-    // console.log('faceUp in dispatcher', faceUp);
-    return {
-        type: 'FLIP_CARD_BACK',
-        payload: type
-    }
+  // console.log('faceUp in dispatcher', faceUp);
+  return {
+    type: 'FLIP_CARD_BACK',
+    payload: type,
+  };
 }
 
 export function flipFrontAction() {
-    return {
-        type: 'FLIP_CARD_FRONT',
-        payload: null
-    }
+  return {
+    type: 'FLIP_CARD_FRONT',
+    payload: null,
+  };
 }

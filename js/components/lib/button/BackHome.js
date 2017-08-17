@@ -6,10 +6,10 @@
 import React from 'react';
 
 export default class BackHome extends React.Component {
-    render() {
-        return (
-            <div className="back-home">
-            </div>
-        );
-    }
+  render() {
+    return (
+        <div className="back-home">
+        </div>
+    );
+  }
 }

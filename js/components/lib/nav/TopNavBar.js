@@ -2,7 +2,7 @@
  * Created by Zoho on 16/9/1.
  */
 import React from 'react';
-import { Link } from 'react-router';
+import {Link} from 'react-router';
 
 import uuid from 'uuid';
 
@@ -14,37 +14,38 @@ import TopNavButton from './TopNavBar/TopNavButton';
  * activeLink           {number} The index of active link in the array: links;
  */
 export default class TopNavBar extends React.Component {
-    componentWillMount() {
-        this.setElements();
-    }
+  componentWillMount() {
+    this.setElements();
+  }
 
-    render() {
-        return (
-            <nav className="t-nav">
-                <ul>
-                    <Link className="home-t-nav" to="/">
-                        <i className="fa fa-home" aria-hidden="true"></i>
-                    </Link>
-                    {this.state.elements}
-                </ul>
-            </nav>
-        );
-    }
+  render() {
+    return (
+        <nav className="t-nav">
+          <ul>
+            <Link className="home-t-nav" to="/">
+              <i className="fa fa-home" aria-hidden="true"></i>
+            </Link>
+            {this.state.elements}
+          </ul>
+        </nav>
+    );
+  }
 
-    /*****************************************/
-    setElements() {
-        const {links, activeLink} = this.props;
-        const linkArray = links.map((link, i) => {
-            const {path, text} = link;
-            const active = (i == activeLink) ? 'active-t-nav' : '';
-            return (
-                <TopNavButton key={uuid.v1()} active={active} path={path} text={text} />
-            );
-        });
-        this.setState({
-            elements: linkArray
-        });
-    }
+  /*****************************************/
+  setElements() {
+    const {links, activeLink} = this.props;
+    const linkArray = links.map((link, i) => {
+      const {path, text} = link;
+      const active = (i == activeLink) ? 'active-t-nav' : '';
+      return (
+          <TopNavButton key={uuid.v1()} active={active} path={path}
+                        text={text}/>
+      );
+    });
+    this.setState({
+      elements: linkArray,
+    });
+  }
 
 }
 

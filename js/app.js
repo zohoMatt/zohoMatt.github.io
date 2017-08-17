@@ -4,12 +4,12 @@
 
 /********** JS FILES *****************/
 import './router';
-import './model/store'
+import './model/store';
 
 /*********** LESS FILES *************/
 import '../css/$loader.less';
 
 /*********** HTML FILES *************/
-import '../index.html'
+import '../index.html';
 
 
