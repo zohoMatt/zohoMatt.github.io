@@ -5,19 +5,30 @@
 
 import React from 'react';
 
+/**
+ * @props title     {string}
+ * @props archive   {string}
+ * @props intro     {string}
+ * @props tagList   {string[]}
+ */
 export default class ArticleCard extends React.Component {
 
   render() {
+    const { title, archive, intro, tagList } = this.props;
+    const tagElems = tagList.map((tag) => {
+      return <div class="article-tags">{tag}</div>;
+    });
+
     return (
         <div className="article-card">
           <div className="article-category">
             <i class="fa fa-archive" aria-hidden="true"></i>
-            <div class="article-archive">Frontend</div>
+            <div class="article-archive">{archive}</div>
             <i class="fa fa-tags" aria-hidden="true"></i>
-            <div class="article-tags">canvas</div>
+            {tagElems}
           </div>
-          <div class="article-title"><p>Welcome to my blog</p></div>
-          <div class="article-summary"><p>This is a summary of blog</p></div>
+          <div class="article-title"><p>{title}</p></div>
+          <div class="article-summary"><p>{intro}</p></div>
           <div class="article-time">2016-09-14</div>
         </div>
     );

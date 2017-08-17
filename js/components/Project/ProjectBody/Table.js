@@ -29,7 +29,8 @@ export default class Table extends React.Component {
   }
 
   componentDidMount() {
-    axios.get(url.resolve(APIHOST, 'api/project/all')).then((res) => {
+    axios.get(url.resolve(APIHOST, 'api/project/all'))
+    .then((res) => {
       this.setState({
         entries: res.data.list,
       });
