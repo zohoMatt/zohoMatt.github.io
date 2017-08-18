@@ -39,7 +39,7 @@ export default class Table extends React.Component {
 
   render() {
     const tableRowArr = this.state.entries.map((entry) => {
-      const {id, pname, description, repo, playUrl, tagList} = entry;
+      const { id, pname, description, repo, playUrl, tagList } = entry;
 
       return <TableRow
           key={uuid.v1()}

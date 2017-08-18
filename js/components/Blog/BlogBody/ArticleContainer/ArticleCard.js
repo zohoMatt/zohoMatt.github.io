@@ -5,18 +5,20 @@
 
 import React from 'react';
 
+const uuid = require('uuid');
+
 /**
  * @props title     {string}
  * @props archive   {string}
- * @props intro     {string}
+ * @props context     {string}
  * @props tagList   {string[]}
  */
 export default class ArticleCard extends React.Component {
 
   render() {
-    const { title, archive, intro, tagList } = this.props;
+    const { title, archive, context, tagList } = this.props;
     const tagElems = tagList.map((tag) => {
-      return <div class="article-tags">{tag}</div>;
+      return <div key={uuid.v1()} class="article-tags">{tag}</div>;
     });
 
     return (
@@ -28,7 +30,7 @@ export default class ArticleCard extends React.Component {
             {tagElems}
           </div>
           <div class="article-title"><p>{title}</p></div>
-          <div class="article-summary"><p>{intro}</p></div>
+          <div class="article-summary"><p>{context}</p></div>
           <div class="article-time">2016-09-14</div>
         </div>
     );

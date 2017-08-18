@@ -13,7 +13,7 @@ export default class MediaCardContainer extends React.Component {
     const mediaCard = <MediaCard/>;
     return (
         <div className="media-card-container">
-          {Array(19).fill(mediaCard)}
+          {Array(19).fill(mediaCard).map()}
         </div>
     );
   }

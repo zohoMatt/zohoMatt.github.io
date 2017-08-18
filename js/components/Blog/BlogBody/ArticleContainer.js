@@ -6,6 +6,7 @@
 import React from 'react';
 const axios = require('axios');
 const url = require('url');
+const uuid = require('uuid');
 
 import { APIHOST } from '../../../lib/structure';
 import ArticleCard from './ArticleContainer/ArticleCard';
@@ -15,7 +16,7 @@ import ArticleCard from './ArticleContainer/ArticleCard';
  * @state articles.title      string
  * @state articles.archive    string
  * @state articles.tagList    string[]
- * @state articles.intro      string
+ * @state articles.context      string
  */
 export default class ArticleContainer extends React.Component {
   constructor() {
@@ -28,27 +29,27 @@ export default class ArticleContainer extends React.Component {
   componentDidMount() {
     axios.get(url.resolve(APIHOST, '/api/blog/all'))
     .then((response) => {
-      this.setState(response.data.list);
+      this.setState({
+        articles: response.data.list
+      });
     })
   }
 
   render() {
     const articleList = this.state.articles;
     const articleCardElements = articleList.map((atc) => {
-      const { title, archive, tagList, intro } = atc;
-      return <ArticleCard title={title}
+      const { title, archive, tagList, context } = atc;
+      const tags = tagList.map(t => t.tag);
+      return <ArticleCard key={uuid.v1()}
+                          title={title}
                           archive={archive}
-                          tagList={tagList}
-                          intro={intro} />
+                          tagList={tags}
+                          context={context} />
     });
 
     return (
         <div className="article-container">
           {articleCardElements}
-          <ArticleCard title="Welcome to my blog"
-                       archive="Frontend"
-                       tagList={['canvas', 'web']}
-                       intro="This is a summary of my blog" />
         </div>
     );
   }

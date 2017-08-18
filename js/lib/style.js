@@ -29,5 +29,5 @@ export const TAG_TO_COLOR = {
 };
 
 export function tagToColor(rawText) {
-  return TAG_TO_COLOR[rawText.replace(' ', '_')];
+  return TAG_TO_COLOR[rawText.replace(' ', '-')];
 }

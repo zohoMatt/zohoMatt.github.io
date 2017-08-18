@@ -12,12 +12,12 @@ import Tag from './TableRow/Tag';
 import {tagToColor} from '../../../../lib/style';
 
 /**
- * @props:
- * name                 {string} Title of this project.
- * tags                 {Array<string>} All tags related with this project.
- * description          {string} A simple description on this project.
- * linkUrl              {string} Repository link for this project.
- * playUrl              {string} A page to play with this project.
+ *
+ * @props name                 {string} Title of this project.
+ * @props tags                 {Array<string>} All tags related with this project.
+ * @props description          {string} A simple description on this project.
+ * @props linkUrl              {string} Repository link for this project.
+ * @props playUrl              {string} A page to play with this project.
  */
 export default class TableRow extends React.Component {
 
