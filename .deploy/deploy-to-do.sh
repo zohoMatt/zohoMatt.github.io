@@ -1,18 +1,25 @@
 #!/usr/bin/env bash
 
 cd ..
-
-# Archive locally and copy to server
-tar -cvf docs.tar docs/
-scp docs.tar zoho@mattzo.life:~/PROJECTS/zohoMatt/
-rm docs.tar
-cd .deploy
-
-# Login server and untar all files
-ssh zoho@mattzo.life << 'ENDSSH'
-cd ~/PROJECTS/zohoMatt/
+# Distribution
 rm -rf docs
-tar -xvf docs.tar
-rm docs.tar
-ENDSSH
+yarn run dist
+
+# Go to /docs and initialize git
+cd docs
+git init
+git remote add live ssh://zoho@mattzo.life/home/zoho/PROJECTS/gitrepos/homepage/site.git
+
+# Commit all
+git add -A
+git commit -m "dist: DISTRIBUTION AT TIME: $(date)"
+
+# Modify remote branch
+git push live --delete master       # Delete remote master branch in case of conflict
+git push live master
+
+# Back to current folder
+cd ../.deploy
+
+
 
