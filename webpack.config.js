@@ -1,19 +1,29 @@
 /**
  * Created by Zoho on 16/8/27.
  */
-const debug = process.env.NODE_ENV !== "production";
-console.log(`=> Debug mode: ${debug ? 'on' : 'off'}.`);
-
 const webpack = require('webpack');
 const path = require('path');
+const ccolor = require('colors');
 
+const debug = process.env.NODE_ENV !== "production";
+console.log(`=> Development mode: ${debug ? 'on' : 'off'}.`.blue);
+
+/**======================================================**/
+/**                   Configuration                      **/
+/**======================================================**/
 module.exports = {
     context: __dirname,
-    devtool: debug ? "inline-sourcemap" : null,
+    devtool: debug ? "inline-sourcemap" : "",
     entry: {
         'app': './js/app.js'
     },
-    module: {
+  resolve: {
+      alias: {
+        JS: path.resolve(__dirname, 'js'),
+        CSS: path.resolve(__dirname, 'css')
+      }
+  },
+  module: {
         rules: [
             // LESS file loaders
             {
@@ -112,3 +122,5 @@ module.exports = {
     //     })
     // ]
 };
+
+
