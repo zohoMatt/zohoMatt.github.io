@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+
+# Locally
 cd ..
 # Distribution
 rm -rf docs
@@ -16,7 +18,7 @@ git commit -m "dist: DISTRIBUTION AT TIME: $(date)"
 
 # Modify remote branch
 git push live --delete master       # Delete remote master branch in case of conflict
-git push live master
+git push -f live master
 
 # Back to current folder
 cd ../.deploy
