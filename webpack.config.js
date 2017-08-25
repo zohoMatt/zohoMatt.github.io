@@ -13,7 +13,7 @@ console.log(`=> Development mode: ${debug ? 'on' : 'off'}.`.blue);
 /**======================================================**/
 module.exports = {
     context: __dirname,
-    devtool: debug ? "inline-sourcemap" : "",
+    devtool: debug ? "inline-source-map" : "",
     entry: {
         'app': './js/app.js'
     },
@@ -104,7 +104,11 @@ module.exports = {
         path: path.join(__dirname, 'docs'),
         filename: "[name].min.js"
     },
-    plugins: []
+    plugins:[
+      new webpack.optimize.UglifyJsPlugin({
+        sourceMap: debug
+      })
+    ]
     // plugins: debug ? [
     //     // Clean distribution folder
     //     new CleanWebpackPlugin(['docs'], {
@@ -122,5 +126,3 @@ module.exports = {
     //     })
     // ]
 };
-
-
