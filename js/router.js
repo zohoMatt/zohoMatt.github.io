@@ -14,7 +14,9 @@ import Project from './components/Project';
 
 import store from './model/store';
 
-const app = document.getElementById('app');
+// Create app component
+const app = document.createElement('div');
+document.body.appendChild(app);
 
 ReactDOM.render(
     <Provider store={store}>
@@ -29,4 +31,3 @@ ReactDOM.render(
     </Provider>,
     app,
 );
-

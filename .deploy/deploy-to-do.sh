@@ -4,7 +4,6 @@
 # Locally
 cd ..
 # Distribution
-rm -rf docs
 yarn run dist
 
 # Go to /docs and initialize git
@@ -22,6 +21,3 @@ git push -f live master
 
 # Back to current folder
 cd ../.deploy
-
-
-

@@ -2,6 +2,9 @@
  * Created by Zoho on 16/8/27.
  */
 const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+
 const path = require('path');
 const ccolor = require('colors');
 
@@ -105,8 +108,16 @@ module.exports = {
         filename: "[name].min.js"
     },
     plugins:[
+      new CleanWebpackPlugin(['docs']),
+      new HtmlWebpackPlugin({
+        title: 'Zoho Code Lab',
+        favicon: path.resolve(__dirname, 'img/favico.png')
+      }),
       new webpack.optimize.UglifyJsPlugin({
         sourceMap: debug
+      }),
+      new webpack.optimize.CommonsChunkPlugin({
+        name: 'app'
       })
     ]
     // plugins: debug ? [

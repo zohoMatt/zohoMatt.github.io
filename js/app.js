@@ -10,6 +10,4 @@ import './model/store';
 import '../css/$loader.less';
 
 /*********** HTML FILES *************/
-import '../index.html';
-
-
+// import '../index.html';
