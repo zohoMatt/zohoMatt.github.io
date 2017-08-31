@@ -4,6 +4,7 @@
 const ramda = require('ramda');
 
 const MakeRamdaGlobal = _ =>
-  ramda.forEachObjIndexed((v, k) => global.k = v, ramda);
+  ramda.forEachObjIndexed((v, k) => window[k] = v, ramda);
 
-module.exports = MakeRamdaGlobal
+
+module.exports = MakeRamdaGlobal;

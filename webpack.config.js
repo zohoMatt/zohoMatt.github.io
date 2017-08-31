@@ -108,32 +108,28 @@ module.exports = {
         filename: "[name].min.js"
     },
     plugins:[
+      // Delete certain folders/files
       new CleanWebpackPlugin(['docs']),
+
+      // Create a html using the bundle file
       new HtmlWebpackPlugin({
         title: 'Zoho Code Lab',
         favicon: path.resolve(__dirname, 'img/favico.png')
       }),
+
+      // Uglify js to optimize the size
       new webpack.optimize.UglifyJsPlugin({
         sourceMap: debug
       }),
+
+      // todo ???
       new webpack.optimize.CommonsChunkPlugin({
         name: 'app'
+      }),
+
+      // Prevent repeatedly import sth.
+      new webpack.ProvidePlugin({
+        React: 'react'
       })
     ]
-    // plugins: debug ? [
-    //     // Clean distribution folder
-    //     new CleanWebpackPlugin(['docs'], {
-    //         root: path.resolve('.'),
-    //         verbose: true
-    //     })
-    // ] : [
-    //     new webpack.optimize.DedupePlugin(),
-    //     new webpack.optimize.OccurenceOrderPlugin(),
-    //     new webpack.optimize.UglifyJsPlugin({ mangle: false, sourcemap: false }),
-    //     // Clean distribution folder
-    //     new CleanWebpackPlugin(['docs'], {
-    //         root: path.resolve('.'),
-    //         verbose: true
-    //     })
-    // ]
 };
