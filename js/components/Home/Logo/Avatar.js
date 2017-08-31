@@ -4,10 +4,10 @@
 import {IndexLink} from 'react-router';
 
 /******************** Component *******************/
-const Avatar = () =>
+const Avatar = ({ imgSource }) =>
   <div class="avatar">
     <IndexLink to="/">
-      <img src={this.props.imgSource} alt="GitHub: zohoFrank"/>
+      <img src={imgSource} alt="GitHub: zohoFrank"/>
     </IndexLink>
   </div>
 

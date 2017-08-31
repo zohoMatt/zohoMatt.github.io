@@ -1,55 +1,49 @@
 /**
  * Created by Zoho on 16/9/15.
  */
-import {DEFAULT_STORE} from './rootReducer';
+import {DEFAULT_STORE} from './rootReducer'
 
+require('JS/RamdaGlobally')()
+
+// Search keyword. Including all major sub-pages.
 export function searchKeywordReducer(
-    state = DEFAULT_STORE.searchKeyword, action) {
-  switch (action.type) {
-    case 'SEARCH_PROJECT':
-      return {
+    state = DEFAULT_STORE.searchKeyword, action
+) {
+  return prop(action.type,
+    {
+      'SEARCH_PROJECT': {
         ...state,
         project: action.payload,
-      };
-    case 'SEARCH_BLOG':
-      return {
+      },
+      'SEARCH_BLOG': {
         ...state,
         blog: action.payload,
-      };
-    case 'SEARCH_GALLERY':
-      return {
+      },
+      'SEARCH_GALLERY': {
         ...state,
         gallery: action.payload,
-      };
-    default:
-      return state;
-  }
+      }
+    }) || state
 }
 
-export function tagsFilterReducer(state = DEFAULT_STORE.tagFilter, action) {
-  let tagsCopy = null;
-  const content = action.payload;
-  switch (action.type) {
-    case 'ADD_PROJECT_FILTER_TAGS':
-      tagsCopy = state.project.slice();
-      if (tagsCopy.indexOf(content) == -1) {
-        tagsCopy.push(content);
-      }
-      return {
+// Tag filter for all pages
+export function tagsFilterReducer(
+  state = DEFAULT_STORE.tagFilter,
+  action
+) {
+  return prop(action.type,
+    {
+      'ADD_PROJECT_FILTER_TAGS': {
         ...state,
-        project: tagsCopy,
-      };
-    case 'REMOVE_PROJECT_FILTER_TAGS':
-      tagsCopy = state.project.slice();
-      const removeIndex = tagsCopy.indexOf(content);
-      if (removeIndex != -1) {
-        tagsCopy.splice(removeIndex, removeIndex + 1);
-      }
-      return {
+        project: selectTag(action.payload, state.project)
+      },
+      'REMOVE_PROJECT_FILTER_TAGS': {
         ...state,
-        project: tagsCopy,
-      };
-    default:
-      return state;
-  }
+        project: without(action.payload, state.project)
+      }
+    }) || state;
+
 }
+
+/******************** Helpers *******************/
+const selectTag = compose(uniq, append)
