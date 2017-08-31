@@ -3,19 +3,15 @@
  */
 // todo
 
-import React from 'react';
-
 import FolderColumn from './CatalogPanel/FolderColumn';
 import CollapseHandler from './CatalogPanel/CollapseHandler';
 
-export default class CatalogPanel extends React.Component {
+/******************** Component *******************/
+const CatalogPanel = () =>
+  <div className="catalog-panel">
+    <CollapseHandler arrow="right"/>
+    <FolderColumn/>
+  </div>
 
-  render() {
-    return (
-        <div className="catalog-panel">
-          <CollapseHandler arrow="right"/>
-          <FolderColumn/>
-        </div>
-    );
-  }
-}
+/******************** Exports *******************/
+export default CatalogPanel

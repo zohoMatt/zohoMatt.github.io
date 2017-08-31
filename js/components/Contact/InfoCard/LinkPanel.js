@@ -1,6 +1,9 @@
 /**
  * Created by Zoho on 16/9/2.
  */
+
+// betterdo Refactor
+
 import React from 'react';
 
 import uuid from 'uuid';

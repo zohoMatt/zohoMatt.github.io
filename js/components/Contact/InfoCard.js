@@ -1,13 +1,14 @@
 /**
  * Created by Zoho on 16/9/1.
  */
-import React from 'react';
-import {connect} from 'react-redux';
+// betterdo Refactor
 
-import DetailPanel from './InfoCard/DetailPanel';
-import LinkPanel from './InfoCard/LinkPanel';
-import RoundPic from './InfoCard/RoundPic';
-import UpperBackground from './InfoCard/UpperBackground';
+import {connect} from 'react-redux'
+
+import DetailPanel from './InfoCard/DetailPanel'
+import LinkPanel from './InfoCard/LinkPanel'
+import RoundPic from './InfoCard/RoundPic'
+import UpperBackground from './InfoCard/UpperBackground'
 
 /**
  * @props:
@@ -19,13 +20,13 @@ import UpperBackground from './InfoCard/UpperBackground';
   return {
     faceUp: store.flipCard.faceUp,
     backComponentType: store.flipCard.backComponentType,
-  };
+  }
 })
 export default class InfoCard extends React.Component {
 
   render() {
-    const {faceUp, backComponentType} = this.props;
-    const className = faceUp ? 'info-card' : 'info-card flip';
+    const {faceUp, backComponentType} = this.props
+    const className = faceUp ? 'info-card' : 'info-card flip'
     return (
         <div className={className}>
           <div class="front">
@@ -37,6 +38,6 @@ export default class InfoCard extends React.Component {
             <DetailPanel component={backComponentType}/>
           </div>
         </div>
-    );
+    )
   }
 }

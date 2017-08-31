@@ -1,13 +1,12 @@
 /**
  * Created by Zoho on 16/9/5.
  */
-import React from 'react';
-import {connect} from 'react-redux';
+import {connect} from 'react-redux'
 
-import {flipFrontAction} from '../../../../model/actions/flipCardAction';
+import {flipFrontAction} from 'JS/model/actions/flipCardAction'
 
 @connect(() => {
-  return {};
+  return {}
 })
 export default class FlipFrontButton extends React.Component {
 
@@ -17,16 +16,16 @@ export default class FlipFrontButton extends React.Component {
           <i class="fa fa-arrow-circle-left" aria-hidden="true"
              onClick={this.triggerManager.bind(this)}></i>
         </div>
-    );
+    )
   }
 
   /*****************************************/
   triggerManager() {
-    this._triggerFlipFront();
+    this._triggerFlipFront()
   }
 
   /*****************************************/
   _triggerFlipFront() {
-    this.props.dispatch(flipFrontAction());
+    this.props.dispatch(flipFrontAction())
   }
 }

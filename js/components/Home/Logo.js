@@ -1,17 +1,17 @@
 /**
  * Created by Zoho on 16/8/29.
  */
-import React from 'react';
+// betterdo Refactor
 
-import Avatar from './Logo/Avatar';
-import Title from './Logo/Title';
+import Avatar from './Logo/Avatar'
+import Title from './Logo/Title'
 
 export default class Logo extends React.Component {
   constructor() {
-    super();
+    super()
     this.state = {
       imgPath: require('../../../img/avatar.jpg'),
-    };
+    }
   }
 
   render() {
@@ -20,6 +20,6 @@ export default class Logo extends React.Component {
           <Avatar imgSource={this.state.imgPath}/>
           <Title/>
         </div>
-    );
+    )
   }
 }

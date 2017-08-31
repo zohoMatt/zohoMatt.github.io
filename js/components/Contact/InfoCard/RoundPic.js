@@ -1,13 +1,10 @@
 /**
  * Created by Zoho on 16/9/1.
  */
-import React from 'react';
 
-export default class RoundPic extends React.Component {
+/******************** Component *******************/
+const RoundPic = () =>
+  <div className="round-pic"></div>
 
-  render() {
-    return (
-        <div className="round-pic"></div>
-    );
-  }
-}
+/******************** Exports *******************/
+export default RoundPic

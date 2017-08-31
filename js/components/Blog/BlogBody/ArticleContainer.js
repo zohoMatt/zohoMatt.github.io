@@ -3,13 +3,12 @@
  */
 // todo
 
-import React from 'react';
-const axios = require('axios');
-const url = require('url');
-const uuid = require('uuid');
+const axios = require('axios')
+const url = require('url')
+const uuid = require('uuid')
 
-import { APIHOST } from '../../../lib/structure';
-import ArticleCard from './ArticleContainer/ArticleCard';
+import { APIHOST } from 'JS/lib/structure'
+import ArticleCard from './ArticleContainer/ArticleCard'
 
 /**
  * @state articles            string[]
@@ -20,7 +19,7 @@ import ArticleCard from './ArticleContainer/ArticleCard';
  */
 export default class ArticleContainer extends React.Component {
   constructor() {
-    super();
+    super()
     this.state = {
       articles: []
     }
@@ -31,26 +30,26 @@ export default class ArticleContainer extends React.Component {
     .then((response) => {
       this.setState({
         articles: response.data.list
-      });
+      })
     })
   }
 
   render() {
-    const articleList = this.state.articles;
+    const articleList = this.state.articles
     const articleCardElements = articleList.map((atc) => {
-      const { title, archive, tagList, context } = atc;
-      const tags = tagList.map(t => t.tag);
+      const { title, archive, tagList, context } = atc
+      const tags = tagList.map(t => t.tag)
       return <ArticleCard key={uuid.v1()}
                           title={title}
                           archive={archive}
                           tagList={tags}
                           context={context} />
-    });
+    })
 
     return (
         <div className="article-container">
           {articleCardElements}
         </div>
-    );
+    )
   }
 }

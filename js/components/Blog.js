@@ -1,13 +1,13 @@
 /**
  * Created by Zoho on 16/9/1.
  */
-import BlogBody from './Blog/BlogBody';
-import TopNavBar from './lib/nav/TopNavBar';
+import BlogBody from './Blog/BlogBody'
+import TopNavBar from './lib/nav/TopNavBar'
 
-require('JS/RamdaGlobally')();
+require('JS/RamdaGlobally')()
 
 /******************** Component *******************/
-const Contact = () =>
+const Blog = () =>
   <div id="blog-page">
     <TopNavBar links={[
       {path: 'blog', text: 'Blog'},
@@ -22,10 +22,9 @@ const Contact = () =>
 
 
 /******************** Helpers *******************/
-const createTitleDiv = curry((style, content) => {
-  return <div style={style}><p>{content}</p></div>;
-})
-
+const createTitleDiv = curry((style, content) =>
+  <div style={style}><p>{content}</p></div>
+)
 
 /******************** Exports *******************/
-export default Contact;
+export default Blog;

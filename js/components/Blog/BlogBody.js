@@ -3,22 +3,17 @@
  */
 // todo
 
-import React from 'react';
+import ArticleContainer from './BlogBody/ArticleContainer'
+import CatalogPanel from './BlogBody/CatalogPanel'
+import SearchBar from 'JS/components/Project/ProjectBody/SearchBar'
 
-import ArticleContainer from './BlogBody/ArticleContainer';
-import CatalogPanel from './BlogBody/CatalogPanel';
-import SearchBar from '../Project/ProjectBody/SearchBar';
+/******************** Component *******************/
+const BlogBody = () =>
+  <div className="blog-body">
+    <SearchBar placeHolder="search anything"/>
+    <ArticleContainer/>
+    <CatalogPanel/>
+  </div>
 
-export default class BlogBody extends React.Component {
-
-  render() {
-    return (
-        <div className="blog-body">
-          <SearchBar placeHolder="search anything"/>
-          <ArticleContainer/>
-          <CatalogPanel/>
-        </div>
-    );
-  }
-}
-
+/******************** Exports *******************/
+export default BlogBody

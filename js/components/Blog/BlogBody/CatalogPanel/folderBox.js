@@ -1,16 +1,14 @@
 /**
  * Created by hao.zuo on 2017/8/17.
  */
-import React from 'react';
 
-export default class FolderBox extends React.Component {
+/******************** Component *******************/
+const FolderBox = () =>
+  <div className="folder-box">
+    <i class="fa fa-folder-open" aria-hidden="true"></i>
+    <div class="folder-name">Folder Example</div>
+  </div>
 
-  render() {
-    return (
-        <div className="folder-box">
-          <i class="fa fa-folder-open" aria-hidden="true"></i>
-          <div class="folder-name">Folder Example</div>
-        </div>
-    );
-  }
-}
+
+/******************** Exports *******************/
+export default FolderBox

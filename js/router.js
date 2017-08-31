@@ -1,7 +1,6 @@
 /**
  * Created by Zoho on 16/8/29.
  */
-import React from 'react';
 import ReactDOM from 'react-dom';
 import {Router, Route, browserHistory} from 'react-router';
 import {Provider} from 'react-redux';
