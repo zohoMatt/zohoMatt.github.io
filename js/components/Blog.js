@@ -18,11 +18,15 @@ export default class Contact extends React.Component {
             {path: 'gallery', text: 'Gallery'},
             {path: 'contact', text: 'Contact'},
           ]} activeLink={0}/>
-          <div style={{fontSize: '0.6em'}}><p>On developing: only for displaying
-            styles at present.</p></div>
-          <div style={{fontSize: '0.6em'}}><p>开发中：当前只展示样式</p></div>
+          {this.createTitleDiv({fontSize: '0.6em'})('On developing: only for displaying styles at present.')}
+          {this.createTitleDiv({fontSize: '0.6em'})('开发中：当前只展示样式')}
           <BlogBody/>
         </div>
     );
+  }
+
+  /*****************************************/
+  createTitleDiv = style => content => {
+    return <div style={style}><p>{content}</p></div>;
   }
 }

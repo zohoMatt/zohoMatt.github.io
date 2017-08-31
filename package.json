@@ -8,6 +8,7 @@
     "webpack-dev-server": "./node_modules/.bin/webpack-dev-server"
   },
   "scripts": {
+    "deploy-do": "cd .deploy && source deploy-to-do.sh",
     "dist": "export NODE_ENV=production && webpack",
     "dev": "export NODE_ENV=debug && webpack-dev-server",
     "deploy-all": "cd ./.deploy && source deploy-to-githubpages.sh && source deploy-to-do.sh",
@@ -21,6 +22,7 @@
     "clean-webpack-plugin": "^0.1.16",
     "font-awesome": "^4.7.0",
     "html-webpack-plugin": "^2.30.1",
+    "ramda": "^0.24.1",
     "react": "^0.14.8",
     "react-bootstrap": "^0.30.0-rc.2",
     "react-dom": "^0.14.6",
