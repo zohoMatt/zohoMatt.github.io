@@ -99,9 +99,7 @@ module.exports = {
         contentBase: path.join(__dirname, '/docs'),
         compress: true,
         port: 8080,
-        historyApiFallback: {
-            index: 'index.html'
-        }
+        historyApiFallback: true
     },
     output: {
         path: path.join(__dirname, 'docs'),
@@ -118,9 +116,9 @@ module.exports = {
       }),
 
       // Uglify js to optimize the size
-      new webpack.optimize.UglifyJsPlugin({
-        sourceMap: debug
-      }),
+      // new webpack.optimize.UglifyJsPlugin({
+      //   sourceMap: debug
+      // }),
 
       // todo ???
       new webpack.optimize.CommonsChunkPlugin({
