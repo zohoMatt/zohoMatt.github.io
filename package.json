@@ -9,10 +9,10 @@
     "eslint": "./node_modules/.bin/eslint"
   },
   "scripts": {
-    "deploy-do": "cd .deploy && source deploy-to-do.sh",
+    "deploy:all": "cd ./.deploy && source deploy-to-githubpages.sh && source deploy-to-do.sh",
+    "deploy:do": "cd .deploy && source deploy-to-do.sh",
     "dist": "export NODE_ENV=production && webpack",
     "dev": "export NODE_ENV=debug && webpack-dev-server",
-    "deploy-all": "cd ./.deploy && source deploy-to-githubpages.sh && source deploy-to-do.sh",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "zoho",

@@ -24,6 +24,7 @@ module.exports = {
         alias: {
             assets: path.resolve(__dirname, 'src/components/assets'),
             actions: path.resolve(__dirname, 'src/model/actions'),
+            components: path.resolve(__dirname, 'src/components'),
             css: path.resolve(__dirname, 'css'),
             src: path.resolve(__dirname, 'src'),
             store: path.resolve(__dirname, 'src/model/store'),
@@ -106,7 +107,7 @@ module.exports = {
         contentBase: path.join(__dirname, '/docs'),
         compress: true,
         port: 8080,
-        historyApiFallback: true,
+        historyApiFallback: true
     },
     output: {
         path: path.join(__dirname, 'docs'),
@@ -123,13 +124,13 @@ module.exports = {
         }),
 
         // Uglify js to optimize the size
-        // new webpack.optimize.UglifyJsPlugin({
-        //   sourceMap: debug
-        // }),
+        new webpack.optimize.UglifyJsPlugin({
+          sourceMap: debug
+        }),
 
-        // todo ???
+        // Prevent duplication. Allows us to extract common dependencies into a new chunk.
         new webpack.optimize.CommonsChunkPlugin({
-            name: 'app',
+            name: 'common',
         }),
 
         // Prevent repeatedly import sth.
