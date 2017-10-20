@@ -6,7 +6,7 @@ import { applyMiddleware, createStore, compose } from 'redux';
 // Default store
 import { DEFAULT_STORE } from '$store/default';
 // Reducer
-import reducer from './reducers/rootReducer';
+import reducer from './reducers/reducer';
 // Middleware
 import thunk from 'redux-thunk';
 import promise from 'redux-promise-middleware';

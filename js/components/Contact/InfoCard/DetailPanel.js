@@ -7,8 +7,6 @@ import GitHubDetail from './DetailPanel/GitHubDetail';
 import LinkedInDetail from './DetailPanel/LinkedInDetail';
 import ResumeDetail from './DetailPanel/ResumeDetail';
 
-require('JS/RamdaGlobally')()
-
 /******************** Component *******************/
 const DetailPanel = ({ component }) => {
   const supposedComp = selectComponent(component);

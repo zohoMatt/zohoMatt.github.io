@@ -4,8 +4,6 @@
 import BlogBody from './Blog/BlogBody'
 import TopNavBar from './lib/nav/TopNavBar'
 
-require('JS/RamdaGlobally')()
-
 /******************** Component *******************/
 const Blog = () =>
   <div id="blog-page">

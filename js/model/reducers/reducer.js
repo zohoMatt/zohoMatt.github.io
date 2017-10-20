@@ -3,8 +3,9 @@
  */
 import {combineReducers} from 'redux';
 
-import {flipCardBackReducer} from './flipCardReducer';
-import {searchKeywordReducer, tagsFilterReducer} from './filterReducer';
+import {flipCardBackReducer} from './contact/flipCardReducer';
+import {searchKeywordReducer} from './shared/searchReducer';
+import {tagsFilterReducer} from './shared/tagReducer';
 
 // Combine reducers. Also reveal the data structure of store.
 const reducer = combineReducers({

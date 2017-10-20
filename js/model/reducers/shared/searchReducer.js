@@ -3,8 +3,6 @@
  */
 import {DEFAULT_STORE} from '$store/default'
 
-require('JS/RamdaGlobally')()
-
 // Search keyword. Including all major sub-pages.
 export function searchKeywordReducer(
     state = DEFAULT_STORE.searchKeyword, action
@@ -25,25 +23,3 @@ export function searchKeywordReducer(
       }
     }) || state
 }
-
-// Tag filter for all pages
-export function tagsFilterReducer(
-  state = DEFAULT_STORE.tagFilter,
-  action
-) {
-  return prop(action.type,
-    {
-      'ADD_PROJECT_FILTER_TAGS': {
-        ...state,
-        project: selectTag(action.payload, state.project)
-      },
-      'REMOVE_PROJECT_FILTER_TAGS': {
-        ...state,
-        project: without(action.payload, state.project)
-      }
-    }) || state;
-
-}
-
-/******************** Helpers *******************/
-const selectTag = compose(uniq, append)
