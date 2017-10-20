@@ -3,9 +3,6 @@
  */
 
 // betterdo Refactor
-
-import React from 'react';
-
 import uuid from 'uuid';
 
 import IconButton from './LinkPanel/IconButton';

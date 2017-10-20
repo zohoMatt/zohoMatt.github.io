@@ -1,8 +1,6 @@
 /**
  * Created by Zoho on 16/9/14.
  */
-import React from 'react';
-
 /**
  * @props:
  * url          {string} Link URL.

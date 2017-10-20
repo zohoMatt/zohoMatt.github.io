@@ -1,8 +1,6 @@
 /**
  * Created by Zoho on 16/9/9.
  */
-import React from 'react';
-
 import uuid from 'uuid';
 
 import LinkIcon from './TableRow/LinkIcon';

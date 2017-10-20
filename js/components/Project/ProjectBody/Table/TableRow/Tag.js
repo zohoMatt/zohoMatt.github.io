@@ -1,7 +1,6 @@
 /**
  * Created by Zoho on 16/9/14.
  */
-import React from 'react';
 import { connect } from 'react-redux';
 
 import {
