@@ -1,35 +1,29 @@
 /**
  * Created by Zoho on 16/9/6.
  */
-import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 /**
- * @props:
- * // origin
- * placeHolder          {string} The 'placeholder' property for input element.
- * onInputHandler       {function} (event) For 'onInput' event handler in input.
+ * @description
+ * Searching bar for any circumstances, with an event dispatcher while input.
+ *
+ * @param placeHolder       {string}        The `placeholder` attribute.
+ * @param onInputHandler    {function}      Trigger event.
  */
-@connect()
-export default class SearchBar extends React.Component {
-    constructor () {
-        super();
-        this.state = {
-            revealText: 'searchKeyword',
-        };
-    }
+const SearchBar = ({ placeHolder, onInputHandler }) => (
+    <div className="search-bar">
+        <input placeholder={placeHolder} type="text"
+               class="search-input"
+               onInput={onInputHandler}/>
+        <div class="search-btn fa fa-search"></div>
+    </div>
+);
 
-    render () {
-        const {placeHolder, onInputHandler} = this.props;
-        return (
-            <div className="search-bar">
-                <input placeholder={placeHolder} type="text"
-                       class="search-input"
-                       onInput={onInputHandler}/>
-                <div class="search-btn fa fa-search"></div>
-            </div>
-        );
-    }
+SearchBar.propTypes = {
+    placeHolder: PropTypes.string,
+    onInputHandler: PropTypes.func
+};
 
-}
+export default SearchBar;
 
 

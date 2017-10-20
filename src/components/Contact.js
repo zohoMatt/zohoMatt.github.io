@@ -4,8 +4,7 @@
 import InfoCard from './Contact/InfoCard';
 import TopNavBar from './assets/nav/TopNavBar';
 
-/******************** Component *******************/
-const Contact = () =>
+const Contact = () => (
     <div id="contact-page">
         <TopNavBar links={[
             {path: 'blog', text: 'Blog'},
@@ -24,7 +23,7 @@ const Contact = () =>
                 <p>Redux和React开发工具/插件在本站(暂时)可以工作,以展示开发细节。</p>
             </div>
         </div>
-    </div>;
+    </div>
+);
 
-/******************** Exports *******************/
 export default Contact;

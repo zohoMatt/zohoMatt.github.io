@@ -36,6 +36,7 @@ module.exports = {
                 test: /\.less$/,
                 include: [
                     path.resolve(__dirname, 'css'),
+                    path.resolve(__dirname, 'src')
                 ],
                 exclude: [
                     path.resolve(__dirname, 'node_modules'),
