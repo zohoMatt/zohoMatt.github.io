@@ -4,7 +4,7 @@
 
 /********** JS FILES *****************/
 import './router';
-import './model/store/store';
+import './model/index';
 
 /*********** LESS FILES *************/
 import '../css/$loader.less';

@@ -8,7 +8,7 @@ import SearchBar from '../Project/ProjectBody/SearchBar';
 import StatusBar from '../Project/ProjectBody/StatusBar';
 import Table from '../Project/ProjectBody/Table';
 
-import {searchProjectAction} from '$actions/common/searchAction';
+import {searchProjectAction} from '$actions/shared/searchAction';
 
 @connect()
 export default class ProjectBody extends React.Component {

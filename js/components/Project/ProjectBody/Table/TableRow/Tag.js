@@ -7,7 +7,7 @@ import {connect} from 'react-redux';
 import {
   addProjectTagFilter,
   removeProjectTagFilter,
-} from '$actions/project/tagFilter';
+} from '$actions/shared/tagFilter';
 
 /**
  * @props:

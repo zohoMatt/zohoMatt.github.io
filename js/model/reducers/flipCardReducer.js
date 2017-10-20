@@ -1,7 +1,7 @@
 /**
  * Created by Zoho on 16/9/2.
  */
-import {DEFAULT_STORE} from './rootReducer';
+import {DEFAULT_STORE} from '$store/default';
 
 /**
  * @actions:
