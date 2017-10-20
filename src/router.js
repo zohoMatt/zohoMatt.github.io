@@ -2,7 +2,7 @@
  * Created by Zoho on 16/8/29.
  */
 import ReactDOM from 'react-dom';
-import { Router, Route, browserHistory } from 'react-router';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
 import Blog from './components/Blog';
@@ -13,20 +13,21 @@ import Project from './components/Project';
 
 import store from './model/index';
 
-// Create app component
+// Create app element
 const app = document.createElement('div');
 app.setAttribute('id', 'app');
 document.body.appendChild(app);
 
 ReactDOM.render(
     <Provider store={store}>
-        <Router history={browserHistory}>
-            <Route path="/" name="home" component={Home}></Route>
-            <Route path="blog" name="blog" component={Blog}></Route>
-            <Route path="blog/2" name="blog" component={Contact}></Route>
-            <Route path="project" name="project" component={Project}></Route>
-            <Route path="gallery" name="gallery" component={Gallery}></Route>
-            <Route path="contact" name="contact" component={Contact}></Route>
+        <Router>
+            <div>
+                <Route path="/" name="home" component={Home}></Route>
+                <Route path="blog" name="blog" component={Blog}></Route>
+                <Route path="project" name="project" component={Project}></Route>
+                <Route path="gallery" name="gallery" component={Gallery}></Route>
+                <Route path="contact" name="contact" component={Contact}></Route>
+            </div>
         </Router>
     </Provider>,
     app,

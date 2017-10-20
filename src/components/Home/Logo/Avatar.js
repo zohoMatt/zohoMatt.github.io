@@ -1,14 +1,14 @@
 /**
  * Created by Zoho on 16/8/30.
  */
-import { IndexLink } from 'react-router';
+import { Link } from 'react-router-dom';
 
 /******************** Component *******************/
 const Avatar = ({imgSource}) =>
     <div class="avatar">
-        <IndexLink to="/">
+        <Link to="/">
             <img src={imgSource} alt="GitHub: zohoFrank"/>
-        </IndexLink>
+        </Link>
     </div>;
 
 /******************** Exports *******************/

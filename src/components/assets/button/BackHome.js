@@ -1,7 +1,7 @@
 /**
  * Created by Zoho on 16/9/1.
  */
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 
 /******************** Component *******************/
 const BackHome = () => (

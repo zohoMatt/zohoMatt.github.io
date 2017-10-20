@@ -5,7 +5,7 @@ import Logo from './Home/Logo';
 import CenterNavBar from './Home/CenterNavBar';
 
 /******************** Component *******************/
-const Home = () =>
+const Home = () => (
     <div id="home-container">
         <Logo/>
         <CenterNavBar id="navbar" links={[
@@ -14,7 +14,8 @@ const Home = () =>
             {path: 'gallery', text: 'Gallery'},
             {path: 'contact', text: 'Contact'},
         ]}/>
-    </div>;
+    </div>
+);
 
 
 /******************** Exports *******************/

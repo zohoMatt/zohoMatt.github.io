@@ -135,7 +135,7 @@ module.exports = {
 
         // Prevent repeatedly import sth.
         new webpack.ProvidePlugin({
-            React: 'react',
+            React: 'react'
         }),
     ],
 };
