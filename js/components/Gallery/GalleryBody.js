@@ -7,11 +7,9 @@ import {connect} from 'react-redux'
 
 import SearchBar from '../Project/ProjectBody/SearchBar'
 import MediaCardContainer from './GalleryBody/MediaCardContainer'
-import {searchGalleryAction} from '../../model/actions/filterAction'
+import {searchGalleryAction} from '$actions/common/searchAction'
 
-@connect(() => {
-  return {}
-})
+@connect()
 export default class GalleryBody extends React.Component {
 
   render() {

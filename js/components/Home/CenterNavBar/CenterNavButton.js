@@ -7,9 +7,7 @@ import {Link} from 'react-router'
 
 import {connect} from 'react-redux'
 
-@connect(() => {
-  return {}
-})
+@connect()
 export default class CenterNavButton extends React.Component {
 
   render() {

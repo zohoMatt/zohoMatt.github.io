@@ -10,9 +10,7 @@ import {connect} from 'react-redux';
  * placeHolder          {string} The 'placeholder' property for input element.
  * onInputHandler       {function} (event) For 'onInput' event handler in input.
  */
-@connect(() => {
-  return {};
-})
+@connect()
 export default class SearchBar extends React.Component {
   constructor() {
     super();

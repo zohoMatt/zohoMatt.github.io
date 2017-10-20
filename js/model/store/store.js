@@ -4,9 +4,8 @@
 import {applyMiddleware, createStore, compose} from 'redux';
 
 // Reducer
-import reducer, {DEFAULT_STORE} from './reducers/rootReducer';
+import reducer, {DEFAULT_STORE} from '../reducers/rootReducer';
 // Middleware
-import logger from 'redux-logger';
 import thunk from 'redux-thunk';
 import promise from 'redux-promise-middleware';
 

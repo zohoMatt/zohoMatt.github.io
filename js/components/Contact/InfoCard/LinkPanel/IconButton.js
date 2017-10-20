@@ -4,16 +4,14 @@
 import {connect} from 'react-redux'
 
 // action functions
-import {flipBackAction} from 'JS/model/actions/flipCardAction'
+import {flipBackAction} from '$actions/contact/flipCardAction'
 
 /**
  * @props:
  * // origin
  * iconName             {string} Name string to describe what this icon represents. Also the name related with FontAwesome icon.
  */
-@connect(() => {
-  return {}
-})
+@connect()
 export default class IconButton extends React.Component {
   constructor() {
     super()

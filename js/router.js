@@ -11,7 +11,7 @@ import Gallery from './components/Gallery';
 import Home from './components/Home';
 import Project from './components/Project';
 
-import store from './model/store';
+import store from './model/store/store';
 
 // Create app component
 const app = document.createElement('div');

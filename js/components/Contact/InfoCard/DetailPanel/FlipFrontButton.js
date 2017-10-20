@@ -3,11 +3,9 @@
  */
 import {connect} from 'react-redux'
 
-import {flipFrontAction} from 'JS/model/actions/flipCardAction'
+import {flipFrontAction} from '$actions/contact/flipCardAction'
 
-@connect(() => {
-  return {}
-})
+@connect()
 export default class FlipFrontButton extends React.Component {
 
   render() {

@@ -14,9 +14,7 @@ import {connect} from 'react-redux'
  * path                 {string} The router path.
  * text                 {string} Text to display.
  */
-@connect(() => {
-  return {}
-})
+@connect()
 export default class TopNavButton extends React.Component {
 
   render() {

@@ -8,11 +8,9 @@ import SearchBar from '../Project/ProjectBody/SearchBar';
 import StatusBar from '../Project/ProjectBody/StatusBar';
 import Table from '../Project/ProjectBody/Table';
 
-import {searchProjectAction} from '../../model/actions/filterAction';
+import {searchProjectAction} from '$actions/common/searchAction';
 
-@connect(() => {
-  return {};
-})
+@connect()
 export default class ProjectBody extends React.Component {
 
   render() {

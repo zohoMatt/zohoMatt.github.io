@@ -7,6 +7,7 @@ node_modules
 
 # Generated files
 .DS_Store
+*error.log
 
 # Distribution folder
 docs

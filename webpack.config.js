@@ -23,7 +23,8 @@ module.exports = {
   resolve: {
       alias: {
         JS: path.resolve(__dirname, 'js'),
-        CSS: path.resolve(__dirname, 'css')
+        CSS: path.resolve(__dirname, 'css'),
+        $actions: path.resolve(__dirname, 'js/model/actions')
       }
   },
   module: {

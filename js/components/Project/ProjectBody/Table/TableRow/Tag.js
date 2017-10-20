@@ -7,15 +7,13 @@ import {connect} from 'react-redux';
 import {
   addProjectTagFilter,
   removeProjectTagFilter,
-} from '../../../../../model/actions/filterAction';
+} from '$actions/project/tagFilter';
 
 /**
  * @props:
  * name             {string} Tag text.
  */
-@connect(() => {
-  return {};
-})
+@connect()
 export default class Tag extends React.Component {
 
   render() {
