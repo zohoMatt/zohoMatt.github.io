@@ -5,7 +5,8 @@
   "main": "./js/app.js",
   "bin": {
     "webpack": "./node_modules/.bin/webpack",
-    "webpack-dev-server": "./node_modules/.bin/webpack-dev-server"
+    "webpack-dev-server": "./node_modules/.bin/webpack-dev-server",
+    "eslint": "./node_modules/.bin/eslint"
   },
   "scripts": {
     "deploy-do": "cd .deploy && source deploy-to-do.sh",

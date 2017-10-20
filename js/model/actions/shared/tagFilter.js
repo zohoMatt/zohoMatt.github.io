@@ -1,16 +1,18 @@
 /**
  * Tags filter actions
  */
+import {ProjectActions} from '$actions/types';
+
 export function addProjectTagFilter(tagName) {
   return {
-    type: 'ADD_PROJECT_FILTER_TAGS',
+    type: ProjectActions.ADD_TAG_FILTER,
     payload: tagName,
   };
 }
 
 export function removeProjectTagFilter(tagName) {
   return {
-    type: 'REMOVE_PROJECT_FILTER_TAGS',
+    type: ProjectActions.REMOVE_TAG_FILTER,
     payload: tagName,
   };
 }

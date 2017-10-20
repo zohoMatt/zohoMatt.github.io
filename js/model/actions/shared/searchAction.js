@@ -1,23 +1,25 @@
 /**
  * Created by Zoho on 16/9/14.
  */
+import {ProjectActions, BlogActions, GalleryActions} from '$actions/types';
+
 export function searchProjectAction(keyword) {
   return {
-    type: 'SEARCH_PROJECT',
+    type: ProjectActions.SEARCH,
     payload: keyword,
   };
 }
 
 export function searchBlogAction(keyword) {
   return {
-    type: 'SEARCH_BLOG',
+    type: BlogActions.SEARCH,
     payload: keyword,
   };
 }
 
 export function searchGalleryAction(keyword) {
   return {
-    type: 'SEARCH_GALLERY',
+    type: GalleryActions.SEARCH,
     payload: keyword,
   };
 }

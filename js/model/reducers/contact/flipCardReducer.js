@@ -2,21 +2,17 @@
  * Created by Zoho on 16/9/2.
  */
 import {DEFAULT_STORE} from '$store/default';
+import {ContactActions} from '$actions/types';
 
-/**
- * @actions:
- * FLIP_CARD
- * FLIP_CARD_FRONT
- */
 export function flipCardBackReducer(
     state = DEFAULT_STORE.searchKeyword, action) {
   switch (action.type) {
-    case 'FLIP_CARD_BACK':
+    case ContactActions.FLIP_CARD_BACK:
       return {
         faceUp: false,
         backComponentType: action.payload,
       };
-    case 'FLIP_CARD_FRONT':
+    case ContactActions.FLIP_CARD_FRONT:
       return {
         ...state,
         faceUp: true,

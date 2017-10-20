@@ -3,9 +3,10 @@
  */
 // betterdo Refactor
 
-import {Link} from 'react-router'
+import {Link} from 'react-router';
+import {connect} from 'react-redux';
 
-import {connect} from 'react-redux'
+import {ContactActions} from '$actions/types';
 
 /**
  * @props:
@@ -18,7 +19,7 @@ import {connect} from 'react-redux'
 export default class TopNavButton extends React.Component {
 
   render() {
-    const {active, path, text} = this.props
+    const {active, path, text} = this.props;
     return (
         <Link class={active} to={path} onClick={this.triggerManager.bind(this)}>
           {text}
@@ -29,14 +30,14 @@ export default class TopNavButton extends React.Component {
   /*****************************************/
   triggerManager() {
     if (this.props.text.toLowerCase() == 'contact') {
-      this._triggerFlipFront()
+      this._triggerFlipFront();
     }
   }
 
   /*****************************************/
   _triggerFlipFront() {
     this.props.dispatch({
-      type: 'FLIP_CARD_FRONT',
+      type: ContactActions.FLIP_CARD_FRONT,
       payload: null,
     })
   }

@@ -3,6 +3,7 @@
  */
 
 import {DEFAULT_STORE} from '$store/default';
+import {ProjectActions} from '$actions/types';
 
 /******************** Helpers *******************/
 const selectTag = compose(uniq, append)
@@ -14,11 +15,11 @@ export function tagsFilterReducer(
 ) {
   return prop(action.type,
     {
-      'ADD_PROJECT_FILTER_TAGS': {
+      [ProjectActions.ADD_TAG_FILTER]: {
         ...state,
         project: selectTag(action.payload, state.project)
       },
-      'REMOVE_PROJECT_FILTER_TAGS': {
+      [ProjectActions.REMOVE_TAG_FILTER]: {
         ...state,
         project: without(action.payload, state.project)
       }

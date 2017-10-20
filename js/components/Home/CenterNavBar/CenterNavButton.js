@@ -4,8 +4,9 @@
 // betterdo Refactor
 
 import {Link} from 'react-router'
-
 import {connect} from 'react-redux'
+
+import {ContactActions} from '$actions/types'
 
 @connect()
 export default class CenterNavButton extends React.Component {
@@ -29,7 +30,7 @@ export default class CenterNavButton extends React.Component {
   /*****************************************/
   _triggerFlipFront() {
     this.props.dispatch({
-      type: 'FLIP_CARD_FRONT',
+      type: ContactActions.FLIP_CARD_FRONT,
       payload: null,
     })
   }
