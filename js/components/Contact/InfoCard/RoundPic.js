@@ -4,7 +4,7 @@
 
 /******************** Component *******************/
 const RoundPic = () =>
-  <div className="round-pic"></div>
+    <div className="round-pic"></div>;
 
 /******************** Exports *******************/
-export default RoundPic
+export default RoundPic;

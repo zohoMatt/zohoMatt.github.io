@@ -3,12 +3,12 @@
  */
 // todo
 
-const axios = require('axios')
-const url = require('url')
-const uuid = require('uuid')
+const axios = require('axios');
+const url = require('url');
+const uuid = require('uuid');
 
-import { APIHOST } from 'JS/lib/structure'
-import ArticleCard from './ArticleContainer/ArticleCard'
+import { APIHOST } from 'JS/lib/structure';
+import ArticleCard from './ArticleContainer/ArticleCard';
 
 /**
  * @state articles            string[]
@@ -18,38 +18,37 @@ import ArticleCard from './ArticleContainer/ArticleCard'
  * @state articles.context      string
  */
 export default class ArticleContainer extends React.Component {
-  constructor() {
-    super()
-    this.state = {
-      articles: []
+    constructor () {
+        super();
+        this.state = {
+            articles: [],
+        };
     }
-  }
 
-  componentDidMount() {
-    axios.get(url.resolve(APIHOST, '/api/blog/all'))
-    .then((response) => {
-      this.setState({
-        articles: response.data.list
-      })
-    })
-  }
+    componentDidMount () {
+        axios.get(url.resolve(APIHOST, '/api/blog/all')).then((response) => {
+            this.setState({
+                articles: response.data.list,
+            });
+        });
+    }
 
-  render() {
-    const articleList = this.state.articles
-    const articleCardElements = articleList.map((atc) => {
-      const { title, archive, tagList, context } = atc
-      const tags = tagList.map(t => t.tag)
-      return <ArticleCard key={uuid.v1()}
-                          title={title}
-                          archive={archive}
-                          tagList={tags}
-                          context={context} />
-    })
+    render () {
+        const articleList = this.state.articles;
+        const articleCardElements = articleList.map((atc) => {
+            const {title, archive, tagList, context} = atc;
+            const tags = tagList.map(t => t.tag);
+            return <ArticleCard key={uuid.v1()}
+                                title={title}
+                                archive={archive}
+                                tagList={tags}
+                                context={context}/>;
+        });
 
-    return (
-        <div className="article-container">
-          {articleCardElements}
-        </div>
-    )
-  }
+        return (
+            <div className="article-container">
+                {articleCardElements}
+            </div>
+        );
+    }
 }

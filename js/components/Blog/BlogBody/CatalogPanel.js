@@ -8,10 +8,10 @@ import CollapseHandler from './CatalogPanel/CollapseHandler';
 
 /******************** Component *******************/
 const CatalogPanel = () =>
-  <div className="catalog-panel">
-    <CollapseHandler arrow="right"/>
-    <FolderColumn/>
-  </div>
+    <div className="catalog-panel">
+        <CollapseHandler arrow="right"/>
+        <FolderColumn/>
+    </div>;
 
 /******************** Exports *******************/
-export default CatalogPanel
+export default CatalogPanel;

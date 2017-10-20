@@ -4,7 +4,7 @@
 
 /******************** Component *******************/
 const UpperBackground = () =>
-  <div className="upper-background"></div>
+    <div className="upper-background"></div>;
 
 /******************** Exports *******************/
-export default UpperBackground
+export default UpperBackground;

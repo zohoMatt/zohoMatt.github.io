@@ -2,7 +2,7 @@
  * Created by Zoho on 16/9/6.
  */
 import React from 'react';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 
 /**
  * @props:
@@ -12,23 +12,24 @@ import {connect} from 'react-redux';
  */
 @connect()
 export default class SearchBar extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      revealText: 'searchKeyword',
-    };
-  }
+    constructor () {
+        super();
+        this.state = {
+            revealText: 'searchKeyword',
+        };
+    }
 
-  render() {
-    const {placeHolder, onInputHandler} = this.props;
-    return (
-        <div className="search-bar">
-          <input placeholder={placeHolder} type="text" class="search-input"
-                 onInput={onInputHandler}/>
-          <div class="search-btn fa fa-search"></div>
-        </div>
-    );
-  }
+    render () {
+        const {placeHolder, onInputHandler} = this.props;
+        return (
+            <div className="search-bar">
+                <input placeholder={placeHolder} type="text"
+                       class="search-input"
+                       onInput={onInputHandler}/>
+                <div class="search-btn fa fa-search"></div>
+            </div>
+        );
+    }
 
 }
 

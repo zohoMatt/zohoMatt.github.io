@@ -8,30 +8,30 @@ import LinkedInDetail from './DetailPanel/LinkedInDetail';
 import ResumeDetail from './DetailPanel/ResumeDetail';
 
 /******************** Component *******************/
-const DetailPanel = ({ component }) => {
-  const supposedComp = selectComponent(component);
-  return (
-    <div className="back-content">
-      {supposedComp}
-      <FlipFrontButton/>
-    </div>
-  );
-}
+const DetailPanel = ({component}) => {
+    const supposedComp = selectComponent(component);
+    return (
+        <div className="back-content">
+            {supposedComp}
+            <FlipFrontButton/>
+        </div>
+    );
+};
 
 /******************** Helpers *******************/
 const selectComponent = (componentName) => {
-  const standard = {
-    'archive': <ResumeDetail/>,
-    'github': <GitHubDetail/>,
-    'envelope': <EmailDetail/>,
-    'linkedin': <LinkedInDetail/>
-  }
-  const defaultCase = <div/>
+    const standard = {
+        'archive': <ResumeDetail/>,
+        'github': <GitHubDetail/>,
+        'envelope': <EmailDetail/>,
+        'linkedin': <LinkedInDetail/>,
+    };
+    const defaultCase = <div/>;
 
-  return prop(componentName, standard) || defaultCase
-}
+    return prop(componentName, standard) || defaultCase;
+};
 
 
 /******************** Exports *******************/
-export default DetailPanel
+export default DetailPanel;
 

@@ -4,7 +4,7 @@
 // betterdo Implementation
 
 /******************** Component *******************/
-const BackHome = () => <div className="back-home"></div>
+const BackHome = () => <div className="back-home"></div>;
 
 /******************** Exports *******************/
-export default BackHome
+export default BackHome;

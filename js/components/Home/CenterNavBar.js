@@ -3,39 +3,39 @@
  */
 // betterdo Refactor
 
-import uuid from 'uuid'
+import uuid from 'uuid';
 
-import CenterNavButton from './CenterNavBar/CenterNavButton'
+import CenterNavButton from './CenterNavBar/CenterNavButton';
 
 export default class CenterNavBar extends React.Component {
-  constructor() {
-    super()
-    this.data = {}
-  }
+    constructor () {
+        super();
+        this.data = {};
+    }
 
-  componentWillMount() {
-    this.setChildren()
-  }
+    componentWillMount () {
+        this.setChildren();
+    }
 
-  render() {
-    return (
-        <nav className="c-nav">
-          <ul>
-            {this.data.elements}
-          </ul>
-        </nav>
-    )
-  }
+    render () {
+        return (
+            <nav className="c-nav">
+                <ul>
+                    {this.data.elements}
+                </ul>
+            </nav>
+        );
+    }
 
-  /*****************************************/
-  setChildren() {
-    const {links} = this.props
-    const linkArray = links.map((link, i) => {
-      const {path, text} = link
-      return (
-          <CenterNavButton key={uuid.v1()} path={path} text={text}/>
-      )
-    })
-    this.data.elements = linkArray
-  }
+    /*****************************************/
+    setChildren () {
+        const {links} = this.props;
+        const linkArray = links.map((link, i) => {
+            const {path, text} = link;
+            return (
+                <CenterNavButton key={uuid.v1()} path={path} text={text}/>
+            );
+        });
+        this.data.elements = linkArray;
+    }
 }

@@ -3,27 +3,27 @@
  */
 // betterdo Refactor
 
-import {connect} from 'react-redux'
+import { connect } from 'react-redux';
 
-import SearchBar from '../Project/ProjectBody/SearchBar'
-import MediaCardContainer from './GalleryBody/MediaCardContainer'
-import {searchGalleryAction} from '$actions/shared/searchAction'
+import SearchBar from '../Project/ProjectBody/SearchBar';
+import MediaCardContainer from './GalleryBody/MediaCardContainer';
+import { searchGalleryAction } from '$actions/shared/searchAction';
 
 @connect()
 export default class GalleryBody extends React.Component {
 
-  render() {
-    return (
-        <div className="gallery-body">
-          <SearchBar placeHolder="image keyword"
-                     onInputHandler={this.onInputHandler.bind(this)}/>
-          <MediaCardContainer/>
-        </div>
-    )
-  }
+    render () {
+        return (
+            <div className="gallery-body">
+                <SearchBar placeHolder="image keyword"
+                           onInputHandler={this.onInputHandler.bind(this)}/>
+                <MediaCardContainer/>
+            </div>
+        );
+    }
 
-  /******************** SearchBar Dispatcher *******************/
-  onInputHandler(event) {
-    this.props.dispatch(searchGalleryAction(event.target.value))
-  }
+    /******************** SearchBar Dispatcher *******************/
+    onInputHandler (event) {
+        this.props.dispatch(searchGalleryAction(event.target.value));
+    }
 }

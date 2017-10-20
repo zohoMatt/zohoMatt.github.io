@@ -14,8 +14,8 @@ import promise from 'redux-promise-middleware';
 // Middleware
 // with logger and debug tool
 const debugMiddleware = compose(
-  applyMiddleware(promise(), thunk),
-  window.devToolsExtension ? window.devToolsExtension() : x => x,
+    applyMiddleware(promise(), thunk),
+    window.devToolsExtension ? window.devToolsExtension() : x => x,
 );
 // without any log or tools
 const distMiddleware = applyMiddleware(promise(), thunk);
