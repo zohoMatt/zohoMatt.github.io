@@ -18,14 +18,15 @@ module.exports = {
     context: __dirname,
     devtool: debug ? 'inline-source-map' : '',
     entry: {
-        'app': './js/app.js',
+        'app': './src/app.js',
     },
     resolve: {
         alias: {
-            JS: path.resolve(__dirname, 'js'),
-            CSS: path.resolve(__dirname, 'css'),
-            $actions: path.resolve(__dirname, 'js/model/actions'),
-            $store: path.resolve(__dirname, 'js/model/store'),
+            assets: path.resolve(__dirname, 'src/components/assets'),
+            actions: path.resolve(__dirname, 'src/model/actions'),
+            css: path.resolve(__dirname, 'css'),
+            src: path.resolve(__dirname, 'src'),
+            store: path.resolve(__dirname, 'src/model/store'),
         },
     },
     module: {
