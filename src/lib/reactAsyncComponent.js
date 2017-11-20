@@ -11,8 +11,8 @@ export const asyncComponent = (getComponent) => {
         componentWillMount() {
             if (!this.state.Component) {
                 getComponent().then(({default: Component}) => {
-                    AsyncComponent.Component = Component
-                    this.setState({ Component })
+                    AsyncComponent.Component = Component;
+                    this.setState({ Component });
                 })
             }
         }

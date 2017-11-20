@@ -9,9 +9,9 @@ import { tagsFilterReducer } from './shared/tagReducer';
 
 // Combine reducers. Also reveal the data structure of store.
 const reducer = combineReducers({
-  flipCard: flipCardBackReducer,
-  searchKeyword: searchKeywordReducer,
-  tagFilter: tagsFilterReducer,
+    flipCard: flipCardBackReducer,
+    searchKeyword: searchKeywordReducer,
+    tagFilter: tagsFilterReducer,
 });
 
 export default reducer;

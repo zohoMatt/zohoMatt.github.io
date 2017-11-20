@@ -9,10 +9,10 @@
     "eslint": "./node_modules/.bin/eslint"
   },
   "scripts": {
+    "dev": "yarn run lint && export NODE_ENV=debug && webpack-dev-server",
     "deploy:all": "cd ./.deploy && source deploy-to-githubpages.sh && source deploy-to-do.sh",
     "deploy:do": "cd .deploy && source deploy-to-do.sh",
     "dist": "export NODE_ENV=production && webpack",
-    "dev": "export NODE_ENV=debug && webpack-dev-server",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint -c .eslintrc .",
     "lint:fix": "eslint -c .eslintrc --fix ."
@@ -39,6 +39,7 @@
   },
   "devDependencies": {
     "babel-core": "^6.25.0",
+    "babel-eslint": "7",
     "babel-loader": "^7.1.1",
     "babel-plugin-add-module-exports": "^0.1.2",
     "babel-plugin-react-html-attrs": "^2.0.0",
@@ -63,5 +64,9 @@
     "uuid": "^2.0.2",
     "webpack": "^3.5.4",
     "webpack-dev-server": "^2.7.1"
-  }
+  },
+  "eslintIgnore": [
+    "reactAsyncComponent.js",
+    "router.js"
+  ]
 }
