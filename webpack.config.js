@@ -27,6 +27,8 @@ module.exports = {
             components: path.resolve(__dirname, 'src/components'),
             css: path.resolve(__dirname, 'css'),
             src: path.resolve(__dirname, 'src'),
+            lib: path.resolve(__dirname, 'src/lib'),
+            actions: path.resolve(__dirname, 'src/model/actions'),
             store: path.resolve(__dirname, 'src/model/store'),
         },
     },

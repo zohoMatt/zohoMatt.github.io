@@ -5,11 +5,13 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
-import Blog from './components/Blog';
-import Contact from './components/Contact';
-import Gallery from './components/Gallery';
-import Home from './components/Home';
-import Project from './components/Project';
+import { asyncComponent } from 'lib/reactAsyncComponent';
+
+const Blog = asyncComponent(() => import('./components/Blog'));
+const Contact = asyncComponent(() => import('./components/Contact'));
+const Gallery = asyncComponent(() => import('./components/Gallery'));
+const Home = asyncComponent(() => import('./components/Home'));
+const Project = asyncComponent(() => import('./components/Project'));
 
 import store from './model/index';
 
