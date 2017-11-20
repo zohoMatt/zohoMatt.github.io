@@ -2,12 +2,12 @@
  * Created by Zoho on 16/8/27.
  */
 
-/********** GLOBAL ENV *****************/
+/** ******** GLOBAL ENV **************** */
 import './globalConfig';
 
-/********** JS FILES *****************/
+/** ******** JS FILES **************** */
 import './router';
 import './model/index';
 
-/*********** LESS FILES *************/
+/** ********* LESS FILES ************ */
 import '../css/$loader.less';

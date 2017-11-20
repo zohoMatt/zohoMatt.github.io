@@ -17,7 +17,7 @@ export const asyncComponent = (getComponent) => {
             }
         }
         render() {
-            const { Component } = this.state
+            const { Component } = this.state;
             if (Component) {
                 return <Component {...this.props} />
             }

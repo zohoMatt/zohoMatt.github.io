@@ -3,16 +3,16 @@
  */
 import { ContactActions } from 'actions/types';
 
-export function flipBackAction (type) {
-    return {
-        type: ContactActions.FLIP_CARD_BACK,
-        payload: type,
-    };
+export function flipBackAction(type) {
+  return {
+    type: ContactActions.FLIP_CARD_BACK,
+    payload: type,
+  };
 }
 
-export function flipFrontAction () {
-    return {
-        type: ContactActions.FLIP_CARD_FRONT,
-        payload: null,
-    };
+export function flipFrontAction() {
+  return {
+    type: ContactActions.FLIP_CARD_FRONT,
+    payload: null,
+  };
 }
