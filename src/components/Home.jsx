@@ -6,18 +6,18 @@ import CenterNavBar from './Home/CenterNavBar';
 
 /** ****************** Component ****************** */
 const Home = () => (
-    <div id="home-container">
-        <Logo />
-        <CenterNavBar
-            id="navbar"
-            links={[
-                {path: 'blog', text: 'Blog'},
-                {path: 'project', text: 'Project'},
-                {path: 'gallery', text: 'Gallery'},
-                {path: 'contact', text: 'Contact'}
+  <div id="home-container">
+    <Logo />
+    <CenterNavBar
+      id="navbar"
+      links={[
+                { path: 'blog', text: 'Blog' },
+                { path: 'project', text: 'Project' },
+                { path: 'gallery', text: 'Gallery' },
+                { path: 'contact', text: 'Contact' },
             ]}
-        />
-    </div>
+    />
+  </div>
 );
 
 
