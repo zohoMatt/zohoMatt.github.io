@@ -18,7 +18,7 @@
     "import/no-unresolved": ["off"],
     "import/extensions": ["off"],
     "import/prefer-default-export": ["off"],
-    "indent": ["error", 4],
+
     "camelcase": 1,
     "semi": ["error", "always"],
     "quotes": ["error", "single", { "allowTemplateLiterals": true }],

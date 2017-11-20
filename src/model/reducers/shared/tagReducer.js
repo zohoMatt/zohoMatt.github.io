@@ -10,20 +10,20 @@ const selectTag = compose(uniq, append);
 
 /** ****************** Reducers ****************** */
 export function tagsFilterReducer(
-    state = DEFAULT_STORE.tagFilter,
-    action,
+  state = DEFAULT_STORE.tagFilter,
+  action,
 ) {
-    return prop(
-        action.type,
-        {
-            [ProjectActions.ADD_TAG_FILTER]: {
-                ...state,
-                project: selectTag(action.payload, state.project),
-            },
-            [ProjectActions.REMOVE_TAG_FILTER]: {
-                ...state,
-                project: without(action.payload, state.project),
-            },
-        },
-    ) || state;
+  return prop(
+    action.type,
+    {
+      [ProjectActions.ADD_TAG_FILTER]: {
+        ...state,
+        project: selectTag(action.payload, state.project),
+      },
+      [ProjectActions.REMOVE_TAG_FILTER]: {
+        ...state,
+        project: without(action.payload, state.project),
+      },
+    },
+  ) || state;
 }

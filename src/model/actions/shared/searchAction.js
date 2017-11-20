@@ -4,22 +4,22 @@
 import { ProjectActions, BlogActions, GalleryActions } from 'actions/types';
 
 export function searchProjectAction(keyword) {
-    return {
-        type: ProjectActions.SEARCH,
-        payload: keyword,
-    };
+  return {
+    type: ProjectActions.SEARCH,
+    payload: keyword,
+  };
 }
 
 export function searchBlogAction(keyword) {
-    return {
-        type: BlogActions.SEARCH,
-        payload: keyword,
-    };
+  return {
+    type: BlogActions.SEARCH,
+    payload: keyword,
+  };
 }
 
 export function searchGalleryAction(keyword) {
-    return {
-        type: GalleryActions.SEARCH,
-        payload: keyword,
-    };
+  return {
+    type: GalleryActions.SEARCH,
+    payload: keyword,
+  };
 }
