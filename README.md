@@ -1,7 +1,7 @@
 # Home Page
 
 ## About Site
-#### [Visit my site](https://mattzo.life/)
+#### [Visit my site](http://mattzo.life/)
 
 ## About Project
 This is the entrance/home page for my site.
