@@ -3,8 +3,8 @@
   "configurations": [
     {
       "name": "portfolio",
-      "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "dev", "--", "--port", "4321"],
+      "runtimeExecutable": "yarn",
+      "runtimeArgs": ["dev", "--port", "4321"],
       "port": 4321
     }
   ]

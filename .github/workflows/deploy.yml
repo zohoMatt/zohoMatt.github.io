@@ -22,17 +22,22 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      # Corepack provides the Yarn version pinned in package.json ("packageManager").
+      # It must be enabled before setup-node so the yarn cache lookup works.
+      - name: Enable Corepack
+        run: corepack enable
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 24
-          cache: npm
+          cache: yarn
 
       - name: Install dependencies
-        run: npm ci
+        run: yarn install --frozen-lockfile
 
       - name: Build
-        run: npm run build
+        run: yarn build
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
