@@ -12,7 +12,7 @@ export const profile = {
   /** Path under /public, e.g. '/resume.pdf'. Leave empty to hide the link. */
   resume: '',
 
-  headline: ['I build product systems,', 'from the pixel to the pipeline.'],
+  headline: ['I build enterprise systems at scale,', 'measured, observed, optimized.'],
   lede:
     '8+ years building SaaS, fintech and edtech products. At Atlassian I led frontend for <b>Confluence’s Role-Based Access Control</b>, from technical spec to a tenant-scoped rollout across thousands of instances.',
 
