@@ -3,7 +3,8 @@ import type { TechKey } from './tech';
 
 // Public product pages for work done at companies.
 export const CONFLUENCE = 'https://www.atlassian.com/software/confluence';
-export const SEEL = 'https://apps.shopify.com/return-assurance';
+export const SEEL = 'https://www.seel.com/';
+export const SEEL_SHOPIFY_APP = 'https://apps.shopify.com/return-assurance';
 export const NIO = 'https://www.nio.com/';
 
 export interface Metric {
@@ -29,7 +30,6 @@ export interface Project {
   href?: string;
   featured?: {
     order: number;
-    period: string;
     title: string;
     description: string;
     metrics: Metric[];
@@ -43,7 +43,7 @@ export const projects: Project[] = [
     slug: 'zen-studio',
     year: 2026,
     title: 'Zen Studio',
-    summary: 'Scientific computing platform for water-treatment modeling',
+    summary: 'PDE-based water-treatment modeling',
     context: 'Personal',
     role: 'Creator',
     layers: ['ui', 'api', 'svc', 'data', 'infra'],
@@ -53,7 +53,6 @@ export const projects: Project[] = [
     href: 'https://zenstudio.bid',
     featured: {
       order: 3,
-      period: '2020 – now',
       title: 'Zen Studio: water-treatment modeling on the web',
       description:
         'A platform around psdm, an open-source PDE solver on PyPI, supporting an NC State research team. Heavy simulations run in an isolated process pool with live progress, cancellation and interactive breakthrough curves.',
@@ -68,7 +67,7 @@ export const projects: Project[] = [
     slug: 'audio-notes',
     year: 2026,
     title: 'Audio Notes',
-    summary: 'Local meeting transcripts that Claude reads over MCP',
+    summary: 'Local transcripts Claude reads via MCP',
     context: 'Open source',
     role: 'Creator',
     layers: ['ui', 'api', 'svc', 'infra'],
@@ -78,7 +77,6 @@ export const projects: Project[] = [
     href: 'https://github.com/zohoMatt/audio-notes',
     featured: {
       order: 4,
-      period: '2026',
       title: 'Audio Notes: let Claude listen in on your meetings',
       description:
         'A tray app that captures system audio and microphone, transcribes both locally with faster-whisper on the CPU, and hands the transcript to Claude through an MCP server. Audio never leaves the machine; Claude sees only the lines it reads when you ask.',
@@ -94,7 +92,7 @@ export const projects: Project[] = [
     slug: 'job-alert',
     year: 2026,
     title: 'Job Alert',
-    summary: 'Watches 7 ATS job boards and reports new matching roles',
+    summary: 'Watches 7 job boards for matching roles',
     context: 'Open source',
     role: 'Creator',
     layers: ['svc', 'data'],
@@ -107,7 +105,7 @@ export const projects: Project[] = [
     slug: 'confluence-mobile',
     year: 2025,
     title: 'Confluence mobile',
-    summary: 'React Native update with staged, hypothesis-driven rollouts',
+    summary: 'React Native, staged Statsig rollouts',
     context: 'Atlassian',
     role: 'Frontend',
     layers: ['ui', 'infra'],
@@ -119,7 +117,7 @@ export const projects: Project[] = [
     slug: 'rovo-slack-agent',
     year: 2025,
     title: 'Rovo agent in Slack',
-    summary: 'AI agent for tribal-knowledge Q&A, scheduling and agendas',
+    summary: 'AI agent for team Q&A and scheduling',
     context: 'Atlassian',
     role: 'Builder',
     layers: ['svc'],
@@ -131,7 +129,7 @@ export const projects: Project[] = [
     slug: 'confluence-rbac',
     year: 2024,
     title: 'Confluence RBAC',
-    summary: 'Role model replacing a legacy permission matrix',
+    summary: 'Replaced a legacy permission matrix',
     context: 'Atlassian',
     role: 'Frontend tech lead',
     layers: ['ui', 'api', 'infra'],
@@ -140,7 +138,6 @@ export const projects: Project[] = [
     href: CONFLUENCE,
     featured: {
       order: 1,
-      period: '2024 – 26',
       title: 'Role-based access control for Confluence Cloud',
       description:
         'Confluence’s most significant permissions redesign: a role model replacing a legacy matrix with ~1,000 real-world permission combinations. I wrote the tech spec, drove architecture review with staff architects, shaped the GraphQL schema with backend and coordinated ~10 engineers across squads.',
@@ -156,18 +153,17 @@ export const projects: Project[] = [
   {
     slug: 'space-permissions',
     year: 2023,
-    title: 'Space permissions rebuild',
-    summary: 'Server-rendered page → React / TypeScript SPA',
+    title: 'Space permissions uplift',
+    summary: 'Server-rendered page → React SPA',
     context: 'Atlassian',
-    role: 'Frontend lead',
+    role: 'Project lead',
     layers: ['ui', 'api'],
     tech: ['react', 'typescript'],
     impact: 'Saves 2–30s → <100ms',
     href: CONFLUENCE,
     featured: {
       order: 2,
-      period: '2023',
-      title: 'Space permissions, rebuilt as an SPA',
+      title: 'Space permissions uplift',
       description:
         'Replaced a slow server-rendered page with a React/TypeScript SPA and fixed a years-long user pain point. Its component architecture became the foundation for RBAC.',
       metrics: [
@@ -181,31 +177,31 @@ export const projects: Project[] = [
     slug: 'space-access-request',
     year: 2023,
     title: 'Space access requests',
-    summary: 'Invite-link identity verified client-side, admin approval UI',
+    summary: 'Invite links + admin approval flow',
     context: 'Atlassian',
-    role: 'Driver',
-    layers: ['ui'],
-    tech: ['react', 'typescript'],
-    impact: '100–300 requests / day',
+    role: 'Project lead',
+    layers: ['ui', 'api'],
+    tech: ['react', 'typescript', 'graphql', 'statsig', 'signalfx'],
+    impact: 'Big satisfaction boost',
     href: CONFLUENCE,
   },
   {
     slug: 'seel-shopify-app',
     year: 2021,
     title: 'Return-insurance Shopify app',
-    summary: 'Checkout widget plus OAuth merchant onboarding service',
+    summary: 'Checkout widget + OAuth onboarding',
     context: 'Seel · Series A',
     role: 'Lead engineer',
     layers: ['ui', 'api', 'svc'],
     tech: ['shopify', 'react', 'typescript'],
     impact: '100+ merchants · 10K+ DAU',
-    href: SEEL,
+    href: SEEL_SHOPIFY_APP,
   },
   {
     slug: 'seel-platform',
     year: 2021,
     title: 'Seel platform from scratch',
-    summary: 'Next.js SSR, merchant dashboard, partner tools, CI/CD',
+    summary: 'Next.js SSR, merchant dashboard, CI/CD',
     context: 'Seel · Series A',
     role: 'Lead engineer',
     layers: ['ui', 'api', 'svc', 'infra'],
@@ -217,9 +213,9 @@ export const projects: Project[] = [
     slug: 'course-marketplace',
     year: 2018,
     title: 'Course marketplace',
-    summary: 'Mobile payment SDKs and social OAuth login',
+    summary: 'Mobile payments + social login',
     context: 'Ape Tutor',
-    role: 'Led 6-person team',
+    role: 'Lead engineer',
     layers: ['ui', 'api', 'svc'],
     tech: ['vue', 'javascript', 'nodejs', 'koa'],
     impact: '1.2M+ active users',
@@ -228,7 +224,7 @@ export const projects: Project[] = [
     slug: 'ad-platform',
     year: 2018,
     title: 'Social ad management platform',
-    summary: 'Vue / TypeScript with Node.js, Koa and Redis',
+    summary: 'Campaign management for social ads',
     context: 'Ape Tutor',
     role: 'Architect',
     layers: ['ui', 'api', 'svc', 'data'],
@@ -239,12 +235,24 @@ export const projects: Project[] = [
     slug: 'nio-manual-updates',
     year: 2017,
     title: 'In-car manual update service',
-    summary: 'Diff algorithm for incremental patches delivered via AWS',
+    summary: 'Diff-based incremental patches via AWS',
     context: 'NIO',
     role: 'Engineer',
     layers: ['svc', 'infra'],
     tech: ['nodejs', 'aws'],
     impact: 'Incremental OTA patches',
+    href: NIO,
+  },
+  {
+    slug: 'nio-vms',
+    year: 2017,
+    title: 'Vehicle Management System',
+    summary: 'Data viz, remote diagnostics & control',
+    context: 'NIO',
+    role: 'Engineer',
+    layers: ['ui', 'svc', 'data'],
+    tech: ['vue', 'javascript', 'nodejs'],
+    impact: 'First internal vehicle data platform',
     href: NIO,
   },
 ];

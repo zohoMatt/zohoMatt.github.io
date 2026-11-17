@@ -14,12 +14,11 @@ export const profile = {
 
   headline: ['I build product systems,', 'from the pixel to the pipeline.'],
   lede:
-    '8+ years building SaaS, fintech and online-education products. At Atlassian I led frontend for <b>Confluence’s Role-Based Access Control</b>, from technical spec to a tenant-scoped rollout across thousands of instances. On my own I build <b>full-stack</b>: most recently a scientific computing platform in React and FastAPI.',
+    '8+ years building SaaS, fintech and edtech products. At Atlassian I led frontend for <b>Confluence’s Role-Based Access Control</b>, from technical spec to a tenant-scoped rollout across thousands of instances.',
 
   glance: [
-    { label: 'Exp.', value: '8+ yrs · SaaS, fintech, online education' },
+    { label: 'Exp.', value: '8+ yrs · SaaS, fintech, edtech' },
     { label: 'Stack', value: 'React · TypeScript · Node.js · Python' },
-    { label: 'Building', value: 'Zen Studio, scientific computing on the web' },
   ],
   status: 'Open to Senior roles',
 

@@ -52,7 +52,7 @@ const groupsOf = (p: (typeof projects)[number]) =>
   .table { border: 1px solid var(--line); border-radius: 14px; background: var(--surface); overflow: hidden; }
   .row {
     display: grid; align-items: center; gap: 18px; padding: 13px 20px;
-    grid-template-columns: 44px minmax(0, 2.2fr) minmax(0, .9fr) minmax(0, 1fr) 150px minmax(0, 1.5fr) 12px;
+    grid-template-columns: 44px minmax(0, 1.9fr) minmax(0, .9fr) minmax(0, 1fr) 150px minmax(0, 1.9fr) 12px;
     border-bottom: 1px solid var(--line); transition: background .12s;
   }
   .row.head { background: var(--bg); padding-top: 10px; padding-bottom: 10px; }
@@ -64,12 +64,11 @@ const groupsOf = (p: (typeof projects)[number]) =>
   .row:hover :global(.stack) { color: var(--text); }
   .c-yr { font: 12.5px var(--mono); color: var(--faint); }
   .ttl { font-weight: 500; }
-  .ttl small {
-    display: block; font-weight: 400; color: var(--muted); font-size: 13px;
-    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-  }
+  /* Never truncate: copy is written to fit one line on desktop and wraps on narrow screens. */
+  .ttl small { display: block; font-weight: 400; color: var(--muted); font-size: 13px; text-wrap: pretty; }
   .c-ctx, .c-role { font-size: 13.5px; color: var(--muted); }
-  .c-impact { font: 12.5px var(--mono); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  /* Wraps instead of truncating; the title cell is two lines tall, so a two-line impact doesn't grow the row. */
+  .c-impact { font: 12.5px/1.4 var(--mono); text-wrap: balance; }
   .c-go { color: var(--faint); }
   .table-foot {
     padding: 12px 20px; font-size: 13px; color: var(--muted);

@@ -20,8 +20,7 @@ const linkAttrs = p.href ? { href: p.href, target: '_blank', rel: 'noopener' } :
 <Tag class:list={['card', variant]} {...linkAttrs}>
   <div class="grp main">
     <div class="meta">
-      <span class="eyebrow">{f.period}</span>
-      <span class="eyebrow">· {p.context}</span>
+      <span class="eyebrow">{p.context}</span>
       {big && <span class="eyebrow">· {p.role}</span>}
     </div>
     <h3>{f.title}</h3>

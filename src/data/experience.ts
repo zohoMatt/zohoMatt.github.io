@@ -1,16 +1,17 @@
 import { CONFLUENCE, NIO, SEEL } from './projects';
 
-export const education = {
+const TSINGHUA = {
   school: 'Tsinghua University',
   place: 'Beijing',
   href: 'https://www.tsinghua.edu.cn/en/',
   /** Emblem from Wikimedia Commons: File:Tsinghua_University_Logo.svg */
   emblem: '/tsinghua.svg',
-  degrees: [
-    { degree: 'Master of Engineering', year: '2017' },
-    { degree: 'Bachelor of Engineering', year: '2014' },
-  ],
 };
+
+export const education = [
+  { ...TSINGHUA, degree: 'Master of Engineering', start: '2014', end: '2017' },
+  { ...TSINGHUA, degree: 'Bachelor of Engineering', start: '2010', end: '2014' },
+];
 
 export const experience = [
   {
