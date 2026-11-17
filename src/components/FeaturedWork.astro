@@ -1,0 +1,29 @@
+---
+import { featured } from '../data/projects';
+import FeatureCard from './FeatureCard.astro';
+
+// Layout: lead card + two stacked beside it; anything after that gets a full-width row.
+const [lead, ...others] = featured;
+const stacked = others.slice(0, 2);
+const wide = others.slice(2);
+---
+
+<section id="work">
+  <div class="sec-head"><h2>Selected work</h2><a href="#index">All projects ↓</a></div>
+  <div class="featured">
+    <FeatureCard project={lead} variant="big" />
+    <div class="stack-col">
+      {stacked.map((p) => <FeatureCard project={p} />)}
+    </div>
+    {wide.map((p) => <div class="full"><FeatureCard project={p} variant="wide" /></div>)}
+  </div>
+</section>
+
+<style>
+  .featured { display: grid; grid-template-columns: 7fr 5fr; gap: 18px; }
+  .stack-col { display: grid; gap: 18px; }
+  .full { grid-column: 1 / -1; display: grid; }
+  @media (max-width: 980px) {
+    .featured { grid-template-columns: 1fr; }
+  }
+</style>

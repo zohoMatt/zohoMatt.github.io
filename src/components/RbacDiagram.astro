@@ -1,0 +1,35 @@
+---
+// Architecture sketch for the RBAC case study: highlighted nodes are what I designed / built.
+---
+
+<figure class="arch">
+  <svg viewBox="0 0 560 120" role="img" aria-label="RBAC architecture: Roles UI, GraphQL schema, Statsig per-tenant gates and SignalFX / OpsGenie monitoring built by me; existing permission service">
+    <path class="edge own" d="M128 40 H172" />
+    <path class="edge" d="M306 40 H350" />
+    <path class="edge own" d="M68 58 V82" />
+    <path class="edge own" d="M262 58 V82" />
+    <g class="n own"><rect x="8" y="22" width="120" height="36" rx="7" /><text x="68" y="44">Roles UI · React</text></g>
+    <g class="n own"><rect x="172" y="22" width="134" height="36" rx="7" /><text x="239" y="44">GraphQL schema</text></g>
+    <g class="n"><rect x="350" y="22" width="150" height="36" rx="7" /><text x="425" y="44">Permission service</text></g>
+    <g class="n own"><rect x="8" y="82" width="186" height="30" rx="7" /><text x="101" y="101">Statsig · per-tenant gates</text></g>
+    <g class="n own"><rect x="218" y="82" width="190" height="30" rx="7" /><text x="313" y="101">SignalFX · OpsGenie</text></g>
+  </svg>
+  <figcaption>
+    <span><i class="own" />I designed / built</span>
+    <span><i />Existing</span>
+  </figcaption>
+</figure>
+
+<style>
+  .arch { margin: 0; border: 1px solid var(--line); border-radius: 10px; background: var(--bg); padding: 14px 12px 10px; }
+  svg { width: 100%; height: auto; display: block; }
+  .n rect { fill: var(--surface); stroke: var(--line-strong); }
+  .n text { fill: var(--muted); font: 11px var(--mono); text-anchor: middle; }
+  .n.own rect { fill: var(--accent-soft); stroke: var(--accent); }
+  .n.own text { fill: var(--accent); }
+  .edge { stroke: var(--line-strong); stroke-width: 1.2; fill: none; }
+  .edge.own { stroke: var(--accent); }
+  figcaption { display: flex; gap: 14px; margin-top: 6px; font: 11px var(--mono); color: var(--faint); }
+  figcaption i { display: inline-block; width: 9px; height: 9px; border-radius: 2px; margin-right: 6px; vertical-align: -1px; background: var(--line-strong); }
+  figcaption i.own { background: var(--accent); }
+</style>

@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Cartoon avatar of Matt">
+  <defs>
+    <clipPath id="av-clip"><circle cx="200" cy="200" r="200"/></clipPath>
+  </defs>
+  <g clip-path="url(#av-clip)">
+    <!-- background -->
+    <rect width="400" height="400" fill="#e9dfca"/>
+    <polygon points="0,0 400,0 400,150 0,320" fill="#efe7d5"/>
+
+    <!-- shirt / shoulders -->
+    <polygon points="24,400 48,336 116,302 200,290 284,302 352,336 376,400" fill="#9eacea"/>
+    <polygon points="24,400 48,336 116,302 160,298 130,400" fill="#b0bcf1"/>
+    <polygon points="284,302 352,336 376,400 276,400 250,328" fill="#8696dc"/>
+    <polygon points="88,400 102,352 116,400" fill="#a5b2ee"/>
+    <polygon points="304,400 298,350 286,400" fill="#7d8dd3"/>
+
+    <!-- neck -->
+    <polygon points="168,236 232,236 236,300 200,322 164,300" fill="#f0c4a0"/>
+    <polygon points="168,236 232,236 233,262 200,278 167,262" fill="#dfa983"/>
+    <polygon points="174,292 226,292 200,334" fill="#f0c4a0"/>
+
+    <!-- collar (button-down) -->
+    <polygon points="166,274 134,298 148,334 200,324" fill="#c3cdf6"/>
+    <polygon points="166,274 156,282 196,322 200,324" fill="#a9b6ee"/>
+    <polygon points="234,274 266,298 252,334 200,324" fill="#b3bef2"/>
+    <polygon points="234,274 244,282 204,322 200,324" fill="#97a5e4"/>
+    <circle cx="148" cy="324" r="3.2" fill="#efe6d0"/>
+    <circle cx="252" cy="324" r="3.2" fill="#efe6d0"/>
+
+    <!-- placket + buttons -->
+    <line x1="200" y1="334" x2="200" y2="400" stroke="#8a99da" stroke-width="2"/>
+    <circle cx="200" cy="356" r="3.6" fill="#efe6d0"/>
+    <circle cx="200" cy="390" r="3.6" fill="#efe6d0"/>
+
+    <!-- chest logo: tiny bear on a bike -->
+    <g transform="translate(258 366)" fill="#26304f" stroke="#26304f">
+      <circle cx="-7" cy="10" r="5" fill="none" stroke-width="1.6"/>
+      <circle cx="7" cy="10" r="5" fill="none" stroke-width="1.6"/>
+      <path d="M-7 10 L0 3 L7 10" fill="none" stroke-width="1.4"/>
+      <ellipse cx="0" cy="-2" rx="4.5" ry="5.5" stroke="none"/>
+      <circle cx="1" cy="-9" r="3.6" stroke="none"/>
+      <circle cx="-1.6" cy="-12" r="1.4" stroke="none"/>
+      <circle cx="3.4" cy="-12" r="1.4" stroke="none"/>
+    </g>
+
+    <!-- ears -->
+    <polygon points="138,170 125,166 120,190 129,212 142,212" fill="#efbf99"/>
+    <polygon points="135,178 127,178 126,196 133,204" fill="#dda781"/>
+    <polygon points="262,170 275,166 280,190 271,212 258,212" fill="#e6b48e"/>
+    <polygon points="265,178 273,178 274,196 267,204" fill="#d39e78"/>
+
+    <!-- face: fuller, rounder jaw -->
+    <polygon points="136,122 137,204 151,238 180,262 220,262 249,238 263,204 264,122" fill="#f6d0ae"/>
+    <!-- right shade facet -->
+    <polygon points="264,148 263,204 249,238 220,262 234,232 250,200 254,160" fill="#ecbf9a"/>
+    <!-- jaw underside -->
+    <polygon points="151,238 180,262 220,262 249,238 224,252 176,252" fill="#e8b892"/>
+
+    <!-- hair: close buzz cut following the skull -->
+    <polygon points="136,184 132,146 140,112 162,92 200,84 238,92 260,112 268,146 264,184 258,184 256,158 246,145 200,140 154,145 144,158 142,184" fill="#2a2a33"/>
+    <polygon points="140,112 162,92 200,84 186,104 156,118" fill="#3b3b47"/>
+    <polygon points="200,84 238,92 260,112 232,108 212,98" fill="#33333e"/>
+
+    <!-- brows -->
+    <path d="M158 168 L188 165" stroke="#2a2a33" stroke-width="6" stroke-linecap="round"/>
+    <path d="M212 165 L242 168" stroke="#2a2a33" stroke-width="6" stroke-linecap="round"/>
+
+    <!-- eyes: calm, slightly narrow -->
+    <ellipse cx="174" cy="189" rx="6.5" ry="4.2" fill="#2a2a33"/>
+    <ellipse cx="226" cy="189" rx="6.5" ry="4.2" fill="#2a2a33"/>
+    <circle cx="176" cy="187.6" r="1.4" fill="#fff" opacity=".85"/>
+    <circle cx="228" cy="187.6" r="1.4" fill="#fff" opacity=".85"/>
+
+    <!-- nose -->
+    <polygon points="202,195 194,224 207,226" fill="#e5b18b"/>
+
+    <!-- cheeks -->
+    <circle cx="160" cy="221" r="10" fill="#f2a98f" opacity=".3"/>
+    <circle cx="240" cy="221" r="10" fill="#f2a98f" opacity=".3"/>
+
+    <!-- mouth: slight closed smile -->
+    <path d="M184 239 Q200 246 216 239 Q200 252 184 239 Z" fill="#d98a7e"/>
+  </g>
+</svg>

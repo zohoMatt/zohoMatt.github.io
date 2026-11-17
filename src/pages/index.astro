@@ -1,0 +1,28 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import Capabilities from '../components/Capabilities.astro';
+import FeaturedWork from '../components/FeaturedWork.astro';
+import ProjectIndex from '../components/ProjectIndex.astro';
+import Experience from '../components/Experience.astro';
+import Education from '../components/Education.astro';
+import Contact from '../components/Contact.astro';
+import { profile } from '../data/profile';
+---
+
+<Base
+  title={`${profile.name} · ${profile.title}`}
+  description="Senior software engineer, ex-Atlassian. Product frontend, full-stack apps and the systems behind them."
+>
+  <Header />
+  <main class="wrap">
+    <Hero />
+    <Capabilities />
+    <FeaturedWork />
+    <ProjectIndex />
+    <Experience />
+    <Education />
+    <Contact />
+  </main>
+</Base>

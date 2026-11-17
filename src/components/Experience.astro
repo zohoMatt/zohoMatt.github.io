@@ -1,0 +1,45 @@
+---
+import { experience } from '../data/experience';
+import { profile } from '../data/profile';
+---
+
+<section id="about">
+  <div class="xp-block">
+    <div>
+      <h2>Experience</h2>
+      <p class="off">Off-screen: {profile.hobbies}</p>
+    </div>
+    <ul class="xp">
+      {experience.map((e) => (
+        <li>
+          <span class="when">{e.when}</span>
+          <div>
+            {e.href
+              ? <a class="org" href={e.href} target="_blank" rel="noopener">{e.org}<span aria-hidden="true"> ↗</span></a>
+              : <b>{e.org}</b>} · {e.title}
+            {e.note && <span class="note">{e.note}</span>}
+          </div>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<style>
+  .xp-block { display: grid; grid-template-columns: 5fr 7fr; gap: 18px; }
+  .off { margin: 14px 0 0; font-size: 13.5px; color: var(--muted); max-width: 32ch; }
+  .xp { list-style: none; margin: 0; padding: 0; }
+  li { display: grid; grid-template-columns: 110px 1fr; gap: 12px; padding: 12px 0; border-top: 1px solid var(--line); }
+  li:last-child { border-bottom: 1px solid var(--line); }
+  .when { font: 12px var(--mono); color: var(--faint); padding-top: 2px; }
+  b, .org { font-weight: 500; }
+  .org span { color: var(--faint); font-size: 12px; }
+  .org:hover, .org:hover span { color: var(--accent); }
+  .note { display: block; font-size: 13.5px; color: var(--muted); }
+  @media (max-width: 980px) {
+    .xp-block { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 640px) {
+    li { grid-template-columns: 84px 1fr; }
+  }
+</style>

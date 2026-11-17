@@ -1,0 +1,21 @@
+---
+import { TECH, type TechKey } from '../data/tech';
+import TechIcon from './TechIcon.astro';
+
+interface Props {
+  tech: TechKey[];
+  max?: number;
+}
+const { tech, max = 5 } = Astro.props;
+// Only technologies with an icon fit in an icon row.
+const shown = tech.filter((k) => TECH[k].body).slice(0, max);
+const label = tech.map((k) => TECH[k].title).join(', ');
+---
+
+<span class="stack" role="img" aria-label={`Stack: ${label}`} title={label}>
+  {shown.map((k) => <TechIcon name={k} decorative />)}
+</span>
+
+<style>
+  .stack { display: inline-flex; gap: 8px; align-items: center; color: var(--muted); }
+</style>

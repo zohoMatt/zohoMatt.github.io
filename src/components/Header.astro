@@ -1,0 +1,47 @@
+---
+import { profile } from '../data/profile';
+---
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#">{profile.name}</a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#work">Work</a>
+      <a href="#index">Index</a>
+      <a href="#about">About</a>
+      {profile.resume && <a href={profile.resume}>Résumé</a>}
+    </nav>
+    <button class="icon-btn" id="theme-toggle" aria-label="Toggle light / dark theme">◐</button>
+  </div>
+</header>
+
+<style>
+  .top {
+    position: sticky; top: 0; z-index: 20;
+    background: color-mix(in srgb, var(--bg) 86%, transparent);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+  .wrap { display: flex; align-items: center; height: 56px; gap: 28px; }
+  .brand { font: 400 23px/1 var(--serif); letter-spacing: -.005em; white-space: nowrap; }
+  .brand:hover { color: var(--accent); }
+  .nav { display: flex; gap: 22px; font-size: 14px; color: var(--muted); }
+  .nav a:hover { color: var(--text); }
+  .icon-btn {
+    margin-left: auto; border: 1px solid var(--line-strong); background: var(--surface);
+    color: var(--muted); border-radius: 8px; height: 32px; width: 34px; cursor: pointer;
+  }
+  .icon-btn:hover { color: var(--text); }
+  @media (max-width: 640px) {
+    .nav { display: none; }
+  }
+</style>
+
+<script>
+  const root = document.documentElement;
+  document.getElementById('theme-toggle')?.addEventListener('click', () => {
+    const next = root.dataset.theme === 'dark' ? 'light' : 'dark';
+    root.dataset.theme = next;
+    try { localStorage.setItem('theme', next); } catch (e) {}
+  });
+</script>

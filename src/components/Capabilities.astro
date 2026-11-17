@@ -1,0 +1,53 @@
+---
+import { capabilities } from '../data/profile';
+import { projects } from '../data/projects';
+
+const items = capabilities.map((c, i) => ({
+  ...c,
+  index: i,
+  count: projects.filter(c.match).length,
+}));
+---
+
+<div class="caps" role="group" aria-label="Capabilities. Select one to filter projects">
+  {items.map((c) => (
+    <button class="cap" data-filter={c.key}>
+      <div class="cap-head">
+        <span class="cap-name">
+          <span class="layer-ico" aria-hidden="true">
+            {items.map((_, j) => <i class:list={{ on: j === c.index }} />)}
+          </span>
+          {c.name}
+        </span>
+        <span class="cap-count">{c.count} →</span>
+      </div>
+      <p>{c.desc}</p>
+    </button>
+  ))}
+</div>
+
+<style>
+  .caps {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    border: 1px solid var(--line); border-radius: 14px; background: var(--surface); overflow: hidden;
+  }
+  .cap {
+    padding: 20px 22px; border: 0; border-right: 1px solid var(--line);
+    background: none; text-align: left; cursor: pointer; transition: background .15s;
+  }
+  .cap:last-child { border-right: 0; }
+  .cap:hover { background: var(--accent-soft); }
+  .cap-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; }
+  .cap-name { font-weight: 600; display: flex; align-items: center; gap: 8px; }
+  .cap-count { font: 12px var(--mono); color: var(--accent); }
+  p { margin: 0; font-size: 13px; color: var(--muted); line-height: 1.5; }
+  .layer-ico { width: 18px; display: inline-flex; gap: 2px; }
+  .layer-ico i { display: block; height: 8px; flex: 1; border-radius: 1.5px; background: var(--line-strong); }
+  .layer-ico i.on { background: var(--accent); }
+
+  @media (max-width: 640px) {
+    .caps { grid-template-columns: 1fr; }
+    .cap { border-right: 0; border-bottom: 1px solid var(--line); }
+    .cap:last-child { border-bottom: 0; }
+  }
+</style>

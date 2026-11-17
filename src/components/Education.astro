@@ -1,0 +1,46 @@
+---
+import { education as edu } from '../data/experience';
+---
+
+<section id="education">
+  <div class="edu-block">
+    <h2>Education</h2>
+    <a class="school" href={edu.href} target="_blank" rel="noopener">
+      <span class="emblem"><img src={edu.emblem} alt="Tsinghua University emblem" width="56" height="56" loading="lazy" /></span>
+      <span class="body">
+        <span class="name">{edu.school}<span class="ext" aria-hidden="true"> ↗</span></span>
+        <span class="place">{edu.place}</span>
+        <span class="degrees">
+          {edu.degrees.map((d) => (
+            <span class="deg"><span>{d.degree}</span><span class="yr">{d.year}</span></span>
+          ))}
+        </span>
+      </span>
+    </a>
+  </div>
+</section>
+
+<style>
+  .edu-block { display: grid; grid-template-columns: 5fr 7fr; gap: 18px; }
+  .school {
+    display: flex; gap: 18px; align-items: center; padding: 16px 0;
+    border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+  }
+  /* The emblem is purple on transparent; a light disc keeps it legible in dark mode. */
+  .emblem {
+    flex: none; width: 72px; height: 72px; border-radius: 50%; background: #fbf9f4;
+    display: grid; place-items: center; box-shadow: 0 0 0 1px var(--line-strong);
+  }
+  .emblem img { width: 58px; height: 58px; display: block; }
+  .body { display: flex; flex-direction: column; min-width: 0; flex: 1; }
+  .name { font-weight: 500; font-size: 16px; }
+  .ext { color: var(--faint); font-size: 12px; }
+  .school:hover .name, .school:hover .ext { color: var(--accent); }
+  .place { font-size: 13.5px; color: var(--muted); }
+  .degrees { display: flex; flex-direction: column; gap: 2px; margin-top: 8px; font-size: 13.5px; }
+  .deg { display: flex; justify-content: space-between; gap: 12px; }
+  .yr { font: 12px var(--mono); color: var(--faint); }
+  @media (max-width: 980px) {
+    .edu-block { grid-template-columns: 1fr; }
+  }
+</style>

@@ -1,0 +1,117 @@
+---
+import { projects } from '../data/projects';
+import { capabilities } from '../data/profile';
+import TechStack from './TechStack.astro';
+
+const rows = [...projects].sort((a, b) => b.year - a.year);
+// Capability keys each project belongs to, so the client filter is a simple lookup.
+const groupsOf = (p: (typeof projects)[number]) =>
+  capabilities.filter((c) => c.match(p)).map((c) => c.key).join(' ');
+---
+
+<section id="index">
+  <div class="sec-head"><h2>Project index</h2><span class="mono">Sorted by year</span></div>
+  <div class="filters" role="group" aria-label="Filter projects">
+    <button class="chip" data-f="all" aria-pressed="true">All</button>
+    {capabilities.map((c) => <button class="chip" data-f={c.key} aria-pressed="false">{c.name}</button>)}  </div>
+
+  <div class="table" id="project-table">
+    <div class="row head" aria-hidden="true">
+      <span class="c-yr">Year</span><span>Project</span><span class="c-ctx">Context</span>
+      <span class="c-role">Role</span><span>Stack</span><span class="c-impact">Impact</span><span class="c-go"></span>
+    </div>
+    {rows.map((p) => {
+      const Tag = p.href ? 'a' : 'div';
+      const linkAttrs = p.href ? { href: p.href, target: '_blank', rel: 'noopener' } : {};
+      return (
+        <Tag class:list={['row', { link: p.href }]} data-groups={groupsOf(p)} {...linkAttrs}>
+          <span class="c-yr">{p.year}</span>
+          <span class="ttl">{p.title}<small>{p.summary}</small></span>
+          <span class="c-ctx">{p.context}</span>
+          <span class="c-role">{p.role}</span>
+          <TechStack tech={p.tech} />
+          <span class="c-impact">{p.impact}</span>
+          <span class="c-go" aria-hidden="true">{p.href ? '↗' : ''}</span>
+        </Tag>
+      );
+    })}
+    <div class="table-foot" aria-live="polite"><span id="project-count">{rows.length} projects</span></div>
+  </div>
+</section>
+
+<style>
+  .mono { font: 12px var(--mono); }
+  .filters { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; align-items: center; }
+  .chip {
+    font: 12px var(--mono); border: 1px solid var(--line-strong); background: var(--surface);
+    color: var(--muted); border-radius: 999px; padding: 5px 11px; cursor: pointer;
+  }
+  .chip:hover { color: var(--text); }
+  .chip[aria-pressed="true"] { background: var(--text); color: var(--bg); border-color: var(--text); }
+
+  .table { border: 1px solid var(--line); border-radius: 14px; background: var(--surface); overflow: hidden; }
+  .row {
+    display: grid; align-items: center; gap: 18px; padding: 13px 20px;
+    grid-template-columns: 44px minmax(0, 2.2fr) minmax(0, .9fr) minmax(0, 1fr) 112px minmax(0, 1.5fr) 12px;
+    border-bottom: 1px solid var(--line); transition: background .12s;
+  }
+  .row.head { background: var(--bg); padding-top: 10px; padding-bottom: 10px; }
+  .row.head span { font: 11px var(--mono); text-transform: uppercase; letter-spacing: .06em; color: var(--faint); }
+  .row:has(+ .table-foot) { border-bottom: 0; }
+  .row[hidden] { display: none; }
+  a.row:hover { background: var(--accent-soft); }
+  a.row:hover .c-go { color: var(--accent); }
+  .row:hover :global(.stack) { color: var(--text); }
+  .c-yr { font: 12.5px var(--mono); color: var(--faint); }
+  .ttl { font-weight: 500; }
+  .ttl small {
+    display: block; font-weight: 400; color: var(--muted); font-size: 13px;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .c-ctx, .c-role { font-size: 13.5px; color: var(--muted); }
+  .c-impact { font: 12.5px var(--mono); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .c-go { color: var(--faint); }
+  .table-foot {
+    padding: 12px 20px; font-size: 13px; color: var(--muted);
+    background: var(--bg); border-top: 1px solid var(--line);
+  }
+
+  @media (max-width: 980px) {
+    .row { grid-template-columns: 44px minmax(0, 1fr) 112px 12px; }
+    .c-ctx, .c-role, .c-impact { display: none; }
+  }
+  @media (max-width: 640px) {
+    .row { grid-template-columns: minmax(0, 1fr) auto; gap: 12px; padding: 12px 14px; }
+    .c-yr, .c-go { display: none; }
+  }
+</style>
+
+<script>
+  const table = document.getElementById('project-table');
+  const count = document.getElementById('project-count');
+  if (table && count) {
+    const rows = [...table.querySelectorAll<HTMLElement>('.row[data-groups]')];
+    const chips = [...document.querySelectorAll<HTMLButtonElement>('.chip')];
+
+    const apply = (key: string) => {
+      const all = key === 'all';
+      let n = 0;
+      for (const row of rows) {
+        const show = all || row.dataset.groups!.split(' ').includes(key);
+        row.hidden = !show;
+        if (show) n++;
+      }
+      chips.forEach((c) => c.setAttribute('aria-pressed', String(c.dataset.f === key)));
+      const name = chips.find((c) => c.dataset.f === key)?.textContent;
+      count.textContent = all ? `${rows.length} projects` : `${n} of ${rows.length} projects · ${name}`;
+    };
+
+    chips.forEach((c) => c.addEventListener('click', () => apply(c.dataset.f!)));
+    document.querySelectorAll<HTMLButtonElement>('.cap[data-filter]').forEach((cap) =>
+      cap.addEventListener('click', () => {
+        apply(cap.dataset.filter!);
+        document.getElementById('index')?.scrollIntoView();
+      }),
+    );
+  }
+</script>

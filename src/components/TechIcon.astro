@@ -1,0 +1,33 @@
+---
+import { TECH, type Tech, type TechKey } from '../data/tech';
+
+interface Props {
+  name: TechKey;
+  size?: number;
+  /** Decorative when a visible label sits next to it. */
+  decorative?: boolean;
+}
+const { name, size = 16, decorative = false } = Astro.props;
+const t: Tech = TECH[name];
+// Wide marks (e.g. the AWS wordmark) keep their aspect ratio instead of shrinking into a square.
+const [, , vw = 24, vh = 24] = (t.viewBox ?? '0 0 24 24').split(/\s+/).map(Number);
+const width = Math.round(size * Math.max(1, vw / vh));
+---
+
+{t.body && (
+  <svg
+    class="ti"
+    viewBox={t.viewBox}
+    width={width}
+    height={size}
+    fill="currentColor"
+    role={decorative ? undefined : 'img'}
+    aria-hidden={decorative ? 'true' : undefined}
+    aria-label={decorative ? undefined : t.title}
+    set:html={(decorative ? '' : `<title>${t.title}</title>`) + t.body}
+  />
+)}
+
+<style>
+  .ti { display: block; flex: none; }
+</style>

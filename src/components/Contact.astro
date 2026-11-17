@@ -1,0 +1,46 @@
+---
+import { profile } from '../data/profile';
+const year = new Date().getFullYear();
+---
+
+<div class="contact">
+  <div>
+    <div class="eyebrow">Get in touch</div>
+    <h2>Building something hard? <em>Let’s talk.</em></h2>
+  </div>
+  <div class="links">
+    <a class="btn primary" href={`mailto:${profile.email}`}>Email me</a>
+    <a class="btn" href={profile.linkedin} target="_blank" rel="noopener">LinkedIn ↗</a>
+    {profile.github && <a class="btn" href={profile.github} target="_blank" rel="noopener">GitHub ↗</a>}
+    {profile.resume && <a class="btn" href={profile.resume}>Résumé PDF ↓</a>}
+  </div>
+</div>
+<footer class="colophon">
+  <span>© {year} {profile.name}</span>
+  <span>Built with Astro</span>
+</footer>
+
+<style>
+  .contact {
+    margin: 80px 0 0; padding: 44px 0; border-top: 1px solid var(--line);
+    display: grid; grid-template-columns: 1fr auto; gap: 32px; align-items: end;
+  }
+  /* Sans here so it doesn't echo the serif hero headline. */
+  h2 { font: 600 30px/1.2 var(--sans); letter-spacing: -.02em; margin-top: 8px; }
+  h2 em { font-style: normal; color: var(--accent); }
+  .links { display: flex; gap: 10px; flex-wrap: wrap; }
+  .btn {
+    border: 1px solid var(--line-strong); background: var(--surface); padding: 9px 14px;
+    border-radius: 9px; font-size: 14px; display: inline-flex; gap: 8px; align-items: center;
+  }
+  .btn:hover { border-color: var(--text); }
+  .btn.primary { background: var(--text); color: var(--bg); border-color: var(--text); }
+  .colophon {
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+    padding: 18px 0 40px; border-top: 1px solid var(--line); font: 12px var(--mono); color: var(--faint);
+  }
+  @media (max-width: 640px) {
+    .contact { grid-template-columns: 1fr; }
+    h2 { font-size: 24px; }
+  }
+</style>

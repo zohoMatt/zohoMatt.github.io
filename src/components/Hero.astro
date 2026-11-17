@@ -1,0 +1,90 @@
+---
+import { profile } from '../data/profile';
+const [line1, line2] = profile.headline;
+---
+
+<div class="hero">
+  <div>
+    <div class="who">
+      <div class="avatar-wrap">
+        <img class="avatar" src="/avatar.svg" alt="" width="104" height="104" />
+        <span class="avatar-status" title={profile.status} aria-hidden="true" />
+      </div>
+      <div class="who-text">
+        <div class="who-name">{profile.name}</div>
+        <div class="who-meta">
+          <span>{profile.title}</span>
+          <span class="pill">ex‑{profile.formerly}</span>
+        </div>
+        <div class="who-loc">
+          <svg viewBox="0 0 16 16" width="13" height="13" aria-hidden="true"><path d="M8 15s5-4.6 5-8.5A5 5 0 0 0 3 6.5C3 10.4 8 15 8 15Z" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="8" cy="6.5" r="1.8" fill="currentColor"/></svg>
+          {profile.location}
+        </div>
+      </div>
+    </div>
+    <h1>{line1}<br /><em>{line2}</em></h1>
+    <p class="lede" set:html={profile.lede} />
+  </div>
+  <aside class="glance" aria-label="At a glance">
+    <dl>
+      {profile.glance.map((g) => (
+        <>
+          <dt>{g.label}</dt>
+          <dd>{g.value}</dd>
+        </>
+      ))}
+      <dt>Status</dt>
+      <dd><span class="dot-live" />{profile.status}</dd>
+    </dl>
+  </aside>
+</div>
+
+<style>
+  .hero { display: grid; grid-template-columns: 1.55fr 1fr; gap: 64px; padding: 64px 0 56px; align-items: end; }
+  .who { display: flex; align-items: center; gap: 22px; }
+  .avatar-wrap { position: relative; flex: none; }
+  .avatar {
+    width: 104px; height: 104px; border-radius: 50%; display: block;
+    /* gap ring in page color, then an accent ring */
+    box-shadow: 0 0 0 4px var(--bg), 0 0 0 6px var(--accent);
+  }
+  .avatar-status {
+    position: absolute; right: 4px; bottom: 6px; width: 16px; height: 16px; border-radius: 50%;
+    background: var(--ok); box-shadow: 0 0 0 3px var(--bg);
+  }
+  .who-name { font-size: 30px; font-weight: 600; letter-spacing: -.02em; line-height: 1.1; }
+  .who-meta { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 10px; margin-top: 8px; font-size: 16px; }
+  .pill {
+    font: 500 12px var(--mono); color: var(--accent); background: var(--accent-soft);
+    border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
+    padding: 3px 9px; border-radius: 999px; white-space: nowrap;
+  }
+  .who-loc { display: flex; align-items: center; gap: 6px; margin-top: 6px; font-size: 13.5px; color: var(--muted); }
+  h1 { font: 400 clamp(32px, 3.8vw, 46px)/1.1 var(--serif); letter-spacing: -.005em; margin: 32px 0 18px; }
+  h1 em { color: var(--accent); }
+  .lede { font-size: 17px; color: var(--muted); max-width: 58ch; margin: 0; }
+  .lede :global(b) { color: var(--text); font-weight: 500; }
+
+  .glance { border: 1px solid var(--line); background: var(--surface); border-radius: 14px; padding: 6px 18px; }
+  dl { margin: 0; display: grid; grid-template-columns: auto 1fr; column-gap: 20px; }
+  dt, dd { padding: 11px 0; border-bottom: 1px solid var(--line); margin: 0; }
+  dt { font: 11.5px var(--mono); text-transform: uppercase; letter-spacing: .06em; color: var(--faint); padding-top: 13px; }
+  dd { font-size: 14px; }
+  dl > :nth-last-child(-n+2) { border-bottom: 0; }
+  .dot-live {
+    display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--ok);
+    margin-right: 8px; vertical-align: 1px;
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--ok) 22%, transparent);
+  }
+
+  @media (max-width: 980px) {
+    .hero { grid-template-columns: 1fr; gap: 36px; padding-top: 44px; }
+  }
+  @media (max-width: 640px) {
+    .who { gap: 16px; }
+    .avatar { width: 80px; height: 80px; }
+    .avatar-status { width: 13px; height: 13px; right: 2px; bottom: 4px; }
+    .who-name { font-size: 24px; }
+    .who-meta { font-size: 14.5px; }
+  }
+</style>
