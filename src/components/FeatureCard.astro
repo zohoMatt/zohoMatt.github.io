@@ -1,6 +1,6 @@
 ---
 import type { Project } from '../data/projects';
-import { TECH } from '../data/tech';
+import { TECH, hasLogo } from '../data/tech';
 import TechIcon from './TechIcon.astro';
 import RbacDiagram from './RbacDiagram.astro';
 
@@ -34,7 +34,9 @@ const linkAttrs = p.href ? { href: p.href, target: '_blank', rel: 'noopener' } :
     </div>
     <div class="card-foot">
       <div class="tags">
-        {p.tech.map((k) => <span class="tag chip"><TechIcon name={k} size={12} decorative />{TECH[k].title}</span>)}
+        {p.tech.map((k) => (
+          <span class="tag chip">{hasLogo(TECH[k]) && <TechIcon name={k} size={12} decorative />}{TECH[k].title}</span>
+        ))}
       </div>
       {p.href && <span class="read">{f.linkLabel ?? 'Visit ↗'}</span>}
     </div>

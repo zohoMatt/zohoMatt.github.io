@@ -7,8 +7,7 @@ interface Props {
   max?: number;
 }
 const { tech, max = 5 } = Astro.props;
-// Only technologies with an icon fit in an icon row.
-const shown = tech.filter((k) => TECH[k].body).slice(0, max);
+const shown = tech.slice(0, max);
 const label = tech.map((k) => TECH[k].title).join(', ');
 ---
 
@@ -17,5 +16,8 @@ const label = tech.map((k) => TECH[k].title).join(', ');
 </span>
 
 <style>
-  .stack { display: inline-flex; gap: 8px; align-items: center; color: var(--muted); }
+  .stack {
+    display: inline-flex; flex-wrap: wrap; gap: 6px 8px; align-items: center;
+    color: var(--muted);
+  }
 </style>

@@ -1,5 +1,5 @@
 ---
-import { TECH, type Tech, type TechKey } from '../data/tech';
+import { TECH, hasLogo, type Tech, type TechKey } from '../data/tech';
 
 interface Props {
   name: TechKey;
@@ -14,7 +14,7 @@ const [, , vw = 24, vh = 24] = (t.viewBox ?? '0 0 24 24').split(/\s+/).map(Numbe
 const width = Math.round(size * Math.max(1, vw / vh));
 ---
 
-{t.body && (
+{hasLogo(t) ? (
   <svg
     class="ti"
     viewBox={t.viewBox}
@@ -26,8 +26,18 @@ const width = Math.round(size * Math.max(1, vw / vh));
     aria-label={decorative ? undefined : t.title}
     set:html={(decorative ? '' : `<title>${t.title}</title>`) + t.body}
   />
+) : (
+  /* No usable logo: a small box with the name, same height as the icons. */
+  <span class="badge" style={`height:${size}px;font-size:${Math.round(size * 0.6)}px`} aria-hidden={decorative ? 'true' : undefined}>
+    {t.title}
+  </span>
 )}
 
 <style>
   .ti { display: block; flex: none; }
+  .badge {
+    display: inline-flex; align-items: center; flex: none; padding: 0 4px;
+    border: 1px solid currentColor; border-radius: 3px;
+    font-family: var(--mono); font-weight: 500; line-height: 1; white-space: nowrap;
+  }
 </style>

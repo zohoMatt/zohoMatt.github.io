@@ -5,7 +5,7 @@
  * Everything is drawn in currentColor so the icons stay quiet and follow the theme.
  */
 import {
-  siAndroid, siApacheecharts, siAtlassian, siClaude, siCloudflare, siDocker, siFastapi,
+  siAndroid, siApacheecharts, siAtlassian, siClaude, siCloudflare, siDocker,
   siGithubactions, siGraphql, siHuggingface, siIos, siJavascript, siKoa, siModelcontextprotocol,
   siNextdotjs, siNodedotjs, siOpsgenie, siPostgresql, siPython, siReact, siRedis, siShopify,
   siSplunk, siSupabase, siTypescript, siVitest, siVuedotjs,
@@ -15,10 +15,13 @@ import slackRaw from '../icons/slack.svg?raw';
 
 export interface Tech {
   title: string;
-  /** Inner SVG markup (paths only, no fills). Missing = shown as a text-only chip. */
+  /** Inner SVG markup (paths only, no fills). Missing = drawn as a small text badge. */
   body?: string;
   viewBox?: string;
 }
+
+/** True when the tech has a real logo; otherwise it renders as a boxed name. */
+export const hasLogo = (t: Tech) => Boolean(t.body);
 
 type SimpleIcon = { title: string; path: string };
 const si = (icon: SimpleIcon, title = icon.title): Tech => ({
@@ -48,7 +51,8 @@ export const TECH = {
   nodejs: si(siNodedotjs),
   koa: si(siKoa),
   python: si(siPython),
-  fastapi: si(siFastapi),
+  // The FastAPI bolt is unreadable at 16px in one colour, so it gets a text badge.
+  fastapi: { title: 'FastAPI' },
   postgresql: si(siPostgresql),
   supabase: si(siSupabase),
   redis: si(siRedis),

@@ -48,6 +48,7 @@ export const projects: Project[] = [
     role: 'Creator',
     layers: ['ui', 'api', 'svc', 'data', 'infra'],
     tech: ['react', 'typescript', 'fastapi', 'python', 'postgresql', 'docker'],
+    kind: 'tool',
     impact: 'Live · NC State research',
     href: 'https://zenstudio.bid',
     featured: {
