@@ -1,11 +1,50 @@
 ---
 import '../styles/global.css';
+import { profile } from '../data/profile';
+import { education } from '../data/experience';
 
 interface Props {
   title: string;
   description: string;
+  /** Social preview image, path under /public. */
+  image?: string;
 }
-const { title, description } = Astro.props;
+const { title, description, image = '/og.png' } = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const imageUrl = new URL(image, Astro.site).href;
+const sameAs = [profile.linkedin, profile.github].filter(Boolean);
+
+// ProfilePage + Person structured data (https://schema.org/ProfilePage).
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfilePage',
+  url: canonical,
+  name: title,
+  description,
+  mainEntity: {
+    '@type': 'Person',
+    '@id': `${canonical}#person`,
+    name: profile.name,
+    url: canonical,
+    image: new URL('/avatar.png', Astro.site).href,
+    jobTitle: profile.title,
+    description,
+    email: `mailto:${profile.email}`,
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Raleigh',
+      addressRegion: 'NC',
+      addressCountry: 'US',
+    },
+    alumniOf: [...new Set(education.map((e) => e.school))].map((name) => ({
+      '@type': 'CollegeOrUniversity',
+      name,
+    })),
+    knowsAbout: ['React', 'TypeScript', 'Node.js', 'Python', 'Frontend architecture', 'Role-based access control', 'Observability'],
+    sameAs,
+  },
+};
 ---
 
 <!doctype html>
@@ -15,7 +54,42 @@ const { title, description } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <meta name="author" content={profile.name} />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href={canonical} />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <!-- Google Search Console ownership; keep it, or the property becomes unverified. -->
+    <meta name="google-site-verification" content="HhEe8MkGneQV5TlVGPoTaYfGRsYPPHdcLW5fH3mYDMA" />
+
+    <!-- Icons -->
     <link rel="icon" type="image/svg+xml" href="/avatar.svg" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#111113" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f6f5f1" media="(prefers-color-scheme: light)" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="profile" />
+    <meta property="og:site_name" content={profile.name} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={imageUrl} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={`${profile.name}, ${profile.title}`} />
+    <meta property="og:locale" content="en_US" />
+    <meta property="profile:first_name" content={profile.name.split(' ')[0]} />
+    <meta property="profile:last_name" content={profile.name.split(' ').slice(1).join(' ')} />
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={imageUrl} />
+
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
