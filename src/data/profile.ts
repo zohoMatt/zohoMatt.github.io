@@ -3,7 +3,6 @@ import type { Project } from './projects';
 export const profile = {
   name: 'Matt Zuo',
   title: 'Senior Software Engineer',
-  formerly: 'Atlassian',
   location: 'Raleigh, NC',
   email: 'mattzuo12@gmail.com',
   linkedin: 'https://www.linkedin.com/in/mattzo/',
@@ -17,7 +16,7 @@ export const profile = {
     '8+ years building SaaS, fintech and edtech products. At Atlassian I led frontend for <b>Confluence’s Role-Based Access Control</b>, from technical spec to a tenant-scoped rollout across thousands of instances.',
 
   glance: [
-    { label: 'Exp.', value: '8+ yrs · SaaS, fintech, edtech' },
+    { label: 'Exp.', value: '8+ yrs · ex‑Atlassian · SaaS, fintech, edtech' },
     { label: 'Stack', value: 'React · TypeScript · Node.js · Python' },
   ],
   status: 'Open to Senior roles',

@@ -14,7 +14,6 @@ const [line1, line2] = profile.headline;
         <div class="who-name">{profile.name}</div>
         <div class="who-meta">
           <span>{profile.title}</span>
-          <span class="pill">ex‑{profile.formerly}</span>
         </div>
         <div class="who-loc">
           <svg viewBox="0 0 16 16" width="13" height="13" aria-hidden="true"><path d="M8 15s5-4.6 5-8.5A5 5 0 0 0 3 6.5C3 10.4 8 15 8 15Z" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="8" cy="6.5" r="1.8" fill="currentColor"/></svg>
@@ -54,11 +53,6 @@ const [line1, line2] = profile.headline;
   }
   .who-name { font-size: 30px; font-weight: 600; letter-spacing: -.02em; line-height: 1.1; }
   .who-meta { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 10px; margin-top: 8px; font-size: 16px; }
-  .pill {
-    font: 500 12px var(--mono); color: var(--accent); background: var(--accent-soft);
-    border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
-    padding: 3px 9px; border-radius: 999px; white-space: nowrap;
-  }
   .who-loc { display: flex; align-items: center; gap: 6px; margin-top: 6px; font-size: 13.5px; color: var(--muted); }
   h1 { font: 400 clamp(32px, 3.8vw, 46px)/1.1 var(--serif); letter-spacing: -.005em; margin: 32px 0 18px; text-wrap: balance; }
   h1 em { color: var(--accent); }
